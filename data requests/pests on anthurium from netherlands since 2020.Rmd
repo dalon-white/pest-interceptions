@@ -1,0 +1,262 @@
+---
+title: "pests on anthurium netherlands 2020"
+author: "Dalon White"
+date: "2025-07-29"
+output: html_document
+
+params:
+  begin_date: "01-01-2020"
+  end_date: "today" #"today" for all days, otherwise "mm-dd-yyyy"
+  taxonomic_name: ["Anthurium"]
+  common_name: ["laceleaf"]
+  origin_country: ["Spain"]
+  
+---
+
+```{r load libraries and grab params}
+#get start and end dates
+begin_date <- if(is.na(params$begin_date)) as.Date("01-01-1900", "%d-%m-%Y") else(as.Date(params$begin_date, "%d-%m-%Y"))
+
+end_date <- if(params$end_date == "today") as.Date(Sys.Date(), "%d-%m-%Y") else(as.Date(params$end_date, "%d-%m-%Y"))
+
+
+#get taxonomic names and countries
+taxonomic_name = params$taxonomic_name
+common_name = params$common_name
+origin_country = params$origin_country
+
+
+#load packages
+pacman::p_load(DBI, odbc)
+pacman::p_load(tidyverse, lubridate, readr, stringr)
+pacman::p_load(DT, htmlwidgets)
+
+```
+
+# Gather data from ARM
+
+## Connect to ARM
+```{r connect to ARM}
+
+connect_db <- function(database) {
+  DBI::dbConnect(
+    odbc::odbc(),
+    .connection_string =
+      "Driver=SQL Server;
+                       Server=AAP00VA3PPQSQL0\\MSSQLSERVER,1433;
+                        Database=PPQ_AQI_ARMDMV2;
+trusted_connection=yes")
+}
+
+db_conn <- connect_db(database=db)
+
+```
+
+## Grab diagnostic results table
+
+
+```{r grab arm results}
+
+mvw_diagnostic_results <- tbl(
+  db_conn,
+  sql("select * FROM [APHIS_Imports].[dbo].[mvw_Diagnostic_Results]")
+)
+
+df_diagnostic_results <- mvw_diagnostic_results %>%  
+  dplyr::select(
+    INSPECTION_DATE,
+    COMMODITY_DISPLAY_NAME,
+    COMMODITY_TAXONOMIC_DISPLAY_NAME,
+    INSPECTION_PATHWAY,
+    ORIGIN,
+    SUBCATEGORY,
+    INSPECTION_LOCATION_STATE_CODE,
+    DETERMINATION_TYPE,
+    PEST_TAXONOMIC_NAME,
+    QUARANTINE_RECOMMENDATION,
+    DIAGNOSTIC_DETERMINATION_ID,
+    DIAGNOSTIC_REQUEST_ID,
+    any_of(c(starts_with("number_dead", ignore.case = TRUE),
+           starts_with("number_alive", ignore.case = TRUE),
+           starts_with("pest_", ignore.case = TRUE))
+    )
+  )
+
+```
+
+## filter dates & names
+```{r filter dates and names in ARM}
+
+common_pattern <- paste(common_name, collapse = "|")
+taxonomic_pattern <- paste(taxonomic_name, collapse = "|")
+
+arm_results <- df_diagnostic_results %>%
+  filter(
+    INSPECTION_DATE >= begin_date,
+    INSPECTION_DATE <= end_date,
+    ORIGIN %in% origin_country) |> 
+  collect()
+
+
+arm_results <- arm_results |> filter(
+      str_detect(COMMODITY_DISPLAY_NAME, common_pattern) |
+      str_detect(COMMODITY_TAXONOMIC_DISPLAY_NAME, taxonomic_pattern)
+    )
+
+
+#previous version that has been replaced (in case needed later):
+# arm_results = df_diagnostic_results |> 
+#   filter(
+#     INSPECTION_DATE >= begin_date,
+#     INSPECTION_DATE <= end_date,
+#     ORIGIN %in% origin_country)
+# 
+# arm_results <- arm_results |> 
+#     COMMODITY_DISPLAY_NAME %in% common_name | COMMODITY_TAXONOMIC_DISPLAY_NAME %in% taxonomic_name |
+#       grepl(taxonomic_name, COMMODITY_TAXONOMIC_DISPLAY_NAME)
+
+```
+
+
+## Filter interceptions to best known information
+
+# currently missing the diagnostic determination not possible flag from that reference table. need to find the code and add it.
+```{r correct pest query diagnostic}
+#call diagnostic determination data; written flexibly because QUARANTINE_STATUS_MAINLAND just chagned to QUARANTINE_STATUS_CONUS and it differs by table
+get.determinations <- function(connection) {
+  # First, get all columns to avoid SQL errors if column names change
+  result <- tbl(connection, sql("SELECT
+                       *
+                       FROM [PPQ_AQI_ARMDMV2].[ARMDATADM].[SYS2_BRG_DIAGNOSTIC_DETERMINATION]")) |> 
+    collect()
+  
+  # Get the actual column names from the retrieved data
+  actual_cols <- colnames(result)
+  
+  # Define mandatory columns we need
+  base_cols <- c(
+    "ID",
+    "DIAGNOSTIC_REQUEST_ID",
+    "PEST_TAXON_ID",
+    "PEST_TAXON_SIMPLE_NAME",
+    "PEST_TAXONOMIC_NAME",
+    "ID_AUTHORITY",
+    "DETERMINATION_TYPE_ID",
+    "DETERMINED_BY_GROUP_ID",
+    "DETERMINATION_DATETIME",
+    "QUARANTINE_STATUS_HAWAII",
+    "QUARANTINE_STATUS_PUERTO_RICO"
+  )
+  
+  # Check which quarantine status columns exist and add them
+  quarantine_mainland_col <- NULL
+  if ("QUARANTINE_STATUS_MAINLAND" %in% actual_cols) {
+    quarantine_mainland_col <- "QUARANTINE_STATUS_MAINLAND"
+  } else if ("QUARANTINE_STATUS_CONUS" %in% actual_cols) {
+    quarantine_mainland_col <- "QUARANTINE_STATUS_CONUS"
+  }
+  
+  # Create the final column selection list
+  select_cols <- c(base_cols, quarantine_mainland_col)
+  select_cols <- select_cols[!is.null(select_cols)]
+  
+  # Select the needed columns
+  result <- result |> 
+    dplyr::select(all_of(select_cols)) |> 
+    rename("DIAGNOSTIC_DETERMINATION_ID" = "ID")
+  
+  # If needed, standardize column names for downstream code
+  if (!is.null(quarantine_mainland_col) && quarantine_mainland_col == "QUARANTINE_STATUS_MAINLAND") {
+    result <- result |> rename("QUARANTINE_STATUS_CONUS" = "QUARANTINE_STATUS_MAINLAND")
+  }
+  
+  return(result)
+}
+
+system.time(
+  diag.determ.records <- get.determinations(connection=db_conn)
+  )
+
+#pull BRG_DIATNOSTIC_DETERMINATION_NOT_POSSIBLE_REASON table 
+## Just done to attach DIAGNOSTIC_NOT_POSSIBLE_FLAG in the event that a later molecular analysis was done but failed at a better determination (per Andy Carmichael's instructions, 8/12/24 on Teams)
+get.diag.determ.not.possible = function(connection,
+                                        determ.ids){
+  tbl(connection, sql("SELECT
+                      *
+                      FROM [PPQ_AQI_ARMDMV2].[ARMDATADM].[SYS2_BRG_DIAGNOSTIC_DETERMINATION_NOT_POSSIBLE_REASON]")) |> 
+    # dplyr::filter(DIAGNOSTIC_DETERMINATION_ID %in% determ.ids) |> 
+    collect() |> 
+    dplyr::select(ID,
+                  DIAGNOSTIC_DETERMINATION_ID,
+                  DIAGNOSTIC_DETERMINATION_NOT_POSSIBLE_REASON)
+}
+
+determ.not.possible.dat = get.diag.determ.not.possible(
+  connection=db_conn#,
+  # determ.ids = (diag.determ.records |> pull(ID))
+) |>  filter(DIAGNOSTIC_DETERMINATION_ID %in% (diag.determ.records |> pull(DIAGNOSTIC_DETERMINATION_ID)))
+
+
+#merge these
+diag.determ.records = diag.determ.records |>
+  left_join(determ.not.possible.dat,
+            by=c('DIAGNOSTIC_DETERMINATION_ID'))
+
+
+#Filter to records that match the data request
+diag.determ.records <- diag.determ.records|> 
+  filter(DIAGNOSTIC_DETERMINATION_ID %in% (arm_results |> pull(DIAGNOSTIC_DETERMINATION_ID)))
+
+arm_results = arm_results |> left_join(diag.determ.records,by=intersect(colnames(arm_results),colnames(diag.determ.records))) 
+
+parse_final_determination = function(data) {
+  data |> 
+    group_by(DIAGNOSTIC_REQUEST_ID) |> 
+    #Andy Carmichael says if that the most recent "DETERMINATION_CREATED_DATETIME" should be the most accurate, with very rare exceptions.  (The only time I can think of is if there was a molecular ID request, and it failed.)   In that case there DETERM_NOT_POSS_FLAG should be flagged.  
+    #Filter for rows that are not a failed diagnostic determination
+    dplyr::filter(is.na(DIAGNOSTIC_DETERMINATION_NOT_POSSIBLE_REASON)) |> 
+    #Filter the determination type - final has the highest TYPE_ID number
+    dplyr::filter(DETERMINATION_TYPE_ID==max(DETERMINATION_TYPE_ID)) |> 
+    #Filter for who ID'd it - the group_ID is a hierarchy of expertise, so take the max ID
+    dplyr::filter(DETERMINED_BY_GROUP_ID == max(DETERMINED_BY_GROUP_ID)) |> 
+    #The most recent is in practice the most correct - sometimes a final ID will be corrected at a later date, or someone will review for training or spot checking
+    dplyr::filter(DETERMINATION_DATETIME == max(DETERMINATION_DATETIME))
+}
+
+df_diagnostic_results <- parse_final_determination(arm_results)
+
+
+```
+
+## Write ARM data
+```{r write table}
+setwd(here::here('output','data'))
+
+# Creates an interactive HTML table in RStudio viewer
+dt <- datatable(df_diagnostic_results,
+                extensions = c('Buttons'),
+                options = list(
+                  dom = 'Bfrtip',
+                  buttons = list(
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                  )
+                ))
+
+# To save as HTML:
+
+saveWidget(dt, file =
+             paste("pests on",
+                   taxonomic_name,
+                   " from ",
+                   origin_country,
+                   " from ",
+                   begin_date,
+                   " to ",
+                   end_date,
+                   ".html"))
+```
+
+
+
+
+
