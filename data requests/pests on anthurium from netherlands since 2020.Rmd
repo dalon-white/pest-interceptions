@@ -9,7 +9,7 @@ params:
   end_date: "today" #"today" for all days, otherwise "mm-dd-yyyy"
   taxonomic_name: ["Anthurium"]
   common_name: ["laceleaf"]
-  origin_country: ["Spain"]
+  origin_country: ["Netherlands"]
   
 ---
 
@@ -180,9 +180,11 @@ get.diag.determ.not.possible = function(connection,
 }
 
 determ.not.possible.dat = get.diag.determ.not.possible(
-  connection=db_conn#,
-  # determ.ids = (diag.determ.records |> pull(ID))
-) |>  filter(DIAGNOSTIC_DETERMINATION_ID %in% (diag.determ.records |> pull(DIAGNOSTIC_DETERMINATION_ID)))
+  connection=db_conn) |>  
+  filter(DIAGNOSTIC_DETERMINATION_ID %in% (
+    diag.determ.records |> pull(DIAGNOSTIC_DETERMINATION_ID)
+    )
+    )
 
 
 #merge these
