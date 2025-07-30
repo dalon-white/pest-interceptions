@@ -15,9 +15,8 @@ params:
 
 ```{r load libraries and grab params}
 #get start and end dates
-begin_date <- if(is.na(params$begin_date)) as.Date("01-01-1900", "%d-%m-%Y") else(as.Date(params$begin_date, "%d-%m-%Y"))
-
-end_date <- if(params$end_date == "today") as.Date(Sys.Date(), "%d-%m-%Y") else(as.Date(params$end_date, "%d-%m-%Y"))
+begin_date <- if(is.na(params$begin_date)) as.Date("1900-01-01") else as.Date(params$begin_date, "%d-%m-%Y")
+end_date <- if(params$end_date == "today") Sys.Date() else as.Date(params$end_date, "%d-%m-%Y")
 
 
 #get taxonomic names and countries
@@ -38,7 +37,7 @@ pacman::p_load(DT, htmlwidgets)
 ## Connect to ARM
 ```{r connect to ARM}
 
-connect_db <- function(database) {
+connect_db <- function() {
   DBI::dbConnect(
     odbc::odbc(),
     .connection_string =
@@ -48,7 +47,7 @@ connect_db <- function(database) {
 trusted_connection=yes")
 }
 
-db_conn <- connect_db(database=db)
+db_conn <- connect_db()
 
 ```
 
@@ -62,7 +61,12 @@ mvw_diagnostic_results <- tbl(
   sql("select * FROM [APHIS_Imports].[dbo].[mvw_Diagnostic_Results]")
 )
 
-df_diagnostic_results <- mvw_diagnostic_results %>%  
+df_diagnostic_results <- mvw_diagnostic_results |> 
+  filter(
+    INSPECTION_DATE >= begin_date,
+    INSPECTION_DATE <= end_date,
+    ORIGIN %in% origin_country) |>   
+  
   dplyr::select(
     INSPECTION_DATE,
     COMMODITY_DISPLAY_NAME,
@@ -90,30 +94,13 @@ df_diagnostic_results <- mvw_diagnostic_results %>%
 common_pattern <- paste(common_name, collapse = "|")
 taxonomic_pattern <- paste(taxonomic_name, collapse = "|")
 
-arm_results <- df_diagnostic_results %>%
-  filter(
-    INSPECTION_DATE >= begin_date,
-    INSPECTION_DATE <= end_date,
-    ORIGIN %in% origin_country) |> 
+arm_results <- df_diagnostic_results |> 
   collect()
-
 
 arm_results <- arm_results |> filter(
       str_detect(COMMODITY_DISPLAY_NAME, common_pattern) |
       str_detect(COMMODITY_TAXONOMIC_DISPLAY_NAME, taxonomic_pattern)
     )
-
-
-#previous version that has been replaced (in case needed later):
-# arm_results = df_diagnostic_results |> 
-#   filter(
-#     INSPECTION_DATE >= begin_date,
-#     INSPECTION_DATE <= end_date,
-#     ORIGIN %in% origin_country)
-# 
-# arm_results <- arm_results |> 
-#     COMMODITY_DISPLAY_NAME %in% common_name | COMMODITY_TAXONOMIC_DISPLAY_NAME %in% taxonomic_name |
-#       grepl(taxonomic_name, COMMODITY_TAXONOMIC_DISPLAY_NAME)
 
 ```
 
@@ -121,18 +108,19 @@ arm_results <- arm_results |> filter(
 ## Filter interceptions to best known information
 
 # currently missing the diagnostic determination not possible flag from that reference table. need to find the code and add it.
+
 ```{r correct pest query diagnostic}
 #call diagnostic determination data; written flexibly because QUARANTINE_STATUS_MAINLAND just chagned to QUARANTINE_STATUS_CONUS and it differs by table
 get.determinations <- function(connection) {
   # First, get all columns to avoid SQL errors if column names change
   result <- tbl(connection, sql("SELECT
                        *
-                       FROM [PPQ_AQI_ARMDMV2].[ARMDATADM].[SYS2_BRG_DIAGNOSTIC_DETERMINATION]")) |> 
+                       FROM [PPQ_AQI_ARMDMV2].[ARMDATADM].[SYS2_BRG_DIAGNOSTIC_DETERMINATION]")) |>
     collect()
-  
+
   # Get the actual column names from the retrieved data
   actual_cols <- colnames(result)
-  
+
   # Define mandatory columns we need
   base_cols <- c(
     "ID",
@@ -147,7 +135,7 @@ get.determinations <- function(connection) {
     "QUARANTINE_STATUS_HAWAII",
     "QUARANTINE_STATUS_PUERTO_RICO"
   )
-  
+
   # Check which quarantine status columns exist and add them
   quarantine_mainland_col <- NULL
   if ("QUARANTINE_STATUS_MAINLAND" %in% actual_cols) {
@@ -155,21 +143,21 @@ get.determinations <- function(connection) {
   } else if ("QUARANTINE_STATUS_CONUS" %in% actual_cols) {
     quarantine_mainland_col <- "QUARANTINE_STATUS_CONUS"
   }
-  
+
   # Create the final column selection list
   select_cols <- c(base_cols, quarantine_mainland_col)
   select_cols <- select_cols[!is.null(select_cols)]
-  
+
   # Select the needed columns
-  result <- result |> 
-    dplyr::select(all_of(select_cols)) |> 
+  result <- result |>
+    dplyr::select(all_of(select_cols)) |>
     rename("DIAGNOSTIC_DETERMINATION_ID" = "ID")
-  
+
   # If needed, standardize column names for downstream code
   if (!is.null(quarantine_mainland_col) && quarantine_mainland_col == "QUARANTINE_STATUS_MAINLAND") {
     result <- result |> rename("QUARANTINE_STATUS_CONUS" = "QUARANTINE_STATUS_MAINLAND")
   }
-  
+
   return(result)
 }
 
@@ -232,28 +220,19 @@ df_diagnostic_results <- parse_final_determination(arm_results)
 ```{r write table}
 setwd(here::here('output','data'))
 
-# Creates an interactive HTML table in RStudio viewer
 dt <- datatable(df_diagnostic_results,
-                extensions = c('Buttons'),
+                extensions = 'Buttons',
                 options = list(
                   dom = 'Bfrtip',
-                  buttons = list(
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                  )
+                  buttons = c('copy', 'csv', 'excel', 'pdf')
                 ))
 
-# To save as HTML:
+saveWidget(dt,
+           file = paste0("pests_on_", paste(taxonomic_name, collapse="_"),
+                         "_from_", paste(origin_country, collapse="_"),
+                         "_", begin_date, "_to_", end_date, ".html"),
+           selfcontained = TRUE)
 
-saveWidget(dt, file =
-             paste("pests on",
-                   taxonomic_name,
-                   " from ",
-                   origin_country,
-                   " from ",
-                   begin_date,
-                   " to ",
-                   end_date,
-                   ".html"))
 ```
 
 
