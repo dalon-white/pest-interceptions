@@ -1,0 +1,665 @@
+"","INSPECTION_YEAR","ORIGIN","PEST_TAXONOMY_GENUS","PEST_TAXONOMY_SPECIES","PEST_TAXON_SIMPLE_NAME","COMMODITY_DISPLAY_NAME","COMMODITY_TAXONOMIC_DISPLAY_NAME","total_pests"
+"1",2020,"Colombia","Copitarsia","corruda","corruda","Anemone sp. - Anemone","Anemone sp.",1
+"2",2020,"Colombia","Copitarsia","decolora","decolora","Allium schoenoprasum - CHIVE","Allium schoenoprasum",1
+"3",2020,"Colombia","Copitarsia","decolora","decolora","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",3
+"4",2020,"Colombia","Copitarsia","decolora","decolora","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"5",2020,"Colombia","Copitarsia","decolora","decolora","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",1
+"6",2020,"Colombia","Copitarsia","decolora","decolora","Mentha sp. - MINT","Mentha sp.",1
+"7",2020,"Colombia","Copitarsia","decolora","decolora","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",1
+"8",2020,"Colombia","Copitarsia","decolora","decolora","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",1
+"9",2020,"Colombia","Copitarsia","decolora","decolora","Thymus vulgaris - THYME","Thymus vulgaris",2
+"10",2020,"Colombia","Copitarsia",NA,"Copitarsia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",27
+"11",2020,"Colombia","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",247
+"12",2020,"Colombia","Copitarsia",NA,"Copitarsia","Anethum graveolens - DILL","Anethum graveolens",20
+"13",2020,"Colombia","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"14",2020,"Colombia","Copitarsia",NA,"Copitarsia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",7
+"15",2020,"Colombia","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",8
+"16",2020,"Colombia","Copitarsia",NA,"Copitarsia","Astilbe sp. - Astilbe","Astilbe sp.",1
+"17",2020,"Colombia","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",4
+"18",2020,"Colombia","Copitarsia",NA,"Copitarsia","Calendula officinalis (Asteraceae) - Calendula officinalis ","Calendula officinalis (Asteraceae)",1
+"19",2020,"Colombia","Copitarsia",NA,"Copitarsia","Callistephus sp.  - Callistephus","Callistephus sp. ",10
+"20",2020,"Colombia","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",94
+"21",2020,"Colombia","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",2
+"22",2020,"Colombia","Copitarsia",NA,"Copitarsia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"23",2020,"Colombia","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",69
+"24",2020,"Colombia","Copitarsia",NA,"Copitarsia","Eryngium foetidum - FALSE CORIANDER","Eryngium foetidum",1
+"25",2020,"Colombia","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",5
+"26",2020,"Colombia","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",3
+"27",2020,"Colombia","Copitarsia",NA,"Copitarsia","Gypsophila sp. - Gypsophila","Gypsophila sp.",2
+"28",2020,"Colombia","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",22
+"29",2020,"Colombia","Copitarsia",NA,"Copitarsia","Hydrangea sp. - Hydrangea","Hydrangea sp.",9
+"30",2020,"Colombia","Copitarsia",NA,"Copitarsia","Lactuca sativa - LETTUCE","Lactuca sativa",2
+"31",2020,"Colombia","Copitarsia",NA,"Copitarsia","Leucospermum sp. - Leucospermum","Leucospermum sp.",1
+"32",2020,"Colombia","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",3
+"33",2020,"Colombia","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",7
+"34",2020,"Colombia","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",77
+"35",2020,"Colombia","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",4
+"36",2020,"Colombia","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",7
+"37",2020,"Colombia","Copitarsia",NA,"Copitarsia","Origanum majorana - MARJORAM","Origanum majorana",9
+"38",2020,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",43
+"39",2020,"Colombia","Copitarsia",NA,"Copitarsia","Ornithogalum sp. - Ornithogalum","Ornithogalum sp.",2
+"40",2020,"Colombia","Copitarsia",NA,"Copitarsia","Petroselinum crispum - PARSLEY","Petroselinum crispum",1
+"41",2020,"Colombia","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",26
+"42",2020,"Colombia","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",3
+"43",2020,"Colombia","Copitarsia",NA,"Copitarsia","Ruscus sp. - Ruscus","Ruscus sp.",1
+"44",2020,"Colombia","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",16
+"45",2020,"Colombia","Copitarsia",NA,"Copitarsia","Thymus vulgaris - THYME","Thymus vulgaris",12
+"46",2020,"Dominican Republic","Copitarsia",NA,"Copitarsia",NA,NA,2
+"47",2020,"Ecuador","Copitarsia","decolora","decolora","Helianthus sp. - Helianthus","Helianthus sp.",1
+"48",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Achillea sp.  - Achillea","Achillea sp. ",1
+"49",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",18
+"50",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",11
+"51",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Ammi sp. - Ammi","Ammi sp.",1
+"52",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",4
+"53",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"54",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",1
+"55",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",2
+"56",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",2
+"57",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",2
+"58",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Gomphrena sp. - Gomphrena","Gomphrena sp.",1
+"59",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",9
+"60",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Helichrysum sp.  - Helichrysum","Helichrysum sp. ",3
+"61",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Hydrangea sp. - Hydrangea","Hydrangea sp.",1
+"62",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Hypericum sp. - Hypericum","Hypericum sp.",5
+"63",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",1
+"64",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",2
+"65",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Matthiola sp. - Matthiola","Matthiola sp.",18
+"66",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",8
+"67",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Protea sp. - Protea","Protea sp.",1
+"68",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",4
+"69",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Ruscus sp. - Ruscus","Ruscus sp.",1
+"70",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Scabiosa sp. - Scabiosa","Scabiosa sp.",1
+"71",2020,"Ecuador","Copitarsia",NA,"Copitarsia","Trachelium sp. - Trachelium","Trachelium sp.",3
+"72",2020,"Guatemala","Copitarsia",NA,"Copitarsia","Musa sp. - Plantain","Musa sp.",1
+"73",2020,"Guatemala","Copitarsia",NA,"Copitarsia","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",1
+"74",2020,"Guatemala","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"75",2020,"Mexico","Copitarsia","decolora","decolora","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",1
+"76",2020,"Mexico","Copitarsia","decolora","decolora","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",2
+"77",2020,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",2
+"78",2020,"Mexico","Copitarsia","decolora","decolora","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",1
+"79",2020,"Mexico","Copitarsia","decolora","decolora","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",1
+"80",2020,"Mexico","Copitarsia","decolora","decolora","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",2
+"81",2020,"Mexico","Copitarsia","decolora","decolora","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"82",2020,"Mexico","Copitarsia","decolora","decolora",NA,NA,1
+"83",2020,"Mexico","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",5
+"84",2020,"Mexico","Copitarsia",NA,"Copitarsia","Anthurium sp. - Anthurium","Anthurium sp.",1
+"85",2020,"Mexico","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",4
+"86",2020,"Mexico","Copitarsia",NA,"Copitarsia","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",18
+"87",2020,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",5
+"88",2020,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",98
+"89",2020,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",2
+"90",2020,"Mexico","Copitarsia",NA,"Copitarsia","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",4
+"91",2020,"Mexico","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",5
+"92",2020,"Mexico","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",1
+"93",2020,"Mexico","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",2
+"94",2020,"Mexico","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",1
+"95",2020,"Mexico","Copitarsia",NA,"Copitarsia","Opuntia sp. - PRICKLY PEAR PAD","Opuntia sp.",1
+"96",2020,"Mexico","Copitarsia",NA,"Copitarsia","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",1
+"97",2020,"Mexico","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",3
+"98",2020,"Mexico","Copitarsia",NA,"Copitarsia","Polianthes sp. - Polianthes","Polianthes sp.",1
+"99",2020,"Mexico","Copitarsia",NA,"Copitarsia","Spinacia oleracea - SPINACH","Spinacia oleracea",2
+"100",2020,"Mexico","Copitarsia",NA,"Copitarsia",NA,NA,8
+"101",2020,"Nicaragua","Copitarsia",NA,"Copitarsia","Abelmoschus esculentus - OKRA","Abelmoschus esculentus",1
+"102",2020,"Not Specified","Copitarsia","decolora","decolora",NA,NA,1
+"103",2020,"Not Specified","Copitarsia",NA,"Copitarsia",NA,NA,1
+"104",2020,"United States of America","Copitarsia",NA,"Copitarsia","Origanum majorana - MARJORAM","Origanum majorana",1
+"105",2021,"Brazil","Copitarsia",NA,"Copitarsia","Zingiber officinale - GINGER ROOT","Zingiber officinale",1
+"106",2021,"Colombia","Copitarsia","decolora","decolora","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",2
+"107",2021,"Colombia","Copitarsia","decolora","decolora","Dianthus sp. - Dianthus","Dianthus sp.",1
+"108",2021,"Colombia","Copitarsia","decolora","decolora","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",1
+"109",2021,"Colombia","Copitarsia",NA,"Copitarsia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",27
+"110",2021,"Colombia","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",165
+"111",2021,"Colombia","Copitarsia",NA,"Copitarsia","Anethum graveolens - DILL","Anethum graveolens",24
+"112",2021,"Colombia","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"113",2021,"Colombia","Copitarsia",NA,"Copitarsia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",6
+"114",2021,"Colombia","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",7
+"115",2021,"Colombia","Copitarsia",NA,"Copitarsia","Astilbe sp. - Astilbe","Astilbe sp.",1
+"116",2021,"Colombia","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",3
+"117",2021,"Colombia","Copitarsia",NA,"Copitarsia","Calendula sp.  - Calendula","Calendula sp. ",1
+"118",2021,"Colombia","Copitarsia",NA,"Copitarsia","Callistephus sp.  - Callistephus","Callistephus sp. ",6
+"119",2021,"Colombia","Copitarsia",NA,"Copitarsia","Campanula sp. - Campanula","Campanula sp.",1
+"120",2021,"Colombia","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",73
+"121",2021,"Colombia","Copitarsia",NA,"Copitarsia","Cichorium sp.  - Cichorium","Cichorium sp. ",1
+"122",2021,"Colombia","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",2
+"123",2021,"Colombia","Copitarsia",NA,"Copitarsia","Cymbidium sp. - Cymbidium","Cymbidium sp.",1
+"124",2021,"Colombia","Copitarsia",NA,"Copitarsia","Dahlia sp. - Dahlia","Dahlia sp.",1
+"125",2021,"Colombia","Copitarsia",NA,"Copitarsia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"126",2021,"Colombia","Copitarsia",NA,"Copitarsia","Dianthus caryophyllus - Dianthus caryophyllus","Dianthus caryophyllus",1
+"127",2021,"Colombia","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",44
+"128",2021,"Colombia","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",7
+"129",2021,"Colombia","Copitarsia",NA,"Copitarsia","Eucalyptus sp. - Eucalyptus","Eucalyptus sp.",1
+"130",2021,"Colombia","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",2
+"131",2021,"Colombia","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",22
+"132",2021,"Colombia","Copitarsia",NA,"Copitarsia","Hydrangea sp. - Hydrangea","Hydrangea sp.",7
+"133",2021,"Colombia","Copitarsia",NA,"Copitarsia","Hypericum sp. - Hypericum","Hypericum sp.",3
+"134",2021,"Colombia","Copitarsia",NA,"Copitarsia","Lactuca sativa - LETTUCE","Lactuca sativa",4
+"135",2021,"Colombia","Copitarsia",NA,"Copitarsia","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",1
+"136",2021,"Colombia","Copitarsia",NA,"Copitarsia","Leucospermum sp. - Leucospermum","Leucospermum sp.",1
+"137",2021,"Colombia","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",2
+"138",2021,"Colombia","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",9
+"139",2021,"Colombia","Copitarsia",NA,"Copitarsia","Matthiola sp. - Matthiola","Matthiola sp.",1
+"140",2021,"Colombia","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",119
+"141",2021,"Colombia","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",7
+"142",2021,"Colombia","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",8
+"143",2021,"Colombia","Copitarsia",NA,"Copitarsia","Origanum majorana - MARJORAM","Origanum majorana",11
+"144",2021,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",40
+"145",2021,"Colombia","Copitarsia",NA,"Copitarsia","Ornithogalum sp. - Ornithogalum","Ornithogalum sp.",2
+"146",2021,"Colombia","Copitarsia",NA,"Copitarsia","Petroselinum crispum - PARSLEY","Petroselinum crispum",1
+"147",2021,"Colombia","Copitarsia",NA,"Copitarsia","Physalis peruviana - CAPE GOOSEBERRY","Physalis peruviana",1
+"148",2021,"Colombia","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",10
+"149",2021,"Colombia","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",4
+"150",2021,"Colombia","Copitarsia",NA,"Copitarsia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",2
+"151",2021,"Colombia","Copitarsia",NA,"Copitarsia","Ruscus sp. - Ruscus","Ruscus sp.",1
+"152",2021,"Colombia","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",14
+"153",2021,"Colombia","Copitarsia",NA,"Copitarsia","Tagetes sp. - Tagetes","Tagetes sp.",1
+"154",2021,"Colombia","Copitarsia",NA,"Copitarsia","Thymus vulgaris - THYME","Thymus vulgaris",33
+"155",2021,"Costa Rica","Copitarsia",NA,"Copitarsia","Anthurium sp. - Anthurium","Anthurium sp.",1
+"156",2021,"Costa Rica","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"157",2021,"Costa Rica","Copitarsia",NA,"Copitarsia","Eustoma sp. - Eustoma","Eustoma sp.",1
+"158",2021,"Dominican Republic","Copitarsia","decolora","decolora",NA,NA,1
+"159",2021,"Ecuador","Copitarsia","decolora","decolora","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",1
+"160",2021,"Ecuador","Copitarsia","decolora","decolora","Moluccella sp. - Moluccella","Moluccella sp.",1
+"161",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",38
+"162",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",13
+"163",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",2
+"164",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",13
+"165",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",6
+"166",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",7
+"167",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Craspedia sp. - Craspedia","Craspedia sp.",1
+"168",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",4
+"169",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",3
+"170",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Eustoma sp. - Eustoma","Eustoma sp.",3
+"171",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"172",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",7
+"173",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Hypericum sp. - Hypericum","Hypericum sp.",2
+"174",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Kalanchoe sp. - Kalanchoe","Kalanchoe sp.",1
+"175",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",3
+"176",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Matthiola sp. - Matthiola","Matthiola sp.",38
+"177",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",10
+"178",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Ornithogalum sp. - Ornithogalum","Ornithogalum sp.",1
+"179",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",1
+"180",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",1
+"181",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Senecio sp.  - Senecio","Senecio sp. ",1
+"182",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",1
+"183",2021,"Ecuador","Copitarsia",NA,"Copitarsia","Trachelium sp. - Trachelium","Trachelium sp.",1
+"184",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"185",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",1
+"186",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",2
+"187",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Cichorium sp.  - Cichorium","Cichorium sp. ",1
+"188",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Daucus carota subsp. sativus - CARROT","Daucus carota subsp. sativus",1
+"189",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",1
+"190",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",1
+"191",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",1
+"192",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",2
+"193",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",3
+"194",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"195",2021,"Guatemala","Copitarsia",NA,"Copitarsia","Tagetes sp. - Tagetes","Tagetes sp.",1
+"196",2021,"Honduras","Copitarsia",NA,"Copitarsia","Capsicum annuum - BELL PEPPER","Capsicum annuum",1
+"197",2021,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",2
+"198",2021,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",6
+"199",2021,"Mexico","Copitarsia","decolora","decolora","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",1
+"200",2021,"Mexico","Copitarsia","decolora","decolora","Dianthus sp. - Dianthus","Dianthus sp.",1
+"201",2021,"Mexico","Copitarsia","decolora","decolora","Helianthus sp. - Helianthus","Helianthus sp.",1
+"202",2021,"Mexico","Copitarsia","decolora","decolora","Lilium sp. - Lilium","Lilium sp.",1
+"203",2021,"Mexico","Copitarsia","decolora","decolora","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",1
+"204",2021,"Mexico","Copitarsia","decolora","decolora","Thymus vulgaris - THYME","Thymus vulgaris",1
+"205",2021,"Mexico","Copitarsia","decolora","decolora",NA,NA,1
+"206",2021,"Mexico","Copitarsia",NA,"Copitarsia","Aloe vera - Aloe Vera","Aloe vera",1
+"207",2021,"Mexico","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",1
+"208",2021,"Mexico","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"209",2021,"Mexico","Copitarsia",NA,"Copitarsia","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",40
+"210",2021,"Mexico","Copitarsia",NA,"Copitarsia","Asparagus sp. - Asparagus","Asparagus sp.",1
+"211",2021,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",124
+"212",2021,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",6
+"213",2021,"Mexico","Copitarsia",NA,"Copitarsia","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",5
+"214",2021,"Mexico","Copitarsia",NA,"Copitarsia","Brassica rapa subsp. rapa (Brassicaceae) - Turnip, Lvs","Brassica rapa subsp. rapa (Brassicaceae)",3
+"215",2021,"Mexico","Copitarsia",NA,"Copitarsia","Capsicum annuum - BELL PEPPER","Capsicum annuum",1
+"216",2021,"Mexico","Copitarsia",NA,"Copitarsia","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",14
+"217",2021,"Mexico","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",5
+"218",2021,"Mexico","Copitarsia",NA,"Copitarsia","Cymbidium sp. - Cymbidium","Cymbidium sp.",1
+"219",2021,"Mexico","Copitarsia",NA,"Copitarsia","Daucus carota subsp. sativus - CARROT","Daucus carota subsp. sativus",1
+"220",2021,"Mexico","Copitarsia",NA,"Copitarsia","Eustoma sp. - Eustoma","Eustoma sp.",1
+"221",2021,"Mexico","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",2
+"222",2021,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa var. capitata - Butterhead Lettuce","Lactuca sativa var. capitata",1
+"223",2021,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",2
+"224",2021,"Mexico","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",1
+"225",2021,"Mexico","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",1
+"226",2021,"Mexico","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",2
+"227",2021,"Mexico","Copitarsia",NA,"Copitarsia","Origanum majorana - MARJORAM","Origanum majorana",1
+"228",2021,"Mexico","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"229",2021,"Mexico","Copitarsia",NA,"Copitarsia","Portulaca oleracea - PURSLANE","Portulaca oleracea",2
+"230",2021,"Mexico","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",1
+"231",2021,"Mexico","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",1
+"232",2021,"Mexico","Copitarsia",NA,"Copitarsia",NA,NA,14
+"233",2021,"South Africa","Copitarsia",NA,"Copitarsia","Brunia sp. - Brunia","Brunia sp.",1
+"234",2022,"Colombia","Copitarsia","decolora","decolora","Dianthus caryophyllus - Dianthus caryophyllus","Dianthus caryophyllus",1
+"235",2022,"Colombia","Copitarsia",NA,"Copitarsia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",18
+"236",2022,"Colombia","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",130
+"237",2022,"Colombia","Copitarsia",NA,"Copitarsia","Ammi sp. - Ammi","Ammi sp.",1
+"238",2022,"Colombia","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",5
+"239",2022,"Colombia","Copitarsia",NA,"Copitarsia","Anethum graveolens - DILL","Anethum graveolens",17
+"240",2022,"Colombia","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",4
+"241",2022,"Colombia","Copitarsia",NA,"Copitarsia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",2
+"242",2022,"Colombia","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",3
+"243",2022,"Colombia","Copitarsia",NA,"Copitarsia","Astilbe sp. - Astilbe","Astilbe sp.",2
+"244",2022,"Colombia","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",3
+"245",2022,"Colombia","Copitarsia",NA,"Copitarsia","Callistephus sp.  - Callistephus","Callistephus sp. ",1
+"246",2022,"Colombia","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",48
+"247",2022,"Colombia","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",1
+"248",2022,"Colombia","Copitarsia",NA,"Copitarsia","Dahlia sp. - Dahlia","Dahlia sp.",1
+"249",2022,"Colombia","Copitarsia",NA,"Copitarsia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"250",2022,"Colombia","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",34
+"251",2022,"Colombia","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",8
+"252",2022,"Colombia","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",2
+"253",2022,"Colombia","Copitarsia",NA,"Copitarsia","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"254",2022,"Colombia","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",7
+"255",2022,"Colombia","Copitarsia",NA,"Copitarsia","Hydrangea sp. - Hydrangea","Hydrangea sp.",3
+"256",2022,"Colombia","Copitarsia",NA,"Copitarsia","Lactuca sativa - LETTUCE","Lactuca sativa",1
+"257",2022,"Colombia","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",4
+"258",2022,"Colombia","Copitarsia",NA,"Copitarsia","Matthiola sp. - Matthiola","Matthiola sp.",2
+"259",2022,"Colombia","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",102
+"260",2022,"Colombia","Copitarsia",NA,"Copitarsia","Mentha sp. - Mentha","Mentha sp.",1
+"261",2022,"Colombia","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",4
+"262",2022,"Colombia","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",3
+"263",2022,"Colombia","Copitarsia",NA,"Copitarsia","Origanum majorana - MARJORAM","Origanum majorana",3
+"264",2022,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",40
+"265",2022,"Colombia","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",9
+"266",2022,"Colombia","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",2
+"267",2022,"Colombia","Copitarsia",NA,"Copitarsia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",3
+"268",2022,"Colombia","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",4
+"269",2022,"Colombia","Copitarsia",NA,"Copitarsia","Tagetes sp. - Tagetes","Tagetes sp.",2
+"270",2022,"Colombia","Copitarsia",NA,"Copitarsia","Thymus vulgaris - THYME","Thymus vulgaris",11
+"271",2022,"Costa Rica","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"272",2022,"Costa Rica","Copitarsia",NA,"Copitarsia","Celosia sp. - Celosia","Celosia sp.",1
+"273",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",49
+"274",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",1
+"275",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",3
+"276",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"277",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",1
+"278",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Astrantia sp. - Astrantia","Astrantia sp.",1
+"279",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Bupleurum sp. - Bupleurum","Bupleurum sp.",1
+"280",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Calendula sp.  - Calendula","Calendula sp. ",1
+"281",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"282",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",3
+"283",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"284",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",2
+"285",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Hypericum sp. - Hypericum","Hypericum sp.",1
+"286",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",8
+"287",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Matthiola sp. - Matthiola","Matthiola sp.",23
+"288",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Melanophylla sp. - Melanophylla","Melanophylla sp.",1
+"289",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",5
+"290",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Ozothamnus sp. - Ozothamnus","Ozothamnus sp.",2
+"291",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",2
+"292",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",6
+"293",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Ruscus sp. - Ruscus","Ruscus sp.",1
+"294",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Scabiosa sp. - Scabiosa","Scabiosa sp.",3
+"295",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Tagetes sp. - Tagetes","Tagetes sp.",2
+"296",2022,"Ecuador","Copitarsia",NA,"Copitarsia","Veronica sp. - Veronica","Veronica sp.",3
+"297",2022,"Guatemala","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"298",2022,"Guatemala","Copitarsia",NA,"Copitarsia","Impatiens hawkeri - Impatiens hawkerii","Impatiens hawkeri",1
+"299",2022,"Guatemala","Copitarsia",NA,"Copitarsia","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",1
+"300",2022,"Guatemala","Copitarsia",NA,"Copitarsia","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",1
+"301",2022,"Guatemala","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",3
+"302",2022,"Mexico","Copitarsia","corruda","corruda","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"303",2022,"Mexico","Copitarsia","decolora","decolora","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"304",2022,"Mexico","Copitarsia","decolora","decolora","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",11
+"305",2022,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",1
+"306",2022,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",4
+"307",2022,"Mexico","Copitarsia","decolora","decolora","Cynara scolymus - GLOBE ARTICHOKE","Cynara scolymus",1
+"308",2022,"Mexico","Copitarsia","decolora","decolora","Jacobaea sp. - Jacobaea","Jacobaea sp.",1
+"309",2022,"Mexico","Copitarsia","decolora","decolora","Lactuca sativa - LETTUCE","Lactuca sativa",1
+"310",2022,"Mexico","Copitarsia","decolora","decolora","Rosa sp. - Rosa","Rosa sp.",1
+"311",2022,"Mexico","Copitarsia","decolora","decolora",NA,NA,1
+"312",2022,"Mexico","Copitarsia",NA,"Copitarsia","Allium ampeloprasum - LEEK","Allium ampeloprasum",4
+"313",2022,"Mexico","Copitarsia",NA,"Copitarsia","Allium fistulosum - GREEN ONION","Allium fistulosum",1
+"314",2022,"Mexico","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",3
+"315",2022,"Mexico","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",7
+"316",2022,"Mexico","Copitarsia",NA,"Copitarsia","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",44
+"317",2022,"Mexico","Copitarsia",NA,"Copitarsia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",1
+"318",2022,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",3
+"319",2022,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",61
+"320",2022,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",14
+"321",2022,"Mexico","Copitarsia",NA,"Copitarsia","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",3
+"322",2022,"Mexico","Copitarsia",NA,"Copitarsia","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",8
+"323",2022,"Mexico","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",4
+"324",2022,"Mexico","Copitarsia",NA,"Copitarsia","Cynara scolymus - GLOBE ARTICHOKE","Cynara scolymus",1
+"325",2022,"Mexico","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",1
+"326",2022,"Mexico","Copitarsia",NA,"Copitarsia","Eustoma sp. - Eustoma","Eustoma sp.",2
+"327",2022,"Mexico","Copitarsia",NA,"Copitarsia","Gladiolus sp. - Gladiolus","Gladiolus sp.",1
+"328",2022,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa - LETTUCE","Lactuca sativa",4
+"329",2022,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",1
+"330",2022,"Mexico","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",1
+"331",2022,"Mexico","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",2
+"332",2022,"Mexico","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"333",2022,"Mexico","Copitarsia",NA,"Copitarsia","Sechium edule - CHAYOTE","Sechium edule",1
+"334",2022,"Mexico","Copitarsia",NA,"Copitarsia","Spinacia oleracea - SPINACH","Spinacia oleracea",1
+"335",2022,"Mexico","Copitarsia",NA,"Copitarsia","Thymus vulgaris - THYME","Thymus vulgaris",1
+"336",2022,"Mexico","Copitarsia",NA,"Copitarsia","Zantedeschia sp. - Zantedeschia","Zantedeschia sp.",1
+"337",2022,"Mexico","Copitarsia",NA,"Copitarsia",NA,NA,17
+"338",2022,"Montenegro","Copitarsia",NA,"Copitarsia","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",1
+"339",2022,"Netherlands","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",1
+"340",2023,"Colombia","Copitarsia","decolora","decolora","Allium schoenoprasum - CHIVE","Allium schoenoprasum",1
+"341",2023,"Colombia","Copitarsia","decolora","decolora","Anethum graveolens - DILL","Anethum graveolens",1
+"342",2023,"Colombia","Copitarsia","decolora","decolora","Mentha sp. - MINT","Mentha sp.",3
+"343",2023,"Colombia","Copitarsia","decolora","decolora","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",1
+"344",2023,"Colombia","Copitarsia",NA,"Copitarsia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",20
+"345",2023,"Colombia","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",172
+"346",2023,"Colombia","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",7
+"347",2023,"Colombia","Copitarsia",NA,"Copitarsia","Anethum graveolens - DILL","Anethum graveolens",10
+"348",2023,"Colombia","Copitarsia",NA,"Copitarsia","Anthurium sp. - Anthurium","Anthurium sp.",1
+"349",2023,"Colombia","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"350",2023,"Colombia","Copitarsia",NA,"Copitarsia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",5
+"351",2023,"Colombia","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",4
+"352",2023,"Colombia","Copitarsia",NA,"Copitarsia","Brassia sp.  - Brassia","Brassia sp. ",1
+"353",2023,"Colombia","Copitarsia",NA,"Copitarsia","Callistephus sp.  - Callistephus","Callistephus sp. ",4
+"354",2023,"Colombia","Copitarsia",NA,"Copitarsia","Campanula sp. - Campanula","Campanula sp.",5
+"355",2023,"Colombia","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",62
+"356",2023,"Colombia","Copitarsia",NA,"Copitarsia","Dianthus caryophyllus - Dianthus caryophyllus","Dianthus caryophyllus",1
+"357",2023,"Colombia","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",22
+"358",2023,"Colombia","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",4
+"359",2023,"Colombia","Copitarsia",NA,"Copitarsia","Eucalyptus sp. - Eucalyptus","Eucalyptus sp.",1
+"360",2023,"Colombia","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",3
+"361",2023,"Colombia","Copitarsia",NA,"Copitarsia","Gypsophila sp. - Gypsophila","Gypsophila sp.",2
+"362",2023,"Colombia","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",9
+"363",2023,"Colombia","Copitarsia",NA,"Copitarsia","Hydrangea sp. - Hydrangea","Hydrangea sp.",5
+"364",2023,"Colombia","Copitarsia",NA,"Copitarsia","Lepidium sp. - Lepidium","Lepidium sp.",1
+"365",2023,"Colombia","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",2
+"366",2023,"Colombia","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",4
+"367",2023,"Colombia","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",62
+"368",2023,"Colombia","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",9
+"369",2023,"Colombia","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",6
+"370",2023,"Colombia","Copitarsia",NA,"Copitarsia","Origanum majorana - MARJORAM","Origanum majorana",6
+"371",2023,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",31
+"372",2023,"Colombia","Copitarsia",NA,"Copitarsia","Ptilotus sp. - Ptilotus","Ptilotus sp.",1
+"373",2023,"Colombia","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",10
+"374",2023,"Colombia","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",6
+"375",2023,"Colombia","Copitarsia",NA,"Copitarsia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",2
+"376",2023,"Colombia","Copitarsia",NA,"Copitarsia","Ruscus sp. - Ruscus","Ruscus sp.",1
+"377",2023,"Colombia","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",5
+"378",2023,"Colombia","Copitarsia",NA,"Copitarsia","Tagetes sp. - Edible Flower - Pot Marigold","Tagetes sp.",2
+"379",2023,"Colombia","Copitarsia",NA,"Copitarsia","Thymus vulgaris - THYME","Thymus vulgaris",9
+"380",2023,"Colombia","Copitarsia",NA,"Copitarsia","Veronica sp. - Veronica","Veronica sp.",1
+"381",2023,"Ecuador","Copitarsia","decolora","decolora","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",1
+"382",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Agapanthus sp. - Agapanthus","Agapanthus sp.",1
+"383",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",33
+"384",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",10
+"385",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Ammi sp. - Ammi","Ammi sp.",1
+"386",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",9
+"387",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",1
+"388",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Astrantia sp. - Astrantia","Astrantia sp.",1
+"389",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",1
+"390",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Bupleurum sp. - Bupleurum","Bupleurum sp.",1
+"391",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",1
+"392",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"393",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",4
+"394",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",2
+"395",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Eustoma sp. - Eustoma","Eustoma sp.",1
+"396",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",1
+"397",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Gladiolus sp. - Gladiolus","Gladiolus sp.",2
+"398",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",4
+"399",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",1
+"400",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",2
+"401",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Matthiola sp. - Matthiola","Matthiola sp.",6
+"402",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",5
+"403",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",3
+"404",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Scabiosa sp. - Scabiosa","Scabiosa sp.",2
+"405",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",1
+"406",2023,"Ecuador","Copitarsia",NA,"Copitarsia","Zantedeschia sp. - Zantedeschia","Zantedeschia sp.",1
+"407",2023,"Guatemala","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"408",2023,"Guatemala","Copitarsia",NA,"Copitarsia","Cucurbita sp. - SQUASH","Cucurbita sp.",1
+"409",2023,"Guatemala","Copitarsia",NA,"Copitarsia","Daucus carota subsp. sativus - CARROT","Daucus carota subsp. sativus",1
+"410",2023,"Guatemala","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",3
+"411",2023,"Guatemala","Copitarsia",NA,"Copitarsia","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",1
+"412",2023,"Guatemala","Copitarsia",NA,"Copitarsia","Zea mays - CORN","Zea mays",1
+"413",2023,"Honduras","Copitarsia",NA,"Copitarsia","Abelmoschus esculentus - OKRA","Abelmoschus esculentus",1
+"414",2023,"Mexico","Copitarsia","decolora","decolora","Anethum graveolens - DILL","Anethum graveolens",2
+"415",2023,"Mexico","Copitarsia","decolora","decolora","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"416",2023,"Mexico","Copitarsia","decolora","decolora","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",14
+"417",2023,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",4
+"418",2023,"Mexico","Copitarsia","decolora","decolora","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",1
+"419",2023,"Mexico","Copitarsia","decolora","decolora","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",1
+"420",2023,"Mexico","Copitarsia","decolora","decolora",NA,NA,1
+"421",2023,"Mexico","Copitarsia",NA,"Copitarsia","Allium ampeloprasum - LEEK","Allium ampeloprasum",1
+"422",2023,"Mexico","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",1
+"423",2023,"Mexico","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",4
+"424",2023,"Mexico","Copitarsia",NA,"Copitarsia","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",79
+"425",2023,"Mexico","Copitarsia",NA,"Copitarsia","Beta vulgaris subsp. vulgaris - SWISS CHARD","Beta vulgaris subsp. vulgaris",2
+"426",2023,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",1
+"427",2023,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",3
+"428",2023,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",35
+"429",2023,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",1
+"430",2023,"Mexico","Copitarsia",NA,"Copitarsia","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",2
+"431",2023,"Mexico","Copitarsia",NA,"Copitarsia","Calendula officinalis (Asteraceae) - Calendula officinalis ","Calendula officinalis (Asteraceae)",2
+"432",2023,"Mexico","Copitarsia",NA,"Copitarsia","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",7
+"433",2023,"Mexico","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",7
+"434",2023,"Mexico","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",1
+"435",2023,"Mexico","Copitarsia",NA,"Copitarsia","Dysphania ambrosioides - EPAZOTE","Dysphania ambrosioides",1
+"436",2023,"Mexico","Copitarsia",NA,"Copitarsia","Euphorbia sp. - Euphorbia","Euphorbia sp.",1
+"437",2023,"Mexico","Copitarsia",NA,"Copitarsia","Eustoma sp. - Eustoma","Eustoma sp.",1
+"438",2023,"Mexico","Copitarsia",NA,"Copitarsia","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"439",2023,"Mexico","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",1
+"440",2023,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa - LETTUCE","Lactuca sativa",3
+"441",2023,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa var. capitata - Butterhead Lettuce","Lactuca sativa var. capitata",1
+"442",2023,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",1
+"443",2023,"Mexico","Copitarsia",NA,"Copitarsia","Opuntia sp. - PRICKLY PEAR PAD","Opuntia sp.",1
+"444",2023,"Mexico","Copitarsia",NA,"Copitarsia","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",1
+"445",2023,"Mexico","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"446",2023,"Mexico","Copitarsia",NA,"Copitarsia","Portulaca oleracea - PURSLANE","Portulaca oleracea",1
+"447",2023,"Mexico","Copitarsia",NA,"Copitarsia","Setaria sp. - Setaria","Setaria sp.",1
+"448",2023,"Mexico","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",1
+"449",2023,"Mexico","Copitarsia",NA,"Copitarsia",NA,NA,19
+"450",2023,"Netherlands","Copitarsia",NA,"Copitarsia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"451",2023,"Nicaragua","Copitarsia",NA,"Copitarsia","Coccinia grandis - IVY GOURD","Coccinia grandis",1
+"452",2023,"West Bank","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",1
+"453",2024,"Colombia","Copitarsia","decolora","decolora","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",1
+"454",2024,"Colombia","Copitarsia","decolora","decolora","Mentha sp. - MINT","Mentha sp.",1
+"455",2024,"Colombia","Copitarsia","decolora","decolora","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",1
+"456",2024,"Colombia","Copitarsia",NA,"Copitarsia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",20
+"457",2024,"Colombia","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",166
+"458",2024,"Colombia","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",4
+"459",2024,"Colombia","Copitarsia",NA,"Copitarsia","Anethum graveolens - DILL","Anethum graveolens",6
+"460",2024,"Colombia","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",4
+"461",2024,"Colombia","Copitarsia",NA,"Copitarsia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",5
+"462",2024,"Colombia","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",5
+"463",2024,"Colombia","Copitarsia",NA,"Copitarsia","Astilbe sp. - Astilbe","Astilbe sp.",1
+"464",2024,"Colombia","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",1
+"465",2024,"Colombia","Copitarsia",NA,"Copitarsia","Callistephus sp.  - Callistephus","Callistephus sp. ",3
+"466",2024,"Colombia","Copitarsia",NA,"Copitarsia","Campanula sp. - Campanula","Campanula sp.",1
+"467",2024,"Colombia","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",51
+"468",2024,"Colombia","Copitarsia",NA,"Copitarsia","Cocculus sp. - Cocculus","Cocculus sp.",1
+"469",2024,"Colombia","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",21
+"470",2024,"Colombia","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",4
+"471",2024,"Colombia","Copitarsia",NA,"Copitarsia","Eucalyptus sp. - Eucalyptus","Eucalyptus sp.",1
+"472",2024,"Colombia","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",5
+"473",2024,"Colombia","Copitarsia",NA,"Copitarsia","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"474",2024,"Colombia","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",3
+"475",2024,"Colombia","Copitarsia",NA,"Copitarsia","Hydrangea sp. - Hydrangea","Hydrangea sp.",3
+"476",2024,"Colombia","Copitarsia",NA,"Copitarsia","Hypericum sp. - Hypericum","Hypericum sp.",1
+"477",2024,"Colombia","Copitarsia",NA,"Copitarsia","Lactuca sativa - LETTUCE","Lactuca sativa",1
+"478",2024,"Colombia","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",9
+"479",2024,"Colombia","Copitarsia",NA,"Copitarsia","Liriope sp. - Liriope","Liriope sp.",1
+"480",2024,"Colombia","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",66
+"481",2024,"Colombia","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",8
+"482",2024,"Colombia","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",6
+"483",2024,"Colombia","Copitarsia",NA,"Copitarsia","Origanum majorana - MARJORAM","Origanum majorana",6
+"484",2024,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",23
+"485",2024,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare subsp. hirtum - OREGANO (EUROPEAN)","Origanum vulgare subsp. hirtum",1
+"486",2024,"Colombia","Copitarsia",NA,"Copitarsia","Ornithogalum sp. - Ornithogalum","Ornithogalum sp.",1
+"487",2024,"Colombia","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",2
+"488",2024,"Colombia","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",4
+"489",2024,"Colombia","Copitarsia",NA,"Copitarsia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",2
+"490",2024,"Colombia","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",3
+"491",2024,"Colombia","Copitarsia",NA,"Copitarsia","Tagetes sp. - Tagetes","Tagetes sp.",1
+"492",2024,"Colombia","Copitarsia",NA,"Copitarsia","Thymus vulgaris - THYME","Thymus vulgaris",6
+"493",2024,"Costa Rica","Copitarsia",NA,"Copitarsia","Eryngium foetidum - FALSE CORIANDER","Eryngium foetidum",1
+"494",2024,"Costa Rica","Copitarsia",NA,"Copitarsia","Gladiolus sp. - Gladiolus","Gladiolus sp.",1
+"495",2024,"Dominican Republic","Copitarsia",NA,"Copitarsia","Capsicum sp. - Chili Pepper","Capsicum sp.",1
+"496",2024,"Dominican Republic","Copitarsia",NA,"Copitarsia",NA,NA,1
+"497",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Achillea sp.  - Achillea","Achillea sp. ",1
+"498",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",1
+"499",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",44
+"500",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",14
+"501",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Ammi sp. - Ammi","Ammi sp.",6
+"502",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",10
+"503",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"504",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Astrantia sp. - Astrantia","Astrantia sp.",4
+"505",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",1
+"506",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Bupleurum sp. - Bupleurum","Bupleurum sp.",1
+"507",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",3
+"508",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Delphinium sp. - Delphinium","Delphinium sp.",2
+"509",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",1
+"510",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",1
+"511",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",2
+"512",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",6
+"513",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Hydrangea sp. - Hydrangea","Hydrangea sp.",1
+"514",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Hypericum sp. - Hypericum","Hypericum sp.",3
+"515",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Lepidium sp. - Lepidium","Lepidium sp.",1
+"516",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",3
+"517",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Matthiola sp. - Matthiola","Matthiola sp.",4
+"518",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",8
+"519",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",2
+"520",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",2
+"521",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Rumex sp. - Rumex","Rumex sp.",1
+"522",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Scabiosa sp. - Scabiosa","Scabiosa sp.",1
+"523",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Smilax sp. - Smilax","Smilax sp.",1
+"524",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Tagetes sp. - Tagetes","Tagetes sp.",1
+"525",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Trachelium sp. - Trachelium","Trachelium sp.",2
+"526",2024,"Ecuador","Copitarsia",NA,"Copitarsia","Veronica sp. - Veronica","Veronica sp.",1
+"527",2024,"El Salvador","Copitarsia",NA,"Copitarsia","Abelmoschus esculentus - OKRA","Abelmoschus esculentus",1
+"528",2024,"Guatemala","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",8
+"529",2024,"Honduras","Copitarsia",NA,"Copitarsia","Abelmoschus esculentus - OKRA","Abelmoschus esculentus",1
+"530",2024,"India","Copitarsia",NA,"Copitarsia","Tagetes sp. - Tagetes","Tagetes sp.",1
+"531",2024,"Mexico","Copitarsia","decolora","decolora","Anethum graveolens - DILL","Anethum graveolens",1
+"532",2024,"Mexico","Copitarsia","decolora","decolora","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",28
+"533",2024,"Mexico","Copitarsia","decolora","decolora","Brassica juncea (Brassicaceae) - MUSTARD GREENS","Brassica juncea (Brassicaceae)",1
+"534",2024,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",1
+"535",2024,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",3
+"536",2024,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",2
+"537",2024,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",3
+"538",2024,"Mexico","Copitarsia","decolora","decolora","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",1
+"539",2024,"Mexico","Copitarsia","decolora","decolora","Dianthus sp. - Dianthus","Dianthus sp.",1
+"540",2024,"Mexico","Copitarsia","decolora","decolora","Dysphania ambrosioides - EPAZOTE","Dysphania ambrosioides",1
+"541",2024,"Mexico","Copitarsia","decolora","decolora","Lactuca sativa - LETTUCE","Lactuca sativa",1
+"542",2024,"Mexico","Copitarsia","decolora","decolora","Lactuca sativa var. capitata - Butterhead Lettuce","Lactuca sativa var. capitata",1
+"543",2024,"Mexico","Copitarsia","decolora","decolora","Thymus vulgaris - THYME","Thymus vulgaris",1
+"544",2024,"Mexico","Copitarsia","decolora","decolora",NA,NA,2
+"545",2024,"Mexico","Copitarsia",NA,"Copitarsia","Allium ampeloprasum - LEEK","Allium ampeloprasum",1
+"546",2024,"Mexico","Copitarsia",NA,"Copitarsia","Allium sativum - GARLIC","Allium sativum",1
+"547",2024,"Mexico","Copitarsia",NA,"Copitarsia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",1
+"548",2024,"Mexico","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",2
+"549",2024,"Mexico","Copitarsia",NA,"Copitarsia","Anethum graveolens - DILL","Anethum graveolens",1
+"550",2024,"Mexico","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",8
+"551",2024,"Mexico","Copitarsia",NA,"Copitarsia","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",18
+"552",2024,"Mexico","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",1
+"553",2024,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",1
+"554",2024,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",3
+"555",2024,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",27
+"556",2024,"Mexico","Copitarsia",NA,"Copitarsia","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",3
+"557",2024,"Mexico","Copitarsia",NA,"Copitarsia","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",7
+"558",2024,"Mexico","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",3
+"559",2024,"Mexico","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",4
+"560",2024,"Mexico","Copitarsia",NA,"Copitarsia","Eustoma sp. - Eustoma","Eustoma sp.",1
+"561",2024,"Mexico","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",1
+"562",2024,"Mexico","Copitarsia",NA,"Copitarsia","Gladiolus sp. - Gladiolus","Gladiolus sp.",4
+"563",2024,"Mexico","Copitarsia",NA,"Copitarsia","Glebionis coronaria - CHRYSANTHEMUM GREENS","Glebionis coronaria",1
+"564",2024,"Mexico","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",2
+"565",2024,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa - LETTUCE","Lactuca sativa",4
+"566",2024,"Mexico","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",1
+"567",2024,"Mexico","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",1
+"568",2024,"Mexico","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",1
+"569",2024,"Mexico","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",3
+"570",2024,"Mexico","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",2
+"571",2024,"Mexico","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",1
+"572",2024,"Mexico","Copitarsia",NA,"Copitarsia","Spinacia oleracea - SPINACH","Spinacia oleracea",1
+"573",2024,"Mexico","Copitarsia",NA,"Copitarsia","Tagetes sp. - Tagetes","Tagetes sp.",1
+"574",2024,"Mexico","Copitarsia",NA,"Copitarsia","x Solidaster sp. - Solidaster","x Solidaster sp.",1
+"575",2024,"Mexico","Copitarsia",NA,"Copitarsia",NA,NA,5
+"576",2024,"Peru","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"577",2025,"Colombia","Copitarsia","decolora","decolora","Mentha sp. - MINT","Mentha sp.",4
+"578",2025,"Colombia","Copitarsia","decolora","decolora","Origanum vulgare subsp. hirtum - OREGANO (EUROPEAN)","Origanum vulgare subsp. hirtum",1
+"579",2025,"Colombia","Copitarsia",NA,"Copitarsia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",8
+"580",2025,"Colombia","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",70
+"581",2025,"Colombia","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",1
+"582",2025,"Colombia","Copitarsia",NA,"Copitarsia","Anethum graveolens - DILL","Anethum graveolens",5
+"583",2025,"Colombia","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"584",2025,"Colombia","Copitarsia",NA,"Copitarsia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",2
+"585",2025,"Colombia","Copitarsia",NA,"Copitarsia","Aster sp.  - Aster","Aster sp. ",1
+"586",2025,"Colombia","Copitarsia",NA,"Copitarsia","Brassica sp.  - Brassica","Brassica sp. ",1
+"587",2025,"Colombia","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",12
+"588",2025,"Colombia","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",1
+"589",2025,"Colombia","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",6
+"590",2025,"Colombia","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",1
+"591",2025,"Colombia","Copitarsia",NA,"Copitarsia","Gerbera sp.  - Gerbera","Gerbera sp. ",1
+"592",2025,"Colombia","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",1
+"593",2025,"Colombia","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",1
+"594",2025,"Colombia","Copitarsia",NA,"Copitarsia","Limonium sp. - Limonium","Limonium sp.",1
+"595",2025,"Colombia","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",28
+"596",2025,"Colombia","Copitarsia",NA,"Copitarsia","Moluccella sp. - Moluccella","Moluccella sp.",5
+"597",2025,"Colombia","Copitarsia",NA,"Copitarsia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",1
+"598",2025,"Colombia","Copitarsia",NA,"Copitarsia","Origanum majorana - MARJORAM","Origanum majorana",4
+"599",2025,"Colombia","Copitarsia",NA,"Copitarsia","Origanum onites - OREGANO (EUROPEAN)","Origanum onites",1
+"600",2025,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",3
+"601",2025,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare subsp. hirtum - OREGANO (EUROPEAN)","Origanum vulgare subsp. hirtum",4
+"602",2025,"Colombia","Copitarsia",NA,"Copitarsia","Origanum vulgare subsp. vulgare - OREGANO (EUROPEAN)","Origanum vulgare subsp. vulgare",1
+"603",2025,"Colombia","Copitarsia",NA,"Copitarsia","Petroselinum crispum - PARSLEY","Petroselinum crispum",1
+"604",2025,"Colombia","Copitarsia",NA,"Copitarsia","Ranunculus sp. - Ranunculus","Ranunculus sp.",1
+"605",2025,"Colombia","Copitarsia",NA,"Copitarsia","Rosa sp. - Rosa","Rosa sp.",1
+"606",2025,"Colombia","Copitarsia",NA,"Copitarsia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",1
+"607",2025,"Colombia","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",5
+"608",2025,"Colombia","Copitarsia",NA,"Copitarsia","Thymus vulgaris - THYME","Thymus vulgaris",5
+"609",2025,"Costa Rica","Copitarsia",NA,"Copitarsia","Iris sp. - Iris","Iris sp.",1
+"610",2025,"Costa Rica","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",1
+"611",2025,"Dominican Republic","Copitarsia",NA,"Copitarsia","Capsicum frutescens - TABASCO PEPPER","Capsicum frutescens",1
+"612",2025,"Dominican Republic","Copitarsia",NA,"Copitarsia",NA,NA,1
+"613",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",27
+"614",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",1
+"615",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Ammi sp. - Ammi","Ammi sp.",2
+"616",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Anemone sp. - Anemone","Anemone sp.",15
+"617",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"618",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",1
+"619",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Craspedia sp. - Craspedia","Craspedia sp.",1
+"620",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",1
+"621",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Eryngium sp. - Eryngium","Eryngium sp.",1
+"622",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",2
+"623",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Hypericum sp. - Hypericum","Hypericum sp.",2
+"624",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Solidago sp. - Solidago","Solidago sp.",2
+"625",2025,"Ecuador","Copitarsia",NA,"Copitarsia","Veronica sp. - Veronica","Veronica sp.",1
+"626",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",1
+"627",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",1
+"628",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Cucurbita pepo subsp. pepo - SQUASH","Cucurbita pepo subsp. pepo",1
+"629",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Daucus carota subsp. sativus - CARROT","Daucus carota subsp. sativus",1
+"630",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",5
+"631",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",1
+"632",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"633",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Raphanus sativus - RADISH","Raphanus sativus",1
+"634",2025,"Guatemala","Copitarsia",NA,"Copitarsia","Zea mays - CORN","Zea mays",1
+"635",2025,"Italy","Copitarsia",NA,"Copitarsia","Pittosporum sp. - Pittosporum","Pittosporum sp.",1
+"636",2025,"Mexico","Copitarsia","decolora","decolora","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",9
+"637",2025,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",4
+"638",2025,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",1
+"639",2025,"Mexico","Copitarsia","decolora","decolora","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",2
+"640",2025,"Mexico","Copitarsia","decolora","decolora","Cichorium intybus var. foliosum  - RADICCHIO","Cichorium intybus var. foliosum ",2
+"641",2025,"Mexico","Copitarsia","decolora","decolora","Cynara scolymus - GLOBE ARTICHOKE","Cynara scolymus",4
+"642",2025,"Mexico","Copitarsia","decolora","decolora","Lactuca sativa var. capitata - Iceberg Lettuce","Lactuca sativa var. capitata",1
+"643",2025,"Mexico","Copitarsia","decolora","decolora","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",1
+"644",2025,"Mexico","Copitarsia",NA,"Copitarsia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",2
+"645",2025,"Mexico","Copitarsia",NA,"Copitarsia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"646",2025,"Mexico","Copitarsia",NA,"Copitarsia","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",4
+"647",2025,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",1
+"648",2025,"Mexico","Copitarsia",NA,"Copitarsia","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",10
+"649",2025,"Mexico","Copitarsia",NA,"Copitarsia","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",7
+"650",2025,"Mexico","Copitarsia",NA,"Copitarsia","Capsicum sp. - Chili Pepper","Capsicum sp.",1
+"651",2025,"Mexico","Copitarsia",NA,"Copitarsia","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",4
+"652",2025,"Mexico","Copitarsia",NA,"Copitarsia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",5
+"653",2025,"Mexico","Copitarsia",NA,"Copitarsia","Dianthus sp. - Dianthus","Dianthus sp.",3
+"654",2025,"Mexico","Copitarsia",NA,"Copitarsia","Eustoma sp. - Eustoma","Eustoma sp.",1
+"655",2025,"Mexico","Copitarsia",NA,"Copitarsia","Helianthus sp. - Helianthus","Helianthus sp.",2
+"656",2025,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa var. crispa  - Red & Green Leaf Lettuce","Lactuca sativa var. crispa ",3
+"657",2025,"Mexico","Copitarsia",NA,"Copitarsia","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",1
+"658",2025,"Mexico","Copitarsia",NA,"Copitarsia","Lilium sp. - Lilium","Lilium sp.",1
+"659",2025,"Mexico","Copitarsia",NA,"Copitarsia","Mentha sp. - MINT","Mentha sp.",2
+"660",2025,"Mexico","Copitarsia",NA,"Copitarsia","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",6
+"661",2025,"Mexico","Copitarsia",NA,"Copitarsia","Thymus vulgaris - THYME","Thymus vulgaris",1
+"662",2025,"Mexico","Copitarsia",NA,"Copitarsia",NA,NA,3
+"663",2025,"Tanzania","Copitarsia",NA,"Copitarsia","Clematis sp. - Clematis","Clematis sp.",1
+"664",2025,"Trinidad and Tobago","Copitarsia",NA,"Copitarsia",NA,NA,1

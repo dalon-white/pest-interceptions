@@ -1,0 +1,469 @@
+---
+title: "copitarsia from anywhere"
+author: "Dalon White"
+date: "2025-08-21"
+output: html_document
+
+params:
+  begin_date: "01-01-2020"
+  end_date: "today" #"today" for all days, otherwise "mm-dd-yyyy"
+  
+  # Commodity taxonomy:
+  taxonomic_name: NULL #NULL or ["any taxonomic level to match", "any taxonomic level to match", "etc."]
+  common_name: NULL #NULL or ["corn", "sorghum", "etc."]
+  
+  # Country of origin:
+  origin_country: NULL #NULL or ["country1", "country2", "etc."]
+  
+  # Pest taxonomy:
+  KINGDOM: NULL #["Fungi"]
+  PHYLUM: NULL
+  CLASS: NULL
+  ORDER: NULL
+  FAMILY: NULL
+  GENUS: ["Copitarsia"]
+  SPECIES: ["decolora","corruda","incommoda","gibberosa"]
+  
+  # For the title of the file on save:
+  pest_nickname: ["Copitarsia"]
+  
+---
+
+# Add in flexibility to handle pest-specific names
+# Change commmon_name and taxonomic_name to specific 'commodity' within them
+
+
+
+```{r load libraries and grab params}
+#get start and end dates
+begin_date <- if(is.na(params$begin_date)) as.Date("1900-01-01") else as.Date(params$begin_date, "%d-%m-%Y")
+end_date <- if(params$end_date == "today") Sys.Date() else as.Date(params$end_date, "%d-%m-%Y")
+
+#get taxonomic names and countries
+# taxonomic_name = params$taxonomic_name
+# common_name = params$common_name
+# origin_country = params$origin_country
+# pest_taxonomic_name = params$pest_taxonomic_name
+# pest_common_name = params$pest_common_name
+
+
+#load packages
+pacman::p_load(DBI, odbc)
+pacman::p_load(tidyverse, lubridate, readr, stringr,stringdist)
+pacman::p_load(DT, htmlwidgets)
+
+```
+
+
+# Gather data from ARM
+
+## Connect to ARM
+```{r connect to ARM}
+
+connect_db <- function() {
+  DBI::dbConnect(
+    odbc::odbc(),
+    .connection_string =
+      "Driver=SQL Server;
+                       Server=AAP00VA3PPQSQL0\\MSSQLSERVER,1433;
+                        Database=PPQ_AQI_ARMDMV2;
+trusted_connection=yes")
+}
+
+db_conn <- connect_db()
+
+```
+
+## Grab diagnostic results table
+
+
+```{r grab arm results}
+
+mvw_diagnostic_results <- tbl(
+  db_conn,
+  sql("select * FROM [APHIS_Imports].[dbo].[mvw_Diagnostic_Results]")
+)
+
+df_diagnostic_results <- mvw_diagnostic_results
+```
+# Filter by date
+```{r}
+# Apply date filters only when needed
+if (!is.null(begin_date)) {
+  df_diagnostic_results <- df_diagnostic_results |> 
+    filter(INSPECTION_DATE >= begin_date)
+}
+
+if (!is.null(end_date)) {
+  df_diagnostic_results <- df_diagnostic_results |> 
+    filter(INSPECTION_DATE <= end_date)
+}
+```
+# Filter by country
+```{r}
+# Then conditionally apply the origin country filter if it exists
+if (!is.null(params$origin_country) && length(params$origin_country) > 0) {
+  df_diagnostic_results <- df_diagnostic_results |> 
+    filter(ORIGIN %in% params$origin_country)
+}
+```
+# Identify columns to collect
+```{r grab the arm data}
+df_diagnostic_results <- df_diagnostic_results |>   
+  dplyr::select(
+    INSPECTION_DATE,
+    COMMODITY_DISPLAY_NAME,
+    COMMODITY_TAXONOMIC_DISPLAY_NAME,
+    INSPECTION_PATHWAY,
+    ORIGIN,
+    SUBCATEGORY,
+    INSPECTION_LOCATION_STATE_CODE,
+    DETERMINATION_TYPE,
+    any_of(starts_with("PEST_TAXONOMIC_")),
+    QUARANTINE_RECOMMENDATION,
+    DIAGNOSTIC_DETERMINATION_ID,
+    DIAGNOSTIC_REQUEST_ID,
+    any_of(c(starts_with("number_dead", ignore.case = TRUE),
+           starts_with("number_alive", ignore.case = TRUE),
+           starts_with("pest_", ignore.case = TRUE))
+    )
+  )
+
+```
+
+## filter dates & names
+```{r filter dates and names in ARM}
+
+#Filter by commodity name or taxonomic name
+arm_results <- df_diagnostic_results |> 
+  collect()
+
+
+```
+# Filter by commodity
+```{r}
+# Only apply filtering if at least one parameter is not NULL
+if (!is.null(params$common_name) || !is.null(params$taxonomic_name)) {
+  # Create patterns only from non-NULL parameters
+  if (!is.null(params$common_name)) {
+    common_pattern <- paste(params$common_name, collapse = "|")
+    has_common_pattern <- TRUE
+  } else {
+    has_common_pattern <- FALSE
+  }
+  
+  if (!is.null(params$taxonomic_name)) {
+    taxonomic_pattern <- paste(params$taxonomic_name, collapse = "|")
+    has_taxonomic_pattern <- TRUE
+  } else {
+    has_taxonomic_pattern <- FALSE
+  }
+  
+  # Build the filter dynamically based on available patterns
+  if (has_common_pattern && has_taxonomic_pattern) {
+    arm_results <- arm_results |> filter(
+      str_detect(COMMODITY_DISPLAY_NAME, common_pattern) |
+      str_detect(COMMODITY_TAXONOMIC_DISPLAY_NAME, taxonomic_pattern)
+    )
+  } else if (has_common_pattern) {
+    arm_results <- arm_results |> filter(
+      str_detect(COMMODITY_DISPLAY_NAME, common_pattern)
+    )
+  } else if (has_taxonomic_pattern) {
+    arm_results <- arm_results |> filter(
+      str_detect(COMMODITY_TAXONOMIC_DISPLAY_NAME, taxonomic_pattern)
+    )
+  }
+}
+
+```
+# Filter by pest name
+```{r}
+filter_by_taxonomy <- function(filtered_data, params, threshold = 0.9) {
+  # Extract names of non-NULL taxonomy parameters
+  non_null_params <- names(params)[!sapply(params, is.null)]
+  
+  # If there are no non-NULL parameters, return the original data
+  if (length(non_null_params) == 0) {
+    return(filtered_data)
+  }
+  
+  # For each non-NULL parameter, filter the data
+  for (param in non_null_params) {
+    # Create the column name with prefix
+    column_name <- paste0("PEST_TAXONOMY_", param)
+    
+    # Check if the column exists in filtered_data
+    if (column_name %in% colnames(filtered_data)) {
+      # Get the values to filter by
+      filter_values <- params[[param]]
+      
+      # Create empty result set to collect matches
+      level_matches <- data.frame()
+      
+      # Process each value in the parameter vector
+      for (param_value in filter_values) {
+        # Find matches for this taxonomic value using fuzzy matching
+        matches <- filtered_data %>%
+          mutate(
+            similarity = sapply(
+              .data[[column_name]], 
+              function(x) {
+                if (is.na(x)) return(0)
+                1 - stringdist(tolower(x), tolower(param_value), method = "jw") / 
+                  max(nchar(x), nchar(param_value))
+              }
+            )
+          ) %>%
+          filter(similarity >= threshold)
+        
+        # Add to our matches collection
+        level_matches <- bind_rows(level_matches, matches)
+      }
+      
+      # Replace filtered_data with the matches from this level
+      if (nrow(level_matches) > 0) {
+        filtered_data <- level_matches %>% 
+          distinct() %>%
+          select(-similarity)
+      } else {
+        # No matches found for this level
+        print(paste0("No matches found for level: ", param))
+        filtered_data <- filtered_data[0, ] # Return empty dataset with same structure
+        return(filtered_data)
+      }
+    } else {
+      print(paste0("Column ", column_name, " not found in data"))
+    }
+  }
+  
+  return(filtered_data)
+}
+
+```
+
+```{r filter_data}
+# Example usage
+arm_results <- filter_by_taxonomy(arm_results, params, threshold = 0.99)
+
+# Show results
+print(paste0("Found ", nrow(arm_results), " records matching taxonomic criteria"))
+head(arm_results)
+```
+
+## Filter interceptions to best known information
+
+```{r correct pest query diagnostic}
+#call diagnostic determination data; written flexibly because QUARANTINE_STATUS_MAINLAND just chagned to QUARANTINE_STATUS_CONUS and it differs by table
+get.determinations <- function(connection) {
+  # First, get all columns to avoid SQL errors if column names change
+  result <- tbl(connection, sql("SELECT
+                       *
+                       FROM [PPQ_AQI_ARMDMV2].[ARMDATADM].[SYS2_BRG_DIAGNOSTIC_DETERMINATION]")) |>
+    collect()
+
+  # Get the actual column names from the retrieved data
+  actual_cols <- colnames(result)
+
+  # Define mandatory columns we need
+  base_cols <- c(
+    "ID",
+    "DIAGNOSTIC_REQUEST_ID",
+    "PEST_TAXON_ID",
+    "PEST_TAXON_SIMPLE_NAME",
+    "PEST_TAXONOMIC_NAME",
+    "ID_AUTHORITY",
+    "DETERMINATION_TYPE_ID",
+    "DETERMINED_BY_GROUP_ID",
+    "DETERMINATION_DATETIME",
+    "QUARANTINE_STATUS_HAWAII",
+    "QUARANTINE_STATUS_PUERTO_RICO"
+  )
+
+  # Check which quarantine status columns exist and add them
+  quarantine_mainland_col <- NULL
+  if ("QUARANTINE_STATUS_MAINLAND" %in% actual_cols) {
+    quarantine_mainland_col <- "QUARANTINE_STATUS_MAINLAND"
+  } else if ("QUARANTINE_STATUS_CONUS" %in% actual_cols) {
+    quarantine_mainland_col <- "QUARANTINE_STATUS_CONUS"
+  }
+
+  # Create the final column selection list
+  select_cols <- c(base_cols, quarantine_mainland_col)
+  select_cols <- select_cols[!is.null(select_cols)]
+
+  # Select the needed columns
+  result <- result |>
+    dplyr::select(all_of(select_cols)) |>
+    rename("DIAGNOSTIC_DETERMINATION_ID" = "ID")
+
+  # If needed, standardize column names for downstream code
+  if (!is.null(quarantine_mainland_col) && quarantine_mainland_col == "QUARANTINE_STATUS_MAINLAND") {
+    result <- result |> rename("QUARANTINE_STATUS_CONUS" = "QUARANTINE_STATUS_MAINLAND")
+  }
+
+  return(result)
+}
+
+system.time(
+  diag.determ.records <- get.determinations(connection=db_conn)
+  )
+
+#pull BRG_DIATNOSTIC_DETERMINATION_NOT_POSSIBLE_REASON table 
+## Just done to attach DIAGNOSTIC_NOT_POSSIBLE_FLAG in the event that a later molecular analysis was done but failed at a better determination (per Andy Carmichael's instructions, 8/12/24 on Teams)
+get.diag.determ.not.possible = function(connection,
+                                        determ.ids){
+  tbl(connection, sql("SELECT
+                      *
+                      FROM [PPQ_AQI_ARMDMV2].[ARMDATADM].[SYS2_BRG_DIAGNOSTIC_DETERMINATION_NOT_POSSIBLE_REASON]")) |> 
+    # dplyr::filter(DIAGNOSTIC_DETERMINATION_ID %in% determ.ids) |> 
+    collect() |> 
+    dplyr::select(ID,
+                  DIAGNOSTIC_DETERMINATION_ID,
+                  DIAGNOSTIC_DETERMINATION_NOT_POSSIBLE_REASON)
+}
+
+determ.not.possible.dat = get.diag.determ.not.possible(
+  connection=db_conn) |>  
+  filter(DIAGNOSTIC_DETERMINATION_ID %in% (
+    diag.determ.records |> pull(DIAGNOSTIC_DETERMINATION_ID)
+    )
+    )
+
+
+#merge these
+diag.determ.records = diag.determ.records |>
+  left_join(determ.not.possible.dat,
+            by=c('DIAGNOSTIC_DETERMINATION_ID'))
+
+
+#Filter to records that match the data request
+diag.determ.records <- diag.determ.records|> 
+  filter(DIAGNOSTIC_DETERMINATION_ID %in% (arm_results |> pull(DIAGNOSTIC_DETERMINATION_ID)))
+
+arm_results = arm_results |> left_join(diag.determ.records,by=intersect(colnames(arm_results),colnames(diag.determ.records))) 
+
+parse_final_determination = function(data) {
+  data |> 
+    group_by(DIAGNOSTIC_REQUEST_ID) |> 
+    #Andy Carmichael says if that the most recent "DETERMINATION_CREATED_DATETIME" should be the most accurate, with very rare exceptions.  (The only time I can think of is if there was a molecular ID request, and it failed.)   In that case there DETERM_NOT_POSS_FLAG should be flagged.  
+    #Filter for rows that are not a failed diagnostic determination
+    dplyr::filter(is.na(DIAGNOSTIC_DETERMINATION_NOT_POSSIBLE_REASON)) |> 
+    #Filter the determination type - final has the highest TYPE_ID number
+    dplyr::filter(DETERMINATION_TYPE_ID==max(DETERMINATION_TYPE_ID)) |> 
+    #Filter for who ID'd it - the group_ID is a hierarchy of expertise, so take the max ID
+    dplyr::filter(DETERMINED_BY_GROUP_ID == max(DETERMINED_BY_GROUP_ID)) |> 
+    #The most recent is in practice the most correct - sometimes a final ID will be corrected at a later date, or someone will review for training or spot checking
+    dplyr::filter(DETERMINATION_DATETIME == max(DETERMINATION_DATETIME))
+}
+
+df_diagnostic_results <- parse_final_determination(arm_results)
+
+print(paste0("Found ", nrow(df_diagnostic_results), " ultimate identifications matching criteria"))
+print(head(df_diagnostic_results))
+```
+
+## Write ARM data
+```{r write table}
+setwd(here::here('output','data'))
+
+dt <- datatable(df_diagnostic_results,
+                extensions = 'Buttons',
+                options = list(
+                  dom = 'Bfrtip',
+                  buttons = c('copy', 'csv', 'excel', 'pdf')
+                ))
+
+# Generate base filename without extension
+base_filename <- paste0(
+  if(!is.null(params$pest_nickname)) (paste(params$pest_nickname, collapse="_")) else (paste("all pests")),
+  "_on_",
+  if(!(is.null(params$common_name) | is.null(params$taxonomic_name)))(paste(
+    if(!is.null(params$common_name)) (paste(params$common_name, collapse="_")),
+    if(!is.null(params$taxonomic_name)) (paste(params$taxonomic_name, collapse="_")))) else ("anything"),
+  "_from_",
+  if(!is.null(params$origin_country)) (paste(params$origin_country, collapse="_")) else ("anywhere"),
+  "_from_period_",
+  if(!is.null(params$begin_date)) (params$begin_date) else ("anytime"),
+  "_to_",
+  if(!is.null(params$end_date)) (params$end_date) else ("anytime"))
+
+# Try to save as HTML widget, fall back to CSV if error occurs
+tryCatch({
+  saveWidget(dt, 
+             file = paste0(base_filename, ".html"),
+             selfcontained = TRUE)
+  message("Successfully saved interactive HTML widget")
+}, error = function(e) {
+  message("Error saving as HTML widget: ", e$message)
+  message("File may be too large. Saving as CSV instead.")
+  write.csv(df_diagnostic_results, 
+            file = paste0(base_filename, ".csv"), 
+            row.names = FALSE)
+  message("Data saved as: ", paste0(base_filename, ".csv"))
+})
+
+```
+## summarize by origin country
+```{r}
+test = df_diagnostic_results |> mutate(INSPECTION_YEAR = lubridate::year(INSPECTION_DATE)) |> group_by(INSPECTION_YEAR, ORIGIN, COMMODITY_DISPLAY_NAME, COMMODITY_TAXONOMIC_DISPLAY_NAME) |> summarise(total_pests = n() )
+view(test)
+setwd(here::here('output','data'))
+write.csv(test,paste(Sys.Date(),'copitarsia summary.csv'))
+
+library(ggplot2)
+library(dplyr)
+library(viridis)
+
+df <- test
+# Identify top 6 countries by total pest count
+top_origins <- df %>%
+  group_by(ORIGIN) %>%
+  summarise(total_country_pests = sum(total_pests, na.rm = TRUE)) %>%
+  arrange(desc(total_country_pests)) %>%
+  slice_head(n = 6) %>%
+  pull(ORIGIN)
+
+# Create a new dataframe with top 6 countries and "Other"
+pest_summary <- df %>%
+  mutate(ORIGIN_grouped = ifelse(ORIGIN %in% top_origins, ORIGIN, "Other")) %>%
+  group_by(INSPECTION_YEAR, ORIGIN_grouped) %>%
+  summarise(total_pests_sum = sum(total_pests, na.rm = TRUE)) %>%
+  ungroup()
+
+# Re-order factor levels based on total pest counts
+origin_order <- pest_summary %>%
+  group_by(ORIGIN_grouped) %>%
+  summarise(overall_total = sum(total_pests_sum)) %>%
+  arrange(desc(overall_total)) %>%
+  pull(ORIGIN_grouped)
+
+# Set factor levels to maintain order in the plot
+pest_summary$ORIGIN_grouped <- factor(pest_summary$ORIGIN_grouped, 
+                                     levels = origin_order)
+
+# Create the plot
+p = ggplot(pest_summary, aes(x = factor(INSPECTION_YEAR), y = total_pests_sum, fill = ORIGIN_grouped)) +
+  geom_col(position = "dodge") +
+  scale_fill_viridis_d(option = "inferno") +
+  labs(
+    title = "Total Pests by Origin and Year",
+    subtitle = "Top 6 Countries and Other",
+    x = "Inspection Year",
+    y = "Total Number of Pests",
+    fill = "Origin Country"
+  ) +
+  theme_classic() +
+  theme(
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+setwd(here::here('output','data'))
+# Also save the plot as a high-quality PNG
+ggsave(paste0(base_filename, "_plot.png"), 
+       plot = p, 
+       width = 10, 
+       height = 7, 
+       dpi = 300)
+```

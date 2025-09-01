@@ -1,0 +1,605 @@
+"","INSPECTION_YEAR","ORIGIN","COMMODITY_DISPLAY_NAME","COMMODITY_TAXONOMIC_DISPLAY_NAME","total_pests"
+"1",2020,"Colombia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",28
+"2",2020,"Colombia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",250
+"3",2020,"Colombia","Anemone sp. - Anemone","Anemone sp.",1
+"4",2020,"Colombia","Anethum graveolens - DILL","Anethum graveolens",20
+"5",2020,"Colombia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"6",2020,"Colombia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",7
+"7",2020,"Colombia","Aster sp.  - Aster","Aster sp. ",8
+"8",2020,"Colombia","Astilbe sp. - Astilbe","Astilbe sp.",1
+"9",2020,"Colombia","Brassica sp.  - Brassica","Brassica sp. ",4
+"10",2020,"Colombia","Calendula officinalis (Asteraceae) - Calendula officinalis ","Calendula officinalis (Asteraceae)",1
+"11",2020,"Colombia","Callistephus sp.  - Callistephus","Callistephus sp. ",10
+"12",2020,"Colombia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",95
+"13",2020,"Colombia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",2
+"14",2020,"Colombia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"15",2020,"Colombia","Dianthus sp. - Dianthus","Dianthus sp.",69
+"16",2020,"Colombia","Eryngium foetidum - FALSE CORIANDER","Eryngium foetidum",1
+"17",2020,"Colombia","Eryngium sp. - Eryngium","Eryngium sp.",5
+"18",2020,"Colombia","Gerbera sp.  - Gerbera","Gerbera sp. ",3
+"19",2020,"Colombia","Gypsophila sp. - Gypsophila","Gypsophila sp.",2
+"20",2020,"Colombia","Helianthus sp. - Helianthus","Helianthus sp.",22
+"21",2020,"Colombia","Hydrangea sp. - Hydrangea","Hydrangea sp.",9
+"22",2020,"Colombia","Lactuca sativa - LETTUCE","Lactuca sativa",2
+"23",2020,"Colombia","Leucospermum sp. - Leucospermum","Leucospermum sp.",1
+"24",2020,"Colombia","Lilium sp. - Lilium","Lilium sp.",3
+"25",2020,"Colombia","Limonium sp. - Limonium","Limonium sp.",7
+"26",2020,"Colombia","Mentha sp. - MINT","Mentha sp.",78
+"27",2020,"Colombia","Moluccella sp. - Moluccella","Moluccella sp.",4
+"28",2020,"Colombia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",7
+"29",2020,"Colombia","Origanum majorana - MARJORAM","Origanum majorana",9
+"30",2020,"Colombia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",44
+"31",2020,"Colombia","Ornithogalum sp. - Ornithogalum","Ornithogalum sp.",2
+"32",2020,"Colombia","Petroselinum crispum - PARSLEY","Petroselinum crispum",1
+"33",2020,"Colombia","Ranunculus sp. - Ranunculus","Ranunculus sp.",26
+"34",2020,"Colombia","Rosa sp. - Rosa","Rosa sp.",3
+"35",2020,"Colombia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",1
+"36",2020,"Colombia","Ruscus sp. - Ruscus","Ruscus sp.",1
+"37",2020,"Colombia","Solidago sp. - Solidago","Solidago sp.",16
+"38",2020,"Colombia","Thymus vulgaris - THYME","Thymus vulgaris",14
+"39",2020,"Dominican Republic",NA,NA,2
+"40",2020,"Ecuador","Achillea sp.  - Achillea","Achillea sp. ",1
+"41",2020,"Ecuador","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",18
+"42",2020,"Ecuador","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",11
+"43",2020,"Ecuador","Ammi sp. - Ammi","Ammi sp.",1
+"44",2020,"Ecuador","Anemone sp. - Anemone","Anemone sp.",4
+"45",2020,"Ecuador","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"46",2020,"Ecuador","Brassica sp.  - Brassica","Brassica sp. ",1
+"47",2020,"Ecuador","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",2
+"48",2020,"Ecuador","Dianthus sp. - Dianthus","Dianthus sp.",2
+"49",2020,"Ecuador","Gerbera sp.  - Gerbera","Gerbera sp. ",2
+"50",2020,"Ecuador","Gomphrena sp. - Gomphrena","Gomphrena sp.",1
+"51",2020,"Ecuador","Helianthus sp. - Helianthus","Helianthus sp.",10
+"52",2020,"Ecuador","Helichrysum sp.  - Helichrysum","Helichrysum sp. ",3
+"53",2020,"Ecuador","Hydrangea sp. - Hydrangea","Hydrangea sp.",1
+"54",2020,"Ecuador","Hypericum sp. - Hypericum","Hypericum sp.",5
+"55",2020,"Ecuador","Lilium sp. - Lilium","Lilium sp.",1
+"56",2020,"Ecuador","Limonium sp. - Limonium","Limonium sp.",2
+"57",2020,"Ecuador","Matthiola sp. - Matthiola","Matthiola sp.",18
+"58",2020,"Ecuador","Moluccella sp. - Moluccella","Moluccella sp.",8
+"59",2020,"Ecuador","Protea sp. - Protea","Protea sp.",1
+"60",2020,"Ecuador","Ranunculus sp. - Ranunculus","Ranunculus sp.",4
+"61",2020,"Ecuador","Ruscus sp. - Ruscus","Ruscus sp.",1
+"62",2020,"Ecuador","Scabiosa sp. - Scabiosa","Scabiosa sp.",1
+"63",2020,"Ecuador","Trachelium sp. - Trachelium","Trachelium sp.",3
+"64",2020,"Guatemala","Musa sp. - Plantain","Musa sp.",1
+"65",2020,"Guatemala","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",1
+"66",2020,"Guatemala","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"67",2020,"Mexico","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",6
+"68",2020,"Mexico","Anthurium sp. - Anthurium","Anthurium sp.",1
+"69",2020,"Mexico","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",4
+"70",2020,"Mexico","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",20
+"71",2020,"Mexico","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",5
+"72",2020,"Mexico","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",100
+"73",2020,"Mexico","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",2
+"74",2020,"Mexico","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",4
+"75",2020,"Mexico","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",1
+"76",2020,"Mexico","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",6
+"77",2020,"Mexico","Helianthus sp. - Helianthus","Helianthus sp.",1
+"78",2020,"Mexico","Lilium sp. - Lilium","Lilium sp.",2
+"79",2020,"Mexico","Mentha sp. - MINT","Mentha sp.",1
+"80",2020,"Mexico","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",2
+"81",2020,"Mexico","Opuntia sp. - PRICKLY PEAR PAD","Opuntia sp.",1
+"82",2020,"Mexico","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",1
+"83",2020,"Mexico","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",4
+"84",2020,"Mexico","Polianthes sp. - Polianthes","Polianthes sp.",1
+"85",2020,"Mexico","Spinacia oleracea - SPINACH","Spinacia oleracea",2
+"86",2020,"Mexico",NA,NA,9
+"87",2020,"Nicaragua","Abelmoschus esculentus - OKRA","Abelmoschus esculentus",1
+"88",2020,"Not Specified",NA,NA,2
+"89",2020,"United States of America","Origanum majorana - MARJORAM","Origanum majorana",1
+"90",2021,"Brazil","Zingiber officinale - GINGER ROOT","Zingiber officinale",1
+"91",2021,"Colombia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",27
+"92",2021,"Colombia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",167
+"93",2021,"Colombia","Anethum graveolens - DILL","Anethum graveolens",24
+"94",2021,"Colombia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"95",2021,"Colombia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",6
+"96",2021,"Colombia","Aster sp.  - Aster","Aster sp. ",7
+"97",2021,"Colombia","Astilbe sp. - Astilbe","Astilbe sp.",1
+"98",2021,"Colombia","Brassica sp.  - Brassica","Brassica sp. ",3
+"99",2021,"Colombia","Calendula sp.  - Calendula","Calendula sp. ",1
+"100",2021,"Colombia","Callistephus sp.  - Callistephus","Callistephus sp. ",6
+"101",2021,"Colombia","Campanula sp. - Campanula","Campanula sp.",1
+"102",2021,"Colombia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",73
+"103",2021,"Colombia","Cichorium sp.  - Cichorium","Cichorium sp. ",1
+"104",2021,"Colombia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",2
+"105",2021,"Colombia","Cymbidium sp. - Cymbidium","Cymbidium sp.",1
+"106",2021,"Colombia","Dahlia sp. - Dahlia","Dahlia sp.",1
+"107",2021,"Colombia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"108",2021,"Colombia","Dianthus caryophyllus - Dianthus caryophyllus","Dianthus caryophyllus",1
+"109",2021,"Colombia","Dianthus sp. - Dianthus","Dianthus sp.",45
+"110",2021,"Colombia","Eryngium sp. - Eryngium","Eryngium sp.",7
+"111",2021,"Colombia","Eucalyptus sp. - Eucalyptus","Eucalyptus sp.",1
+"112",2021,"Colombia","Gerbera sp.  - Gerbera","Gerbera sp. ",2
+"113",2021,"Colombia","Helianthus sp. - Helianthus","Helianthus sp.",22
+"114",2021,"Colombia","Hydrangea sp. - Hydrangea","Hydrangea sp.",7
+"115",2021,"Colombia","Hypericum sp. - Hypericum","Hypericum sp.",3
+"116",2021,"Colombia","Lactuca sativa - LETTUCE","Lactuca sativa",4
+"117",2021,"Colombia","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",1
+"118",2021,"Colombia","Leucospermum sp. - Leucospermum","Leucospermum sp.",1
+"119",2021,"Colombia","Lilium sp. - Lilium","Lilium sp.",2
+"120",2021,"Colombia","Limonium sp. - Limonium","Limonium sp.",9
+"121",2021,"Colombia","Matthiola sp. - Matthiola","Matthiola sp.",1
+"122",2021,"Colombia","Mentha sp. - MINT","Mentha sp.",119
+"123",2021,"Colombia","Moluccella sp. - Moluccella","Moluccella sp.",7
+"124",2021,"Colombia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",8
+"125",2021,"Colombia","Origanum majorana - MARJORAM","Origanum majorana",11
+"126",2021,"Colombia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",41
+"127",2021,"Colombia","Ornithogalum sp. - Ornithogalum","Ornithogalum sp.",2
+"128",2021,"Colombia","Petroselinum crispum - PARSLEY","Petroselinum crispum",1
+"129",2021,"Colombia","Physalis peruviana - CAPE GOOSEBERRY","Physalis peruviana",1
+"130",2021,"Colombia","Ranunculus sp. - Ranunculus","Ranunculus sp.",10
+"131",2021,"Colombia","Rosa sp. - Rosa","Rosa sp.",4
+"132",2021,"Colombia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",2
+"133",2021,"Colombia","Ruscus sp. - Ruscus","Ruscus sp.",1
+"134",2021,"Colombia","Solidago sp. - Solidago","Solidago sp.",14
+"135",2021,"Colombia","Tagetes sp. - Tagetes","Tagetes sp.",1
+"136",2021,"Colombia","Thymus vulgaris - THYME","Thymus vulgaris",33
+"137",2021,"Costa Rica","Anthurium sp. - Anthurium","Anthurium sp.",1
+"138",2021,"Costa Rica","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"139",2021,"Costa Rica","Eustoma sp. - Eustoma","Eustoma sp.",1
+"140",2021,"Dominican Republic",NA,NA,1
+"141",2021,"Ecuador","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",38
+"142",2021,"Ecuador","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",13
+"143",2021,"Ecuador","Anemone sp. - Anemone","Anemone sp.",2
+"144",2021,"Ecuador","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",13
+"145",2021,"Ecuador","Brassica sp.  - Brassica","Brassica sp. ",6
+"146",2021,"Ecuador","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",8
+"147",2021,"Ecuador","Craspedia sp. - Craspedia","Craspedia sp.",1
+"148",2021,"Ecuador","Dianthus sp. - Dianthus","Dianthus sp.",4
+"149",2021,"Ecuador","Eryngium sp. - Eryngium","Eryngium sp.",3
+"150",2021,"Ecuador","Eustoma sp. - Eustoma","Eustoma sp.",3
+"151",2021,"Ecuador","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"152",2021,"Ecuador","Helianthus sp. - Helianthus","Helianthus sp.",7
+"153",2021,"Ecuador","Hypericum sp. - Hypericum","Hypericum sp.",2
+"154",2021,"Ecuador","Kalanchoe sp. - Kalanchoe","Kalanchoe sp.",1
+"155",2021,"Ecuador","Limonium sp. - Limonium","Limonium sp.",3
+"156",2021,"Ecuador","Matthiola sp. - Matthiola","Matthiola sp.",38
+"157",2021,"Ecuador","Moluccella sp. - Moluccella","Moluccella sp.",11
+"158",2021,"Ecuador","Ornithogalum sp. - Ornithogalum","Ornithogalum sp.",1
+"159",2021,"Ecuador","Ranunculus sp. - Ranunculus","Ranunculus sp.",1
+"160",2021,"Ecuador","Rosa sp. - Rosa","Rosa sp.",1
+"161",2021,"Ecuador","Senecio sp.  - Senecio","Senecio sp. ",1
+"162",2021,"Ecuador","Solidago sp. - Solidago","Solidago sp.",1
+"163",2021,"Ecuador","Trachelium sp. - Trachelium","Trachelium sp.",1
+"164",2021,"Guatemala","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"165",2021,"Guatemala","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",1
+"166",2021,"Guatemala","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",2
+"167",2021,"Guatemala","Cichorium sp.  - Cichorium","Cichorium sp. ",1
+"168",2021,"Guatemala","Daucus carota subsp. sativus - CARROT","Daucus carota subsp. sativus",1
+"169",2021,"Guatemala","Dianthus sp. - Dianthus","Dianthus sp.",1
+"170",2021,"Guatemala","Helianthus sp. - Helianthus","Helianthus sp.",1
+"171",2021,"Guatemala","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",1
+"172",2021,"Guatemala","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",2
+"173",2021,"Guatemala","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",3
+"174",2021,"Guatemala","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"175",2021,"Guatemala","Tagetes sp. - Tagetes","Tagetes sp.",1
+"176",2021,"Honduras","Capsicum annuum - BELL PEPPER","Capsicum annuum",1
+"177",2021,"Mexico","Aloe vera - Aloe Vera","Aloe vera",1
+"178",2021,"Mexico","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",1
+"179",2021,"Mexico","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"180",2021,"Mexico","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",40
+"181",2021,"Mexico","Asparagus sp. - Asparagus","Asparagus sp.",1
+"182",2021,"Mexico","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",126
+"183",2021,"Mexico","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",12
+"184",2021,"Mexico","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",5
+"185",2021,"Mexico","Brassica rapa subsp. rapa (Brassicaceae) - Turnip, Lvs","Brassica rapa subsp. rapa (Brassicaceae)",3
+"186",2021,"Mexico","Capsicum annuum - BELL PEPPER","Capsicum annuum",1
+"187",2021,"Mexico","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",15
+"188",2021,"Mexico","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",5
+"189",2021,"Mexico","Cymbidium sp. - Cymbidium","Cymbidium sp.",1
+"190",2021,"Mexico","Daucus carota subsp. sativus - CARROT","Daucus carota subsp. sativus",1
+"191",2021,"Mexico","Dianthus sp. - Dianthus","Dianthus sp.",1
+"192",2021,"Mexico","Eustoma sp. - Eustoma","Eustoma sp.",1
+"193",2021,"Mexico","Helianthus sp. - Helianthus","Helianthus sp.",3
+"194",2021,"Mexico","Lactuca sativa var. capitata - Butterhead Lettuce","Lactuca sativa var. capitata",1
+"195",2021,"Mexico","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",2
+"196",2021,"Mexico","Lilium sp. - Lilium","Lilium sp.",2
+"197",2021,"Mexico","Mentha sp. - MINT","Mentha sp.",1
+"198",2021,"Mexico","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",2
+"199",2021,"Mexico","Origanum majorana - MARJORAM","Origanum majorana",1
+"200",2021,"Mexico","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",1
+"201",2021,"Mexico","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"202",2021,"Mexico","Portulaca oleracea - PURSLANE","Portulaca oleracea",2
+"203",2021,"Mexico","Rosa sp. - Rosa","Rosa sp.",1
+"204",2021,"Mexico","Solidago sp. - Solidago","Solidago sp.",1
+"205",2021,"Mexico","Thymus vulgaris - THYME","Thymus vulgaris",1
+"206",2021,"Mexico",NA,NA,15
+"207",2021,"South Africa","Brunia sp. - Brunia","Brunia sp.",1
+"208",2022,"Colombia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",18
+"209",2022,"Colombia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",130
+"210",2022,"Colombia","Ammi sp. - Ammi","Ammi sp.",1
+"211",2022,"Colombia","Anemone sp. - Anemone","Anemone sp.",5
+"212",2022,"Colombia","Anethum graveolens - DILL","Anethum graveolens",17
+"213",2022,"Colombia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",4
+"214",2022,"Colombia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",2
+"215",2022,"Colombia","Aster sp.  - Aster","Aster sp. ",3
+"216",2022,"Colombia","Astilbe sp. - Astilbe","Astilbe sp.",2
+"217",2022,"Colombia","Brassica sp.  - Brassica","Brassica sp. ",3
+"218",2022,"Colombia","Callistephus sp.  - Callistephus","Callistephus sp. ",1
+"219",2022,"Colombia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",48
+"220",2022,"Colombia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",1
+"221",2022,"Colombia","Dahlia sp. - Dahlia","Dahlia sp.",1
+"222",2022,"Colombia","Delphinium sp. - Delphinium","Delphinium sp.",1
+"223",2022,"Colombia","Dianthus caryophyllus - Dianthus caryophyllus","Dianthus caryophyllus",1
+"224",2022,"Colombia","Dianthus sp. - Dianthus","Dianthus sp.",34
+"225",2022,"Colombia","Eryngium sp. - Eryngium","Eryngium sp.",8
+"226",2022,"Colombia","Gerbera sp.  - Gerbera","Gerbera sp. ",2
+"227",2022,"Colombia","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"228",2022,"Colombia","Helianthus sp. - Helianthus","Helianthus sp.",7
+"229",2022,"Colombia","Hydrangea sp. - Hydrangea","Hydrangea sp.",3
+"230",2022,"Colombia","Lactuca sativa - LETTUCE","Lactuca sativa",1
+"231",2022,"Colombia","Limonium sp. - Limonium","Limonium sp.",4
+"232",2022,"Colombia","Matthiola sp. - Matthiola","Matthiola sp.",2
+"233",2022,"Colombia","Mentha sp. - MINT","Mentha sp.",102
+"234",2022,"Colombia","Mentha sp. - Mentha","Mentha sp.",1
+"235",2022,"Colombia","Moluccella sp. - Moluccella","Moluccella sp.",4
+"236",2022,"Colombia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",3
+"237",2022,"Colombia","Origanum majorana - MARJORAM","Origanum majorana",3
+"238",2022,"Colombia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",40
+"239",2022,"Colombia","Ranunculus sp. - Ranunculus","Ranunculus sp.",9
+"240",2022,"Colombia","Rosa sp. - Rosa","Rosa sp.",2
+"241",2022,"Colombia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",3
+"242",2022,"Colombia","Solidago sp. - Solidago","Solidago sp.",4
+"243",2022,"Colombia","Tagetes sp. - Tagetes","Tagetes sp.",2
+"244",2022,"Colombia","Thymus vulgaris - THYME","Thymus vulgaris",11
+"245",2022,"Costa Rica","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"246",2022,"Costa Rica","Celosia sp. - Celosia","Celosia sp.",1
+"247",2022,"Ecuador","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",49
+"248",2022,"Ecuador","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",1
+"249",2022,"Ecuador","Anemone sp. - Anemone","Anemone sp.",3
+"250",2022,"Ecuador","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"251",2022,"Ecuador","Aster sp.  - Aster","Aster sp. ",1
+"252",2022,"Ecuador","Astrantia sp. - Astrantia","Astrantia sp.",1
+"253",2022,"Ecuador","Bupleurum sp. - Bupleurum","Bupleurum sp.",1
+"254",2022,"Ecuador","Calendula sp.  - Calendula","Calendula sp. ",1
+"255",2022,"Ecuador","Delphinium sp. - Delphinium","Delphinium sp.",1
+"256",2022,"Ecuador","Dianthus sp. - Dianthus","Dianthus sp.",3
+"257",2022,"Ecuador","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"258",2022,"Ecuador","Helianthus sp. - Helianthus","Helianthus sp.",2
+"259",2022,"Ecuador","Hypericum sp. - Hypericum","Hypericum sp.",1
+"260",2022,"Ecuador","Limonium sp. - Limonium","Limonium sp.",8
+"261",2022,"Ecuador","Matthiola sp. - Matthiola","Matthiola sp.",23
+"262",2022,"Ecuador","Melanophylla sp. - Melanophylla","Melanophylla sp.",1
+"263",2022,"Ecuador","Moluccella sp. - Moluccella","Moluccella sp.",5
+"264",2022,"Ecuador","Ozothamnus sp. - Ozothamnus","Ozothamnus sp.",2
+"265",2022,"Ecuador","Ranunculus sp. - Ranunculus","Ranunculus sp.",2
+"266",2022,"Ecuador","Rosa sp. - Rosa","Rosa sp.",6
+"267",2022,"Ecuador","Ruscus sp. - Ruscus","Ruscus sp.",1
+"268",2022,"Ecuador","Scabiosa sp. - Scabiosa","Scabiosa sp.",3
+"269",2022,"Ecuador","Tagetes sp. - Tagetes","Tagetes sp.",2
+"270",2022,"Ecuador","Veronica sp. - Veronica","Veronica sp.",3
+"271",2022,"Guatemala","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"272",2022,"Guatemala","Impatiens hawkeri - Impatiens hawkerii","Impatiens hawkeri",1
+"273",2022,"Guatemala","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",1
+"274",2022,"Guatemala","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",1
+"275",2022,"Guatemala","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",3
+"276",2022,"Mexico","Allium ampeloprasum - LEEK","Allium ampeloprasum",4
+"277",2022,"Mexico","Allium fistulosum - GREEN ONION","Allium fistulosum",1
+"278",2022,"Mexico","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",3
+"279",2022,"Mexico","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",8
+"280",2022,"Mexico","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",55
+"281",2022,"Mexico","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",1
+"282",2022,"Mexico","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",3
+"283",2022,"Mexico","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",62
+"284",2022,"Mexico","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",18
+"285",2022,"Mexico","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",3
+"286",2022,"Mexico","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",8
+"287",2022,"Mexico","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",4
+"288",2022,"Mexico","Cynara scolymus - GLOBE ARTICHOKE","Cynara scolymus",2
+"289",2022,"Mexico","Dianthus sp. - Dianthus","Dianthus sp.",1
+"290",2022,"Mexico","Eustoma sp. - Eustoma","Eustoma sp.",2
+"291",2022,"Mexico","Gladiolus sp. - Gladiolus","Gladiolus sp.",1
+"292",2022,"Mexico","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"293",2022,"Mexico","Jacobaea sp. - Jacobaea","Jacobaea sp.",1
+"294",2022,"Mexico","Lactuca sativa - LETTUCE","Lactuca sativa",5
+"295",2022,"Mexico","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",1
+"296",2022,"Mexico","Limonium sp. - Limonium","Limonium sp.",1
+"297",2022,"Mexico","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",2
+"298",2022,"Mexico","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"299",2022,"Mexico","Rosa sp. - Rosa","Rosa sp.",1
+"300",2022,"Mexico","Sechium edule - CHAYOTE","Sechium edule",1
+"301",2022,"Mexico","Spinacia oleracea - SPINACH","Spinacia oleracea",1
+"302",2022,"Mexico","Thymus vulgaris - THYME","Thymus vulgaris",1
+"303",2022,"Mexico","Zantedeschia sp. - Zantedeschia","Zantedeschia sp.",1
+"304",2022,"Mexico",NA,NA,18
+"305",2022,"Montenegro","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",1
+"306",2022,"Netherlands","Eryngium sp. - Eryngium","Eryngium sp.",1
+"307",2023,"Colombia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",21
+"308",2023,"Colombia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",172
+"309",2023,"Colombia","Anemone sp. - Anemone","Anemone sp.",7
+"310",2023,"Colombia","Anethum graveolens - DILL","Anethum graveolens",11
+"311",2023,"Colombia","Anthurium sp. - Anthurium","Anthurium sp.",1
+"312",2023,"Colombia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"313",2023,"Colombia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",5
+"314",2023,"Colombia","Aster sp.  - Aster","Aster sp. ",4
+"315",2023,"Colombia","Brassia sp.  - Brassia","Brassia sp. ",1
+"316",2023,"Colombia","Callistephus sp.  - Callistephus","Callistephus sp. ",4
+"317",2023,"Colombia","Campanula sp. - Campanula","Campanula sp.",5
+"318",2023,"Colombia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",62
+"319",2023,"Colombia","Dianthus caryophyllus - Dianthus caryophyllus","Dianthus caryophyllus",1
+"320",2023,"Colombia","Dianthus sp. - Dianthus","Dianthus sp.",22
+"321",2023,"Colombia","Eryngium sp. - Eryngium","Eryngium sp.",4
+"322",2023,"Colombia","Eucalyptus sp. - Eucalyptus","Eucalyptus sp.",1
+"323",2023,"Colombia","Gerbera sp.  - Gerbera","Gerbera sp. ",3
+"324",2023,"Colombia","Gypsophila sp. - Gypsophila","Gypsophila sp.",2
+"325",2023,"Colombia","Helianthus sp. - Helianthus","Helianthus sp.",9
+"326",2023,"Colombia","Hydrangea sp. - Hydrangea","Hydrangea sp.",5
+"327",2023,"Colombia","Lepidium sp. - Lepidium","Lepidium sp.",1
+"328",2023,"Colombia","Lilium sp. - Lilium","Lilium sp.",2
+"329",2023,"Colombia","Limonium sp. - Limonium","Limonium sp.",4
+"330",2023,"Colombia","Mentha sp. - MINT","Mentha sp.",65
+"331",2023,"Colombia","Moluccella sp. - Moluccella","Moluccella sp.",9
+"332",2023,"Colombia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",6
+"333",2023,"Colombia","Origanum majorana - MARJORAM","Origanum majorana",6
+"334",2023,"Colombia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",32
+"335",2023,"Colombia","Ptilotus sp. - Ptilotus","Ptilotus sp.",1
+"336",2023,"Colombia","Ranunculus sp. - Ranunculus","Ranunculus sp.",10
+"337",2023,"Colombia","Rosa sp. - Rosa","Rosa sp.",6
+"338",2023,"Colombia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",2
+"339",2023,"Colombia","Ruscus sp. - Ruscus","Ruscus sp.",1
+"340",2023,"Colombia","Solidago sp. - Solidago","Solidago sp.",5
+"341",2023,"Colombia","Tagetes sp. - Edible Flower - Pot Marigold","Tagetes sp.",2
+"342",2023,"Colombia","Thymus vulgaris - THYME","Thymus vulgaris",9
+"343",2023,"Colombia","Veronica sp. - Veronica","Veronica sp.",1
+"344",2023,"Ecuador","Agapanthus sp. - Agapanthus","Agapanthus sp.",1
+"345",2023,"Ecuador","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",33
+"346",2023,"Ecuador","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",10
+"347",2023,"Ecuador","Ammi sp. - Ammi","Ammi sp.",1
+"348",2023,"Ecuador","Anemone sp. - Anemone","Anemone sp.",9
+"349",2023,"Ecuador","Aster sp.  - Aster","Aster sp. ",1
+"350",2023,"Ecuador","Astrantia sp. - Astrantia","Astrantia sp.",1
+"351",2023,"Ecuador","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",1
+"352",2023,"Ecuador","Brassica sp.  - Brassica","Brassica sp. ",1
+"353",2023,"Ecuador","Bupleurum sp. - Bupleurum","Bupleurum sp.",1
+"354",2023,"Ecuador","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",1
+"355",2023,"Ecuador","Delphinium sp. - Delphinium","Delphinium sp.",1
+"356",2023,"Ecuador","Dianthus sp. - Dianthus","Dianthus sp.",4
+"357",2023,"Ecuador","Eryngium sp. - Eryngium","Eryngium sp.",2
+"358",2023,"Ecuador","Eustoma sp. - Eustoma","Eustoma sp.",1
+"359",2023,"Ecuador","Gerbera sp.  - Gerbera","Gerbera sp. ",1
+"360",2023,"Ecuador","Gladiolus sp. - Gladiolus","Gladiolus sp.",2
+"361",2023,"Ecuador","Helianthus sp. - Helianthus","Helianthus sp.",4
+"362",2023,"Ecuador","Lilium sp. - Lilium","Lilium sp.",1
+"363",2023,"Ecuador","Limonium sp. - Limonium","Limonium sp.",2
+"364",2023,"Ecuador","Matthiola sp. - Matthiola","Matthiola sp.",6
+"365",2023,"Ecuador","Moluccella sp. - Moluccella","Moluccella sp.",5
+"366",2023,"Ecuador","Rosa sp. - Rosa","Rosa sp.",3
+"367",2023,"Ecuador","Scabiosa sp. - Scabiosa","Scabiosa sp.",2
+"368",2023,"Ecuador","Solidago sp. - Solidago","Solidago sp.",1
+"369",2023,"Ecuador","Zantedeschia sp. - Zantedeschia","Zantedeschia sp.",1
+"370",2023,"Guatemala","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"371",2023,"Guatemala","Cucurbita sp. - SQUASH","Cucurbita sp.",1
+"372",2023,"Guatemala","Daucus carota subsp. sativus - CARROT","Daucus carota subsp. sativus",1
+"373",2023,"Guatemala","Dianthus sp. - Dianthus","Dianthus sp.",3
+"374",2023,"Guatemala","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",1
+"375",2023,"Guatemala","Zea mays - CORN","Zea mays",1
+"376",2023,"Honduras","Abelmoschus esculentus - OKRA","Abelmoschus esculentus",1
+"377",2023,"Mexico","Allium ampeloprasum - LEEK","Allium ampeloprasum",1
+"378",2023,"Mexico","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",1
+"379",2023,"Mexico","Anethum graveolens - DILL","Anethum graveolens",2
+"380",2023,"Mexico","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"381",2023,"Mexico","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",93
+"382",2023,"Mexico","Beta vulgaris subsp. vulgaris - SWISS CHARD","Beta vulgaris subsp. vulgaris",2
+"383",2023,"Mexico","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",1
+"384",2023,"Mexico","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",3
+"385",2023,"Mexico","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",39
+"386",2023,"Mexico","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",1
+"387",2023,"Mexico","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",2
+"388",2023,"Mexico","Calendula officinalis (Asteraceae) - Calendula officinalis ","Calendula officinalis (Asteraceae)",2
+"389",2023,"Mexico","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",7
+"390",2023,"Mexico","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",8
+"391",2023,"Mexico","Dianthus sp. - Dianthus","Dianthus sp.",1
+"392",2023,"Mexico","Dysphania ambrosioides - EPAZOTE","Dysphania ambrosioides",1
+"393",2023,"Mexico","Euphorbia sp. - Euphorbia","Euphorbia sp.",1
+"394",2023,"Mexico","Eustoma sp. - Eustoma","Eustoma sp.",1
+"395",2023,"Mexico","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"396",2023,"Mexico","Helianthus sp. - Helianthus","Helianthus sp.",1
+"397",2023,"Mexico","Lactuca sativa - LETTUCE","Lactuca sativa",3
+"398",2023,"Mexico","Lactuca sativa var. capitata - Butterhead Lettuce","Lactuca sativa var. capitata",1
+"399",2023,"Mexico","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",2
+"400",2023,"Mexico","Opuntia sp. - PRICKLY PEAR PAD","Opuntia sp.",1
+"401",2023,"Mexico","Pisum sativum (Fabaceae) - PEA","Pisum sativum (Fabaceae)",1
+"402",2023,"Mexico","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"403",2023,"Mexico","Portulaca oleracea - PURSLANE","Portulaca oleracea",1
+"404",2023,"Mexico","Setaria sp. - Setaria","Setaria sp.",1
+"405",2023,"Mexico","Solidago sp. - Solidago","Solidago sp.",1
+"406",2023,"Mexico",NA,NA,20
+"407",2023,"Netherlands","Delphinium sp. - Delphinium","Delphinium sp.",1
+"408",2023,"Nicaragua","Coccinia grandis - IVY GOURD","Coccinia grandis",1
+"409",2023,"West Bank","Mentha sp. - MINT","Mentha sp.",1
+"410",2024,"Colombia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",20
+"411",2024,"Colombia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",167
+"412",2024,"Colombia","Anemone sp. - Anemone","Anemone sp.",4
+"413",2024,"Colombia","Anethum graveolens - DILL","Anethum graveolens",6
+"414",2024,"Colombia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",4
+"415",2024,"Colombia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",5
+"416",2024,"Colombia","Aster sp.  - Aster","Aster sp. ",5
+"417",2024,"Colombia","Astilbe sp. - Astilbe","Astilbe sp.",1
+"418",2024,"Colombia","Brassica sp.  - Brassica","Brassica sp. ",1
+"419",2024,"Colombia","Callistephus sp.  - Callistephus","Callistephus sp. ",3
+"420",2024,"Colombia","Campanula sp. - Campanula","Campanula sp.",1
+"421",2024,"Colombia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",51
+"422",2024,"Colombia","Cocculus sp. - Cocculus","Cocculus sp.",1
+"423",2024,"Colombia","Dianthus sp. - Dianthus","Dianthus sp.",21
+"424",2024,"Colombia","Eryngium sp. - Eryngium","Eryngium sp.",4
+"425",2024,"Colombia","Eucalyptus sp. - Eucalyptus","Eucalyptus sp.",1
+"426",2024,"Colombia","Gerbera sp.  - Gerbera","Gerbera sp. ",5
+"427",2024,"Colombia","Gypsophila sp. - Gypsophila","Gypsophila sp.",1
+"428",2024,"Colombia","Helianthus sp. - Helianthus","Helianthus sp.",3
+"429",2024,"Colombia","Hydrangea sp. - Hydrangea","Hydrangea sp.",3
+"430",2024,"Colombia","Hypericum sp. - Hypericum","Hypericum sp.",1
+"431",2024,"Colombia","Lactuca sativa - LETTUCE","Lactuca sativa",1
+"432",2024,"Colombia","Limonium sp. - Limonium","Limonium sp.",9
+"433",2024,"Colombia","Liriope sp. - Liriope","Liriope sp.",1
+"434",2024,"Colombia","Mentha sp. - MINT","Mentha sp.",67
+"435",2024,"Colombia","Moluccella sp. - Moluccella","Moluccella sp.",8
+"436",2024,"Colombia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",6
+"437",2024,"Colombia","Origanum majorana - MARJORAM","Origanum majorana",6
+"438",2024,"Colombia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",24
+"439",2024,"Colombia","Origanum vulgare subsp. hirtum - OREGANO (EUROPEAN)","Origanum vulgare subsp. hirtum",1
+"440",2024,"Colombia","Ornithogalum sp. - Ornithogalum","Ornithogalum sp.",1
+"441",2024,"Colombia","Ranunculus sp. - Ranunculus","Ranunculus sp.",2
+"442",2024,"Colombia","Rosa sp. - Rosa","Rosa sp.",4
+"443",2024,"Colombia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",2
+"444",2024,"Colombia","Solidago sp. - Solidago","Solidago sp.",3
+"445",2024,"Colombia","Tagetes sp. - Tagetes","Tagetes sp.",1
+"446",2024,"Colombia","Thymus vulgaris - THYME","Thymus vulgaris",6
+"447",2024,"Costa Rica","Eryngium foetidum - FALSE CORIANDER","Eryngium foetidum",1
+"448",2024,"Costa Rica","Gladiolus sp. - Gladiolus","Gladiolus sp.",1
+"449",2024,"Dominican Republic","Capsicum sp. - Chili Pepper","Capsicum sp.",1
+"450",2024,"Dominican Republic",NA,NA,1
+"451",2024,"Ecuador","Achillea sp.  - Achillea","Achillea sp. ",1
+"452",2024,"Ecuador","Allium schoenoprasum - CHIVE","Allium schoenoprasum",1
+"453",2024,"Ecuador","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",44
+"454",2024,"Ecuador","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",14
+"455",2024,"Ecuador","Ammi sp. - Ammi","Ammi sp.",6
+"456",2024,"Ecuador","Anemone sp. - Anemone","Anemone sp.",10
+"457",2024,"Ecuador","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"458",2024,"Ecuador","Astrantia sp. - Astrantia","Astrantia sp.",4
+"459",2024,"Ecuador","Brassica sp.  - Brassica","Brassica sp. ",1
+"460",2024,"Ecuador","Bupleurum sp. - Bupleurum","Bupleurum sp.",1
+"461",2024,"Ecuador","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",3
+"462",2024,"Ecuador","Delphinium sp. - Delphinium","Delphinium sp.",2
+"463",2024,"Ecuador","Dianthus sp. - Dianthus","Dianthus sp.",1
+"464",2024,"Ecuador","Eryngium sp. - Eryngium","Eryngium sp.",1
+"465",2024,"Ecuador","Gerbera sp.  - Gerbera","Gerbera sp. ",2
+"466",2024,"Ecuador","Helianthus sp. - Helianthus","Helianthus sp.",6
+"467",2024,"Ecuador","Hydrangea sp. - Hydrangea","Hydrangea sp.",1
+"468",2024,"Ecuador","Hypericum sp. - Hypericum","Hypericum sp.",3
+"469",2024,"Ecuador","Lepidium sp. - Lepidium","Lepidium sp.",1
+"470",2024,"Ecuador","Limonium sp. - Limonium","Limonium sp.",3
+"471",2024,"Ecuador","Matthiola sp. - Matthiola","Matthiola sp.",4
+"472",2024,"Ecuador","Moluccella sp. - Moluccella","Moluccella sp.",8
+"473",2024,"Ecuador","Ranunculus sp. - Ranunculus","Ranunculus sp.",2
+"474",2024,"Ecuador","Rosa sp. - Rosa","Rosa sp.",2
+"475",2024,"Ecuador","Rumex sp. - Rumex","Rumex sp.",1
+"476",2024,"Ecuador","Scabiosa sp. - Scabiosa","Scabiosa sp.",1
+"477",2024,"Ecuador","Smilax sp. - Smilax","Smilax sp.",1
+"478",2024,"Ecuador","Tagetes sp. - Tagetes","Tagetes sp.",1
+"479",2024,"Ecuador","Trachelium sp. - Trachelium","Trachelium sp.",2
+"480",2024,"Ecuador","Veronica sp. - Veronica","Veronica sp.",1
+"481",2024,"El Salvador","Abelmoschus esculentus - OKRA","Abelmoschus esculentus",1
+"482",2024,"Guatemala","Dianthus sp. - Dianthus","Dianthus sp.",8
+"483",2024,"Honduras","Abelmoschus esculentus - OKRA","Abelmoschus esculentus",1
+"484",2024,"India","Tagetes sp. - Tagetes","Tagetes sp.",1
+"485",2024,"Mexico","Allium ampeloprasum - LEEK","Allium ampeloprasum",1
+"486",2024,"Mexico","Allium sativum - GARLIC","Allium sativum",1
+"487",2024,"Mexico","Allium schoenoprasum - CHIVE","Allium schoenoprasum",1
+"488",2024,"Mexico","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",2
+"489",2024,"Mexico","Anethum graveolens - DILL","Anethum graveolens",2
+"490",2024,"Mexico","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",8
+"491",2024,"Mexico","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",46
+"492",2024,"Mexico","Aster sp.  - Aster","Aster sp. ",1
+"493",2024,"Mexico","Brassica juncea (Brassicaceae) - MUSTARD GREENS","Brassica juncea (Brassicaceae)",1
+"494",2024,"Mexico","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",2
+"495",2024,"Mexico","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",6
+"496",2024,"Mexico","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",29
+"497",2024,"Mexico","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",3
+"498",2024,"Mexico","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",4
+"499",2024,"Mexico","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",7
+"500",2024,"Mexico","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",3
+"501",2024,"Mexico","Dianthus sp. - Dianthus","Dianthus sp.",5
+"502",2024,"Mexico","Dysphania ambrosioides - EPAZOTE","Dysphania ambrosioides",1
+"503",2024,"Mexico","Eustoma sp. - Eustoma","Eustoma sp.",1
+"504",2024,"Mexico","Gerbera sp.  - Gerbera","Gerbera sp. ",1
+"505",2024,"Mexico","Gladiolus sp. - Gladiolus","Gladiolus sp.",4
+"506",2024,"Mexico","Glebionis coronaria - CHRYSANTHEMUM GREENS","Glebionis coronaria",1
+"507",2024,"Mexico","Helianthus sp. - Helianthus","Helianthus sp.",2
+"508",2024,"Mexico","Lactuca sativa - LETTUCE","Lactuca sativa",5
+"509",2024,"Mexico","Lactuca sativa var. capitata - Butterhead Lettuce","Lactuca sativa var. capitata",1
+"510",2024,"Mexico","Limonium sp. - Limonium","Limonium sp.",1
+"511",2024,"Mexico","Mentha sp. - MINT","Mentha sp.",1
+"512",2024,"Mexico","Moluccella sp. - Moluccella","Moluccella sp.",1
+"513",2024,"Mexico","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",3
+"514",2024,"Mexico","Rosa sp. - Rosa","Rosa sp.",2
+"515",2024,"Mexico","Solidago sp. - Solidago","Solidago sp.",1
+"516",2024,"Mexico","Spinacia oleracea - SPINACH","Spinacia oleracea",1
+"517",2024,"Mexico","Tagetes sp. - Tagetes","Tagetes sp.",1
+"518",2024,"Mexico","Thymus vulgaris - THYME","Thymus vulgaris",1
+"519",2024,"Mexico","x Solidaster sp. - Solidaster","x Solidaster sp.",1
+"520",2024,"Mexico",NA,NA,7
+"521",2024,"Peru","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"522",2025,"Colombia","Allium schoenoprasum - CHIVE","Allium schoenoprasum",8
+"523",2025,"Colombia","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",70
+"524",2025,"Colombia","Anemone sp. - Anemone","Anemone sp.",1
+"525",2025,"Colombia","Anethum graveolens - DILL","Anethum graveolens",5
+"526",2025,"Colombia","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",1
+"527",2025,"Colombia","Artemisia dracunculus (Asteraceae) - TARRAGON","Artemisia dracunculus (Asteraceae)",2
+"528",2025,"Colombia","Aster sp.  - Aster","Aster sp. ",1
+"529",2025,"Colombia","Brassica sp.  - Brassica","Brassica sp. ",1
+"530",2025,"Colombia","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",12
+"531",2025,"Colombia","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",1
+"532",2025,"Colombia","Dianthus sp. - Dianthus","Dianthus sp.",6
+"533",2025,"Colombia","Eryngium sp. - Eryngium","Eryngium sp.",1
+"534",2025,"Colombia","Gerbera sp.  - Gerbera","Gerbera sp. ",1
+"535",2025,"Colombia","Helianthus sp. - Helianthus","Helianthus sp.",1
+"536",2025,"Colombia","Lilium sp. - Lilium","Lilium sp.",1
+"537",2025,"Colombia","Limonium sp. - Limonium","Limonium sp.",1
+"538",2025,"Colombia","Mentha sp. - MINT","Mentha sp.",32
+"539",2025,"Colombia","Moluccella sp. - Moluccella","Moluccella sp.",5
+"540",2025,"Colombia","Ocimum basilicum (Lamiaceae) - Ocimum basilicum ","Ocimum basilicum (Lamiaceae)",1
+"541",2025,"Colombia","Origanum majorana - MARJORAM","Origanum majorana",4
+"542",2025,"Colombia","Origanum onites - OREGANO (EUROPEAN)","Origanum onites",1
+"543",2025,"Colombia","Origanum vulgare - OREGANO (EUROPEAN)","Origanum vulgare",3
+"544",2025,"Colombia","Origanum vulgare subsp. hirtum - OREGANO (EUROPEAN)","Origanum vulgare subsp. hirtum",5
+"545",2025,"Colombia","Origanum vulgare subsp. vulgare - OREGANO (EUROPEAN)","Origanum vulgare subsp. vulgare",1
+"546",2025,"Colombia","Petroselinum crispum - PARSLEY","Petroselinum crispum",1
+"547",2025,"Colombia","Ranunculus sp. - Ranunculus","Ranunculus sp.",1
+"548",2025,"Colombia","Rosa sp. - Rosa","Rosa sp.",1
+"549",2025,"Colombia","Rosmarinus officinalis - ROSEMARY","Rosmarinus officinalis",1
+"550",2025,"Colombia","Solidago sp. - Solidago","Solidago sp.",5
+"551",2025,"Colombia","Thymus vulgaris - THYME","Thymus vulgaris",5
+"552",2025,"Costa Rica","Iris sp. - Iris","Iris sp.",1
+"553",2025,"Costa Rica","Lilium sp. - Lilium","Lilium sp.",1
+"554",2025,"Dominican Republic","Capsicum frutescens - TABASCO PEPPER","Capsicum frutescens",1
+"555",2025,"Dominican Republic",NA,NA,1
+"556",2025,"Ecuador","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",27
+"557",2025,"Ecuador","Amaranthus sp.  - Amaranthus","Amaranthus sp. ",1
+"558",2025,"Ecuador","Ammi sp. - Ammi","Ammi sp.",2
+"559",2025,"Ecuador","Anemone sp. - Anemone","Anemone sp.",15
+"560",2025,"Ecuador","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",2
+"561",2025,"Ecuador","Chrysanthemum sp.  - Chrysanthemum","Chrysanthemum sp. ",1
+"562",2025,"Ecuador","Craspedia sp. - Craspedia","Craspedia sp.",1
+"563",2025,"Ecuador","Dianthus sp. - Dianthus","Dianthus sp.",1
+"564",2025,"Ecuador","Eryngium sp. - Eryngium","Eryngium sp.",1
+"565",2025,"Ecuador","Helianthus sp. - Helianthus","Helianthus sp.",2
+"566",2025,"Ecuador","Hypericum sp. - Hypericum","Hypericum sp.",2
+"567",2025,"Ecuador","Solidago sp. - Solidago","Solidago sp.",2
+"568",2025,"Ecuador","Veronica sp. - Veronica","Veronica sp.",1
+"569",2025,"Guatemala","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",1
+"570",2025,"Guatemala","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",1
+"571",2025,"Guatemala","Cucurbita pepo subsp. pepo - SQUASH","Cucurbita pepo subsp. pepo",1
+"572",2025,"Guatemala","Daucus carota subsp. sativus - CARROT","Daucus carota subsp. sativus",1
+"573",2025,"Guatemala","Dianthus sp. - Dianthus","Dianthus sp.",5
+"574",2025,"Guatemala","Phaseolus sp.  - GREEN BEAN","Phaseolus sp. ",1
+"575",2025,"Guatemala","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",1
+"576",2025,"Guatemala","Raphanus sativus - RADISH","Raphanus sativus",1
+"577",2025,"Guatemala","Zea mays - CORN","Zea mays",1
+"578",2025,"Italy","Pittosporum sp. - Pittosporum","Pittosporum sp.",1
+"579",2025,"Mexico","Alstroemeria sp. - Alstroemeria","Alstroemeria sp.",2
+"580",2025,"Mexico","Antirrhinum sp. - Antirrhinum","Antirrhinum sp.",5
+"581",2025,"Mexico","Apium graveolens var. dulce - CELERY","Apium graveolens var. dulce",13
+"582",2025,"Mexico","Brassica oleracea var. botrytis  - CAULIFLOWER","Brassica oleracea var. botrytis ",1
+"583",2025,"Mexico","Brassica oleracea var. capitata  - CABBAGE","Brassica oleracea var. capitata ",4
+"584",2025,"Mexico","Brassica oleracea var. italica  - Brassica oleracea italica","Brassica oleracea var. italica ",11
+"585",2025,"Mexico","Brassica oleracea var. viridis  - KALE","Brassica oleracea var. viridis ",2
+"586",2025,"Mexico","Brassica rapa subsp. pekinensis (Brassicaceae) - CHINESE CABBAGE","Brassica rapa subsp. pekinensis (Brassicaceae)",7
+"587",2025,"Mexico","Capsicum sp. - Chili Pepper","Capsicum sp.",1
+"588",2025,"Mexico","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae) - Huazontle","Chenopodium berlandieri subsp. nuttalliae (Amaranthaceae)",4
+"589",2025,"Mexico","Cichorium intybus var. foliosum  - RADICCHIO","Cichorium intybus var. foliosum ",2
+"590",2025,"Mexico","Coriandrum sativum (Apiaceae) - Coriandrum sativum ","Coriandrum sativum (Apiaceae)",5
+"591",2025,"Mexico","Cynara scolymus - GLOBE ARTICHOKE","Cynara scolymus",4
+"592",2025,"Mexico","Dianthus sp. - Dianthus","Dianthus sp.",3
+"593",2025,"Mexico","Eustoma sp. - Eustoma","Eustoma sp.",1
+"594",2025,"Mexico","Helianthus sp. - Helianthus","Helianthus sp.",2
+"595",2025,"Mexico","Lactuca sativa var. capitata - Iceberg Lettuce","Lactuca sativa var. capitata",1
+"596",2025,"Mexico","Lactuca sativa var. crispa  - Red & Green Leaf Lettuce","Lactuca sativa var. crispa ",3
+"597",2025,"Mexico","Lactuca sativa var. longifolia - Romaine Lettuce","Lactuca sativa var. longifolia",2
+"598",2025,"Mexico","Lilium sp. - Lilium","Lilium sp.",1
+"599",2025,"Mexico","Mentha sp. - MINT","Mentha sp.",2
+"600",2025,"Mexico","Pisum sativum var. macrocarpon  - Pisum sativum macrocarpon","Pisum sativum var. macrocarpon ",6
+"601",2025,"Mexico","Thymus vulgaris - THYME","Thymus vulgaris",1
+"602",2025,"Mexico",NA,NA,3
+"603",2025,"Tanzania","Clematis sp. - Clematis","Clematis sp.",1
+"604",2025,"Trinidad and Tobago",NA,NA,1
