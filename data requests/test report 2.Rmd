@@ -6,20 +6,20 @@ output: html_document
 
 params:
   begin_date: 01-01-2022 #NULL for all dates, otherwise "mm-dd-yyyy"
-  end_date: NULL #NULL for today, otherwise "mm-dd-yyyy"
+  end_date: "today" #NULL for today, otherwise "mm-dd-yyyy"
   
   # Commodity taxonomy:
-  commodity_taxonomic_name: "Litchi" #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
+  commodity_taxonomic_name: NULL #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
   commodity_common_name: NULL
   
   # Country of origin:
-  origin_country: ["Australia"] #NULL or ["country1", "country2", "etc."]
+  origin_country: NULL #NULL or ["country1", "country2", "etc."]
   
   # Pest taxonomy:
   KINGDOM: NULL #["Fungi"]
   PHYLUM: NULL #["Phylum2", "Phylum3", "etc."]
   CLASS: NULL #["Insecta", "Class2", "etc."]
-  ORDER: ["Hemiptera"] #NULL #["Coleoptera", "Order2", "etc."]
+  ORDER: ["Lepidoptera"] #NULL #["Coleoptera", "Order2", "etc."]
   FAMILY: NULL #["Dermestidae", "Family2", "etc."]
   GENUS: NULL #["Genus2", "Genus3", "etc."]
   SPECIES: NULL #["Granarium", "Species2", "etc."]
@@ -45,8 +45,8 @@ pacman::p_load(DT, htmlwidgets)
 
 ```{r load libraries and grab params}
 source(here::here("functions","filter_dates.R"))
-begin_date <- get_date_params(params=params)[[1]]
-end_date <- get_date_params(params=params)[[2]]
+begin_date <- get_date_params(params=params)[1]
+end_date <- get_date_params(params=params)[2]
 
 ```
 
@@ -81,8 +81,7 @@ df_diagnostic_results <- filter_dates(data = df_diagnostic_results,
 # Filter by country
 ```{r}
 source(here::here("functions","filter_country.R"))
-df_diagnostic_results <- filter_country(data = df_diagnostic_results,
-                                        params = params)
+df_diagnostic_results <- filter_country(params=params)
 ```
 
 # Identify columns to collect
@@ -123,14 +122,15 @@ arm_results <- df_diagnostic_results |>
 source(here::here("functions","filter_commodity.R"))
 arm_results <- filter_commodity(data = arm_results, params = params)
 
-#This may include NA values. It shouldn't, and yet I'm seeing them...
 ```
 
 # Filter by pest name
 ```{r}
-source(here::here("functions","filter_taxa.R"))
+source(here::here("functions","filter_by_taxonomy.R"))
 arm_results <- filter_by_taxonomy(arm_results, params, threshold = 0.99)
 
+# Show results
+print_matches(arm_results)
 ```
 
 ## Filter interceptions to best known information
@@ -139,16 +139,10 @@ arm_results <- filter_by_taxonomy(arm_results, params, threshold = 0.99)
 source(here::here("functions","parse_diagnostic_determinations.R"))
 
 # get diagnostic records
-  # combination of diagnostic determinations and diagnostic determination not possible flags
-arm_results <- get_diagnostic_results(connection = db_conn,
-                                      data = arm_results)
+# combination of diagnostic determinations and diagnostic determination not possible flags
+arm_results <- get_diagnostic_results(connection = db_conn, data = arm_results)
 
 df_diagnostic_results <- parse_final_determination(arm_results)
-
-#can double check that it is working:
-View(arm_results |> arrange(desc(INSPECTION_DATE)))
-
-View(df_diagnostic_results |> arrange(desc(INSPECTION_DATE)))
 
 print_diagnostic_results(parsed_determinations_data = df_diagnostic_results)
 
@@ -182,11 +176,11 @@ base_filename <- paste0(
     if(!is.null(params$commodity_common_name)) (paste(params$commodity_common_name, collapse="_")),
     if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_")))) else ("anything"),
   "_from_",
-  if(!is.null(params$origin_country)) (paste(params$origin_country, collapse="_")) else ("anywhere"),
+  if(!is.null(params$origin_country)) (paste(origin_country, collapse="_")) else ("anywhere"),
   "_from_period_",
   if(!is.null(params$begin_date)) (params$begin_date) else ("anytime"),
   "_to_",
-  if(!is.null(params$end_date)) (params$end_date) else (Sys.Date())
+  if(!is.null(params$end_date)) (params$end_date) else ("anytime")
 )
 
 # Create interactive data table

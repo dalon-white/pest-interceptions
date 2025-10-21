@@ -67,14 +67,14 @@ get_diag_determ_not_possible <- function(connection, data){
 
 
 # ---- bring these together into a single function ----
-get_diagnostic_results <- function(connection) {
+get_diagnostic_results <- function(connection, data) {
 
   diag_determ_records <- get_determinations(connection)
   determ_not_possible_data <- get_diag_determ_not_possible(connection)
 
   diag_determ_records <- diag_determ_records |>
     filter(DIAGNOSTIC_DETERMINATION_ID %in% (
-      diag_determ_records |> pull(DIAGNOSTIC_DETERMINATION_ID)
+      data |> pull(DIAGNOSTIC_DETERMINATION_ID)
     )
     )
 
