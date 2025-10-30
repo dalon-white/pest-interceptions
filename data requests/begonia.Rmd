@@ -1,0 +1,331 @@
+---
+title: "test report on lepidoptera"
+author: "Dalon White"
+date: "2025-10-15"
+output: html_document
+
+params:
+  begin_date: NULL #NULL for all dates, otherwise "mm-dd-yyyy"
+  end_date: "today" #NULL for today, otherwise "mm-dd-yyyy"
+  
+  # Commodity taxonomy:
+  commodity_taxonomic_name: ["Begonia"] #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
+  commodity_common_name: ["Begonia"]
+  
+  # Country of origin:
+  origin_country: NULL #NULL or ["country1", "country2", "etc."]
+  
+  # Pest taxonomy:
+  KINGDOM: NULL #["Fungi"]
+  PHYLUM: NULL #["Phylum2", "Phylum3", "etc."]
+  CLASS: NULL #["Insecta", "Class2", "etc."]
+  ORDER: NULL #["Coleoptera", "Order2", "etc."]
+  FAMILY: NULL #["Dermestidae", "Family2", "etc."]
+  GENUS: NULL #["Genus2", "Genus3", "etc."]
+  SPECIES: NULL #["Granarium", "Species2", "etc."]
+
+  # For the title of the file on save:
+  pest_nickname: ["any pest"]
+  
+---
+# If errors:
+If VS Code cannot knit, it cannot find your params; run in RStudio instead
+
+# Load libraries and parameters
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#load packages
+pacman::p_load(DBI, odbc)
+pacman::p_load(tidyverse, lubridate, readr, stringr,stringdist)
+pacman::p_load(DT, htmlwidgets)
+
+```
+
+
+```{r load libraries and grab params}
+source(here::here("functions","filter_dates.R"))
+begin_date <- get_date_params(params=params)[1]
+end_date <- get_date_params(params=params)[2]
+
+```
+
+
+# Gather data from ARM
+
+## Connect to ARM
+```{r connect to ARM}
+
+source(here::here("functions","connect_and_access_arm.R"))
+#connect to ARM
+db_conn <- connect_db()
+
+```
+
+# retrieve diagnostic results table
+
+```{r grab arm results}
+source(here::here("functions","connect_and_access_arm.R"))
+df_diagnostic_results <- mvw_diagnostic_results()
+```
+
+# Filter by date
+```{r}
+# source(here::here("functions","filter_dates.R"))
+# # Apply date filters
+# df_diagnostic_results <- filter_dates(data = df_diagnostic_results,
+#                                       begin_date = begin_date,
+#                                       end_date = end_date)
+```
+
+# Filter by country
+```{r}
+source(here::here("functions","filter_country.R"))
+df_diagnostic_results <- filter_country(data = df_diagnostic_results, params = params)
+```
+
+# Identify columns to collect
+```{r grab the arm data}
+df_diagnostic_results <- df_diagnostic_results |>   
+  dplyr::select(
+    INSPECTION_DATE,
+    COMMODITY_DISPLAY_NAME,
+    COMMODITY_TAXONOMIC_DISPLAY_NAME,
+    INSPECTION_PATHWAY,
+    ORIGIN,
+    SUBCATEGORY,
+    INSPECTION_LOCATION_STATE_CODE,
+    DETERMINATION_TYPE,
+    any_of(starts_with("PEST_TAXONOMIC_")),
+    QUARANTINE_RECOMMENDATION,
+    DIAGNOSTIC_DETERMINATION_ID,
+    DIAGNOSTIC_REQUEST_ID,
+    any_of(c(starts_with("number_dead", ignore.case = TRUE),
+           starts_with("number_alive", ignore.case = TRUE),
+           starts_with("pest_", ignore.case = TRUE))
+    )
+  )
+
+```
+
+# Collect data
+
+```{r collect data}
+
+arm_results <- df_diagnostic_results |> 
+  collect()
+
+```
+
+# Filter by commodity
+```{r}
+source(here::here("functions","filter_commodity.R"))
+arm_results <- filter_commodity(data = arm_results, params = params)
+
+```
+
+# Filter by pest name
+```{r}
+source(here::here("functions","filter_taxa.R"))
+arm_results <- filter_by_taxonomy(arm_results, params, threshold = 0.99)
+
+# Show results
+print_matches(arm_results)
+```
+
+## Filter interceptions to best known information
+
+```{r correct pest query diagnostic}
+source(here::here("functions","parse_diagnostic_determinations.R"))
+
+# get diagnostic records
+# combination of diagnostic determinations and diagnostic determination not possible flags
+arm_results <- get_diagnostic_results(connection = db_conn, data = arm_results)
+
+df_diagnostic_results <- parse_final_determination(arm_results)
+
+print_diagnostic_results(parsed_determinations_data = df_diagnostic_results)
+
+```
+
+## Write ARM data and Generate Report
+```{r write table and report}
+setwd(here::here('output','reports'))
+
+# # Create a folder with name based on parameters
+# dir_name <- paste0(
+#   if(!is.null(params$pest_nickname)) (paste(params$pest_nickname, collapse="_")) else (paste("all pests")),
+#   "_on_",
+#   if(!(is.null(params$commodity_common_name) | is.null(params$commodity_taxonomic_name)))(paste(
+#     if(!is.null(params$commodity_common_name)) (paste(params$commodity_common_name, collapse="_")),
+#     if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_")))) else ("anything"),
+#   "_from_",
+#   if(!is.null(params$origin_country)) (paste(origin_country, collapse="_")) else ("anywhere"),
+#   "_from_period_",
+#   if(!is.null(params$begin_date)) (params$begin_date) else ("anytime"),
+#   "_to_",
+#   if(!is.null(params$end_date)) (params$end_date) else ("anytime")
+# )
+# if(!dir.exists(dir_name)) dir.create(dir_name)
+
+# Generate base filename without extension
+base_filename <- paste0(
+  if(!is.null(params$pest_nickname)) (paste(params$pest_nickname, collapse="_")) else (paste("all pests")),
+  "_on_",
+  if(!(is.null(params$commodity_common_name) | is.null(params$commodity_taxonomic_name)))(paste(
+    if(!is.null(params$commodity_common_name)) (paste(params$commodity_common_name, collapse="_")),
+    if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_")))) else ("anything"),
+  "_from_",
+  if(!is.null(params$origin_country)) (paste(origin_country, collapse="_")) else ("anywhere"),
+  "_from_period_",
+  if(!is.null(params$begin_date)) (params$begin_date) else ("anytime"),
+  "_to_",
+  if(!is.null(params$end_date)) (params$end_date) else ("anytime")
+)
+
+# Create interactive data table
+dt <- datatable(df_diagnostic_results,
+                extensions = 'Buttons',
+                options = list(
+                  dom = 'Bfrtip',
+                  buttons = c('copy', 'csv', 'excel', 'pdf')
+                ))
+
+write.csv(df_diagnostic_results, file = (paste0(base_filename, "_data.csv")))
+
+
+# Save the interactive data table
+saveWidget(dt, file = paste0(base_filename, "_data.html"), selfcontained = TRUE)
+# Source the generate-report.R file to get the function
+source(here::here("add-ons", "generate-report.R"))
+
+# Generate and save the report
+report_html <- generate_pest_report(
+  data = df_diagnostic_results,
+  params = params,
+  base_filename = base_filename,
+  include_plot = TRUE,
+  include_data_preview = TRUE
+)
+
+# Save the report to file
+report_file <- save_report(report_html, base_filename)
+
+# Print information about saved files
+cat(paste0("\nFiles saved to folder: ", getwd(), "/", dir_name, "\n"))
+cat(paste0("- Interactive data table: ", base_filename, "_data.html\n"))
+cat(paste0("- Search report: ", report_file, "\n"))
+```
+
+
+```{r plot1}
+source(here::here('add-ons','plot-diagnostic-results.R'))
+
+diagnostic_results_summary = summarize_diagnostic_results(df_diagnostic_results,
+                                       arrange_by = "origin", #or "year"; anything else will be by total pests
+                                       truncate_origins = TRUE,
+                                       top_n_origins = 10,
+                                       group_by_origin = TRUE,
+                                       group_by_year = TRUE,
+                                       group_by_commodities = FALSE,
+                                       truncate_commodities = FALSE,
+                                       top_n_commodities = 10,
+                                       group_by_taxon = FALSE,
+                                       truncate_taxon = FALSE,
+                                       top_n_taxon = 10)
+
+save_summary(data = diagnostic_results_summary,
+             base_filename = base_filename)
+
+
+
+
+save_plot(data = diagnostic_results_summary,
+                      base_filename = paste0(base_filename,'_plot1'),
+                      plot_x = "INSPECTION_YEAR",
+                      xlab = "Year",
+                      plot_y = "total_pests",
+                      ylab = "Total Pests",
+                      plot_fill = "ORIGIN",
+                      fill_lab = "Origin",
+                      plot_title = "Pest Interceptions by Year and Origin",
+                      plot_subtitle = "Summary of pest interceptions",
+                      width = 10,
+                      height = 7,
+                      dpi = 300)
+
+```
+
+```{r}
+
+diagnostic_results_summary2 = summarize_diagnostic_results(df_diagnostic_results,
+                                       arrange_by = "origin", #or "year"; anything else will be by total pests
+                                       truncate_origins = TRUE,
+                                       top_n_origins = 10,
+                                       group_by_origin = FALSE,
+                                       group_by_year = TRUE,
+                                       group_by_commodities = FALSE,
+                                       truncate_commodities = FALSE,
+                                       top_n_commodities = 10,
+                                       group_by_taxon = TRUE,
+                                       truncate_taxon = TRUE,
+                                       top_n_taxon = 10)
+
+save_summary(data = diagnostic_results_summary2,
+             base_filename = paste0(base_filename,'_plot2')
+             )
+
+
+
+
+save_plot(data = diagnostic_results_summary,
+                      base_filename = paste0(base_filename,'_plot2'),
+                      plot_x = "INSPECTION_YEAR",
+                      xlab = "Year",
+                      plot_y = "total_pests",
+                      ylab = "Total Pests",
+                      plot_fill = "PEST_TAXONOMIC_NAME",
+                      fill_lab = "Pest taxonomic name",
+                      plot_title = "Pest Interceptions by Year and Origin",
+                      plot_subtitle = "Summary of pest interceptions",
+                      width = 10,
+                      height = 7,
+                      dpi = 300)
+```
+
+```{r plt 3}
+
+diagnostic_results_summary3 = summarize_diagnostic_results(df_diagnostic_results,
+                                       arrange_by = "origin", #or "year"; anything else will be by total pests
+                                       truncate_origins = TRUE,
+                                       top_n_origins = 5,
+                                       group_by_origin = TRUE,
+                                       group_by_year = FALSE,
+                                       group_by_commodities = FALSE,
+                                       truncate_commodities = FALSE,
+                                       top_n_commodities = 10,
+                                       group_by_taxon = TRUE,
+                                       truncate_taxon = TRUE,
+                                       top_n_taxon = 15)
+
+save_summary(data = diagnostic_results_summary3,
+             base_filename = paste0(base_filename,'_summary_3')
+             )
+
+
+
+
+save_plot(data = diagnostic_results_summary3,
+                      base_filename = paste0(base_filename,'_plot_3'),
+                      plot_x = "ORIGIN",
+                      xlab = "Origin",
+                      plot_y = "total_pests",
+                      ylab = "Total Pests",
+                      plot_fill = "PEST_TAXONOMIC_NAME",
+                      fill_lab = "Pest taxonomic name",
+                      plot_title = "Pest Interceptions by origin and pest taxonomic name",
+                      plot_subtitle = "Summary of pest interceptions",
+                      width = 10,
+                      height = 7,
+                      dpi = 300)
+```
