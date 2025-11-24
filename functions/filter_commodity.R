@@ -4,6 +4,8 @@
 
 filter_commodity <- function(params, data){
 # Only apply filtering if at least one parameter is not NULL
+
+#If either commodity common name or taxonomic name is provided, collapse the vectors into patterns for 0/str_detect filtering
 if (!is.null(params$commodity_common_name) || !is.null(params$commodity_taxonomic_name)) {
   # Create patterns only from non-NULL parameters
   if (!is.null(params$commodity_common_name)) {

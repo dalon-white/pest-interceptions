@@ -1,0 +1,102 @@
+---
+title: "test report on lepidoptera"
+author: "Dalon White"
+date: "2025-10-15"
+output: html_document
+
+params:
+  begin_date: NULL #NULL for all dates, otherwise "mm-dd-yyyy"
+  end_date: NULL #NULL for today, otherwise "mm-dd-yyyy"
+  
+  # Commodity taxonomy:
+  commodity_taxonomic_name: ["Pelargonium"] #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
+  commodity_common_name: ["Geranium", "Pelargonium"] #NULL or ["common name1", "common name2", "etc."]
+  
+  # Country of origin:
+  origin_country: ["Ethiopia", "Kenya", "Portugal", "Israel", "Canary Islands"] #NULL or ["country1", "country2", "etc."]
+  
+  # Pest taxonomy:
+  KINGDOM: NULL #["Fungi"]
+  PHYLUM: NULL #["Phylum2", "Phylum3", "etc."]
+  CLASS: NULL #["Insecta", "Class2", "etc."]
+  ORDER: NULL #["Coleoptera", "Order2", "etc."]
+  FAMILY: NULL #["Dermestidae", "Family2", "etc."]
+  GENUS: ["Spodoptera"] #["Genus2", "Genus3", "etc."]
+  SPECIES: NULL #["Granarium", "Species2", "etc."]
+
+  # For the title of the file on save:
+  pest_nickname: ["armyworms"]
+  
+---
+# If errors:
+If VS Code cannot knit, it cannot find your params; run in RStudio instead
+
+# Load libraries and parameters
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#load packages
+pacman::p_load(DBI, odbc)
+pacman::p_load(tidyverse, lubridate, readr, stringr,stringdist)
+pacman::p_load(DT, htmlwidgets)
+
+```
+
+
+```{r load libraries and grab params}
+source(here::here("functions","filter_dates.R"))
+begin_date <- get_date_params(params=params)[1]
+end_date <- get_date_params(params=params)[2]
+
+```
+
+# Gather data from ARM
+## Connect to ARM
+```{r connect to ARM}  
+source(here::here("functions","connect_and_access_arm.R"))
+#connect to ARM
+db_conn <- connect_db()
+df_diag_results <- mvw_diagnostic_results()
+
+df_diag_results <- df_diag_results |>   
+  dplyr::select(
+    INSPECTION_DATE,
+    COMMODITY_DISPLAY_NAME,
+    COMMODITY_TAXONOMIC_DISPLAY_NAME,
+    INSPECTION_PATHWAY,
+    ORIGIN,
+    SUBCATEGORY,
+    INSPECTION_LOCATION_STATE_CODE,
+    DETERMINATION_TYPE,
+    any_of(starts_with("PEST_TAXONOMIC_")),
+    QUARANTINE_RECOMMENDATION,
+    DIAGNOSTIC_DETERMINATION_ID,
+    DIAGNOSTIC_REQUEST_ID,
+    any_of(c(starts_with("number_dead", ignore.case = TRUE),
+           starts_with("number_alive", ignore.case = TRUE),
+           starts_with("pest_", ignore.case = TRUE))
+    )
+  )
+
+df <- df_diag_results |> collect()
+```
+
+## Apply filters
+```{r apply filters}
+source(here::here("functions","filter_dates.R"))
+source(here::here("functions","filter_commodity.R"))
+source(here::here("functions","filter_country.R"))
+source(here::here("functions","filter_taxa.R"))
+results <- df |>
+    filter_dates() |>
+    # filter by commodity
+    filter_commodity(params = params) |>
+    # filter by country
+    filter_country(params = params) |>
+    # filter by pest taxonomy
+    filter_by_taxonomy(params = params, threshold = 0.99)
+
+results
+#No matches found
+# If threshold is reduced to 0.95, it finds some matches that aren't spodoptera, so it appears to be working correctly, there are just no records in ARM of spodoptera interceptions on the specified commodities from the specified countries
+```
