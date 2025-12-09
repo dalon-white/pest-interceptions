@@ -1,7 +1,7 @@
 ---
-title: "test report on spodoptera"
+title: "spodoptera litora and spodoptera spp."
 author: "Dalon White"
-date: "2025-10-15"
+date: "2025-12-09"
 output: html_document
 
 params:
@@ -9,11 +9,11 @@ params:
   end_date: NULL #NULL for today, otherwise "mm-dd-yyyy"
   
   # Commodity taxonomy:
-  commodity_taxonomic_name: ["Pelargonium"] #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
-  commodity_common_name: ["Geranium", "Pelargonium"] #NULL or ["common name1", "common name2", "etc."]
+  commodity_taxonomic_name: NULL #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
+  commodity_common_name: NULL #NULL or ["common name1", "common name2", "etc."]
   
   # Country of origin:
-  origin_country: ["Ethiopia", "Kenya", "Portugal", "Israel", "Canary Islands"] #NULL or ["country1", "country2", "etc."]
+  origin_country: NULL #NULL or ["country1", "country2", "etc."]
   
   # Pest taxonomy:
   KINGDOM: NULL #["Fungi"]
@@ -22,12 +22,13 @@ params:
   ORDER: NULL #["Coleoptera", "Order2", "etc."]
   FAMILY: NULL #["Dermestidae", "Family2", "etc."]
   GENUS: ["Spodoptera"] #["Genus2", "Genus3", "etc."]
-  SPECIES: NULL #["Granarium", "Species2", "etc."]
+  SPECIES: ["Litura"] #NULL OR ["Granarium", "Species2", "etc."]
 
   # For the title of the file on save:
-  pest_nickname: ["armyworms"]
+  pest_nickname: ["tobacco cutworm"]
   
 ---
+
 # If errors:
 If VS Code cannot knit, it cannot find your params; run in RStudio instead
 
