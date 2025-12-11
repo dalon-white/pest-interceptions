@@ -189,7 +189,7 @@ diagnostic_results_summary = summarize_diagnostic_results(results,
                                        truncate_taxon = FALSE,
                                        top_n_taxon = 10,
                                        group_by_pathway = TRUE,
-                                       taxonomic_level_grouping = "genus")
+                                       taxonomic_level_grouping = NULL)
 
 save_summary(data = diagnostic_results_summary,
              base_filename = base_filename)
