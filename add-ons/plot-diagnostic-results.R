@@ -45,7 +45,9 @@ summarize_diagnostic_results <- function(data,
                                        top_n_commodities = 10,
                                        group_by_taxon = TRUE,
                                        truncate_taxon = TRUE,
-                                       top_n_taxon = 10) {
+                                       top_n_taxon = 10,
+                                       group_by_pathway = FALSE,
+                                       taxonomic_level_grouping = NULL) {
   
   # Ensure data exists and has required columns
   if (missing(data) || nrow(data) == 0) {
@@ -56,6 +58,19 @@ summarize_diagnostic_results <- function(data,
   # Create a copy to avoid modifying the original data
   working_data <- data
   
+  if(!is.na(taxonomic_level_grouping)){
+    #Use the taxonomic level specified to find the column
+    # For instance taxonomic_level_grouping = "GENUS" would look for "PEST_TAXONOMY_GENUS"
+    taxon_col <- paste0("PEST_TAXONOMY_", toupper(taxonomic_level_grouping))
+    if(taxon_col %in% colnames(working_data)){
+      working_data <- working_data %>%
+        mutate(PEST_TAXONOMIC_NAME = .data[[taxon_col]])
+    } else {
+      warning(paste("Specified taxonomic level column", taxon_col, "not found in data. Using default PEST_TAXONOMIC_NAME."))
+    }
+  }
+
+
   # Add a year column if grouping by year
   if (group_by_year) {
     working_data <- working_data %>% 
@@ -81,6 +96,9 @@ summarize_diagnostic_results <- function(data,
   
   if (group_by_taxon) {
     group_vars <- c(group_vars, "PEST_TAXONOMIC_NAME", "PEST_TAXON_SIMPLE_NAME")
+  }
+  if (group_by_pathway) {
+    group_vars <- c(group_vars, "INSPECTION_PATHWAY")
   }
   
   # If no grouping variables, use a dummy grouping
