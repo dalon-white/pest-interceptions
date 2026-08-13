@@ -2,3 +2,16 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Generated analyst outputs
+/output/
+/.gitignored/output/data/*
+!/.gitignored/output/data/.gitkeep
+/.gitignored/output/reports/*
+!/.gitignored/output/reports/.gitkeep
+
+# Generated files that may be created from data request Rmds
+/data requests/**/*.csv
+/data requests/**/*.html
+/data requests/**/*.png
+/data requests/**/*_files/

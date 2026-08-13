@@ -97,7 +97,6 @@ results <- df |>
     # filter by pest taxonomy
     filter_by_taxonomy(params = params, threshold = 0.99)
 
-results
 #No matches found
 # If threshold is reduced to 0.95, it finds some matches that aren't spodoptera, so it appears to be working correctly, there are just no records in ARM of spodoptera interceptions on the specified commodities from the specified countries
 ```
@@ -105,7 +104,9 @@ results
 
 ## Write ARM data and Generate Report
 ```{r write table and report}
-setwd(here::here('output','reports'))
+output_dir <- here::here('.gitignored','output','reports')
+if(!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
+setwd(output_dir)
 
 # # Create a folder with name based on parameters
 # dir_name <- paste0(
@@ -167,7 +168,7 @@ report_html <- generate_pest_report(
 report_file <- save_report(report_html, base_filename)
 
 # Print information about saved files
-cat(paste0("\nFiles saved to folder: ", getwd(), "/", dir_name, "\n"))
+#cat(paste0("\nFiles saved to folder: ", getwd(), "/", dir_name, "\n"))
 cat(paste0("- Interactive data table: ", base_filename, "_data.html\n"))
 cat(paste0("- Search report: ", report_file, "\n"))
 ```
@@ -191,11 +192,12 @@ diagnostic_results_summary = summarize_diagnostic_results(results,
                                        group_by_pathway = TRUE,
                                        taxonomic_level_grouping = NULL)
 
+output_dir <- here::here('.gitignored','output','reports')
+if(!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
+setwd(output_dir)
+
 save_summary(data = diagnostic_results_summary,
              base_filename = base_filename)
-
-
-
 
 save_plot(data = diagnostic_results_summary,
                       base_filename = paste0(base_filename,'_plot'),

@@ -365,7 +365,9 @@ print(head(df_diagnostic_results))
 
 ## Write ARM data
 ```{r write table}
-setwd(here::here('output','data'))
+output_dir <- here::here('.gitignored','output','data')
+if(!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
+setwd(output_dir)
 
 dt <- datatable(df_diagnostic_results,
                 extensions = 'Buttons',
@@ -408,7 +410,9 @@ tryCatch({
 ```{r}
 test = df_diagnostic_results |> mutate(INSPECTION_YEAR = lubridate::year(INSPECTION_DATE)) |> group_by(INSPECTION_YEAR, ORIGIN, COMMODITY_DISPLAY_NAME, COMMODITY_TAXONOMIC_DISPLAY_NAME) |> summarise(total_pests = n() )
 view(test)
-setwd(here::here('output','data'))
+output_dir <- here::here('.gitignored','output','data')
+if(!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
+setwd(output_dir)
 write.csv(test,paste(Sys.Date(),'copitarsia summary.csv'))
 
 library(ggplot2)
@@ -459,7 +463,9 @@ p = ggplot(pest_summary, aes(x = factor(INSPECTION_YEAR), y = total_pests_sum, f
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 
-setwd(here::here('output','data'))
+output_dir <- here::here('.gitignored','output','data')
+if(!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
+setwd(output_dir)
 # Also save the plot as a high-quality PNG
 ggsave(paste0(base_filename, "_plot.png"), 
        plot = p, 

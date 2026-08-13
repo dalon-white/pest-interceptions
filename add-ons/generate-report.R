@@ -343,6 +343,11 @@ save_report <- function(report_content, base_filename, report_suffix = "_report"
   } else {
     output_file <- paste0(base_filename, ".html")
   }
+
+  output_dir <- dirname(output_file)
+  if (!output_dir %in% c(".", "") && !dir.exists(output_dir)) {
+    dir.create(output_dir, recursive = TRUE)
+  }
   
   # Write the report to file
   writeLines(report_content, output_file)

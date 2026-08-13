@@ -1,19 +1,19 @@
 ---
-title: "spodoptera spp."
+title: "test report on cotton from boll weevil countries"
 author: "Dalon White"
-date: "2025-12-09"
+date: "2026-01-05"
 output: html_document
 
 params:
   begin_date: NULL #NULL for all dates, otherwise "mm-dd-yyyy"
-  end_date: NULL #NULL for today, otherwise "mm-dd-yyyy"
-  
+  end_date: "today" #NULL for today, otherwise "mm-dd-yyyy"
   # Commodity taxonomy:
-  commodity_taxonomic_name: NULL #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
-  commodity_common_name: NULL #NULL or ["common name1", "common name2", "etc."]
-  
+  commodity_taxonomic_name: ["Gossypium", "Gossypium hirsutum", "Gossypium barbadense"] #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
+  commodity_common_name: ["Cotton"]
+
   # Country of origin:
-  origin_country: NULL #NULL or ["country1", "country2", "etc."]
+  # mexico, and all countries in central america and south america
+  origin_country: ["Mexico", "Belize", "Guatemala", "Honduras", "El Salvador", "Nicaragua", "Costa Rica", "Panama", "Colombia", "Bolivia", "Venezuela", "Ecuador", "Peru", "Brazil", "Paraguay", "Argentina", "Uruguay", "Guyana", "French Guiana", "Suriname", "Chile"] #NULL or ["country1", "country2", "etc."]
   
   # Pest taxonomy:
   KINGDOM: NULL #["Fungi"]
@@ -21,13 +21,19 @@ params:
   CLASS: NULL #["Insecta", "Class2", "etc."]
   ORDER: NULL #["Coleoptera", "Order2", "etc."]
   FAMILY: NULL #["Dermestidae", "Family2", "etc."]
-  GENUS: ["Spodoptera"] #["Genus2", "Genus3", "etc."]
+  GENUS: NULL #["Genus2", "Genus3", "etc."]
   SPECIES: NULL #["Granarium", "Species2", "etc."]
 
   # For the title of the file on save:
-  pest_nickname: ["armyworms"]
+  pest_nickname: ["boll weevil"]
   
 ---
+Question 1:
+" perhaps seeing if we can figure out how much cotton comes in from boll weevil countries? "
+
+Question 2:
+" commodities it (boll weevil) has been found on or ways it has hitchhiked "
+
 
 # If errors:
 If VS Code cannot knit, it cannot find your params; run in RStudio instead

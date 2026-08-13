@@ -1,0 +1,212 @@
+---
+title: "All pests on Chilean grape (with rachis)"
+author: "Dalon White"
+date: "2026-04-16"
+output: html_document
+
+params:
+  begin_date: "01-01-2011" #NULL for all dates, otherwise "mm-dd-yyyy"
+  end_date: "today" #NULL for today, otherwise "mm-dd-yyyy"
+  # Commodity taxonomy:
+  commodity_taxonomic_name: ["Vitis vinifera", "Vitis"]
+  commodity_common_name: ["grape", "grapes", "grape with rachis"]
+  
+  # Country of origin: Looking for pests on commodities from any country of origin
+  origin_country: ["Chile"]
+  
+  # Pest taxonomy: Looking for all pests intercepted on this commodity
+  KINGDOM: NULL #["Fungi"]
+  PHYLUM: NULL #["Phylum2", "Phylum3", "etc."]
+  CLASS: NULL #["Insecta", "Class2", "etc."]
+  ORDER: NULL #["Coleoptera", "Order2", "etc."]
+  FAMILY: NULL #["Dermestidae", "Family2", "etc."]
+  GENUS: NULL #["Genus2", "Genus3", "etc."]
+  SPECIES: NULL #["Granarium", "Species2", "etc."]
+  
+  # For the title of the file on save:
+  pest_nickname: NULL
+
+---
+
+# # If errors:
+# If VS Code cannot knit, it cannot find your params; run in RStudio instead
+
+# Load libraries and parameters
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#load packages
+pacman::p_load(DBI, odbc)
+pacman::p_load(tidyverse, lubridate, readr, stringr, stringdist)
+pacman::p_load(DT, htmlwidgets)
+
+```
+
+
+```{r load libraries and grab params}
+source(here::here("functions","filter_dates.R"))
+begin_date <- get_date_params(params=params)[1]
+end_date <- get_date_params(params=params)[2]
+
+```
+
+# Gather data from ARM
+## Connect to ARM
+```{r connect to ARM}  
+source(here::here("functions","connect_and_access_arm.R"))
+#connect to ARM
+db_conn <- connect_db()
+df_diag_results <- mvw_diagnostic_results()
+
+df_diag_results <- df_diag_results |>   
+  dplyr::select(
+    INSPECTION_DATE,
+    COMMODITY_DISPLAY_NAME,
+    COMMODITY_TAXONOMIC_DISPLAY_NAME,
+    INSPECTION_PATHWAY,
+    ORIGIN,
+    SUBCATEGORY,
+    INSPECTION_LOCATION_STATE_CODE,
+    DETERMINATION_TYPE,
+    any_of(starts_with("PEST_TAXONOMIC_")),
+    QUARANTINE_RECOMMENDATION,
+    DIAGNOSTIC_DETERMINATION_ID,
+    DIAGNOSTIC_REQUEST_ID,
+    any_of(c(starts_with("number_dead", ignore.case = TRUE),
+             starts_with("number_alive", ignore.case = TRUE),
+             starts_with("pest_", ignore.case = TRUE))
+    )
+  )
+
+df <- df_diag_results |> collect()
+```
+
+## Apply filters
+```{r apply filters}
+source(here::here("functions","filter_dates.R"))
+source(here::here("functions","filter_commodity.R"))
+source(here::here("functions","filter_country.R"))
+source(here::here("functions","filter_taxa.R"))
+results <- df |>
+  filter_dates() |>
+  # filter by commodity
+  filter_commodity(params = params) |>
+  # filter by country
+  filter_country(params = params) |>
+  # filter by pest taxonomy
+  filter_by_taxonomy(params = params, threshold = 0.99)
+
+results
+
+```
+
+
+## Write ARM data and Generate Report
+```{r write table and report}
+
+# Create a folder with name based on parameters
+dir_name <- paste0(
+  if(!is.null(params$pest_nickname)) (paste(params$pest_nickname, collapse="_")) else (paste("all pests")),
+  "_on_",
+  if(!(is.null(params$commodity_common_name) | is.null(params$commodity_taxonomic_name)))(paste(
+    if(!is.null(params$commodity_common_name)) (paste(params$commodity_common_name, collapse="_")),
+    if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_")))) else ("anything"),
+  "_from_",
+  if(!is.null(params$origin_country)) (paste(params$origin_country, collapse="_")) else ("anywhere"),
+  "_from_period_",
+  if(!is.null(params$begin_date)) (params$begin_date) else ("anytime"),
+  "_to_",
+  if(!is.null(params$end_date)) (params$end_date) else ("anytime")
+)
+if(!dir.exists(here::here('.gitignored','output','reports',dir_name))) dir.create(here::here('.gitignored','output','reports',dir_name), recursive = TRUE)
+
+# Generate base filename without extension
+base_filename <- paste0(
+  if(!is.null(params$pest_nickname)) (paste(params$pest_nickname, collapse="_")) else (paste("all pests")),
+  "_on_",
+  if(!(is.null(params$commodity_common_name) | is.null(params$commodity_taxonomic_name)))(paste(
+    if(!is.null(params$commodity_common_name)) (paste(params$commodity_common_name, collapse="_")),
+    if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_")))) else ("anything"),
+  "_from_",
+  if(!is.null(params$origin_country)) (paste(params$origin_country, collapse="_")) else ("anywhere"),
+  "_from_period_",
+  if(!is.null(params$begin_date)) (params$begin_date) else ("anytime"),
+  "_to_",
+  if(!is.null(params$end_date)) (params$end_date) else ("anytime")
+)
+
+# Create interactive data table
+dt <- datatable(results,
+                extensions = 'Buttons',
+                options = list(
+                  dom = 'Bfrtip',
+                  buttons = c('copy', 'csv', 'excel', 'pdf')
+                ))
+
+write.csv(results, file = paste0(here::here('.gitignored','output','reports',base_filename), "_data.csv"))
+
+
+# Save the interactive data table
+saveWidget(dt, file = paste0(here::here('.gitignored','output','reports',base_filename), "_data.html"), selfcontained = TRUE)
+# Source the generate-report.R file to get the function
+source(here::here("add-ons", "generate-report.R"))
+
+# Generate and save the report
+report_html <- generate_pest_report(
+  data = results,
+  params = params,
+  base_filename = base_filename,
+  include_plot = TRUE,
+  include_data_preview = TRUE
+)
+
+# Save the report to file
+report_file <- save_report(report_html, here::here('.gitignored','output','reports',base_filename))
+
+# Print information about saved files
+cat(paste0("\nFiles saved to folder: ", here::here('.gitignored','output','reports', dir_name, "\n")))
+cat(paste0("- Interactive data table: ", here::here('.gitignored','output','reports', base_filename), "_data.html\n"))
+cat(paste0("- Search report: ", report_file, "\n"))
+```
+
+# Plot diagnostic results
+```{r plot results}
+source(here::here('add-ons','plot-diagnostic-results.R'))
+
+diagnostic_results_summary = summarize_diagnostic_results(results,
+                                                          arrange_by = "n", #"origin" or "year"; anything else will be by total pests
+                                                          truncate_origins = FALSE,
+                                                          top_n_origins = 10,
+                                                          group_by_origin = FALSE,
+                                                          group_by_year = TRUE,
+                                                          group_by_commodities = FALSE,
+                                                          truncate_commodities = FALSE,
+                                                          top_n_commodities = 11,
+                                                          group_by_taxon = FALSE,
+                                                          truncate_taxon = FALSE,
+                                                          top_n_taxon = 10,
+                                                          group_by_pathway = TRUE,
+                                                          taxonomic_level_grouping = "genus")
+
+save_summary(data = diagnostic_results_summary,
+             base_filename = base_filename)
+
+
+
+
+save_plot(data = diagnostic_results_summary,
+          base_filename = paste0(base_filename,'_plot'),
+          plot_x = "COMMODITY_DISPLAY_NAME",
+          xlab = "Commodity",
+          plot_y = "total_pests",
+          ylab = "Total Pests",
+          plot_fill = "INSPECTION_PATHWAY",
+          fill_lab = "Pathway",
+          plot_title = "Pest Interceptions by commodity and pathway",
+          plot_subtitle = "Summary of pest interceptions",
+          width = 10,
+          height = 7,
+          dpi = 300)
+
+
+```

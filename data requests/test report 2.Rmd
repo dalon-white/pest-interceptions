@@ -150,7 +150,9 @@ print_diagnostic_results(parsed_determinations_data = df_diagnostic_results)
 
 ## Write ARM data and Generate Report
 ```{r write table and report}
-setwd(here::here('output','reports'))
+output_dir <- here::here('.gitignored','output','reports')
+if(!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
+setwd(output_dir)
 
 # # Create a folder with name based on parameters
 # dir_name <- paste0(

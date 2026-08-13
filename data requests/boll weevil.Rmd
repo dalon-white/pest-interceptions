@@ -1,19 +1,19 @@
 ---
-title: "spodoptera spp."
+title: "boll weevil"
 author: "Dalon White"
-date: "2025-12-09"
+date: "2026-01-05"
 output: html_document
 
 params:
   begin_date: NULL #NULL for all dates, otherwise "mm-dd-yyyy"
-  end_date: NULL #NULL for today, otherwise "mm-dd-yyyy"
-  
+  end_date: "today" #NULL for today, otherwise "mm-dd-yyyy"
   # Commodity taxonomy:
-  commodity_taxonomic_name: NULL #NULL or ["taxonomic name1", "taxonomic name2", "etc."]
-  commodity_common_name: NULL #NULL or ["common name1", "common name2", "etc."]
+  commodity_taxonomic_name: NULL
+  commodity_common_name: NULL
   
   # Country of origin:
-  origin_country: NULL #NULL or ["country1", "country2", "etc."]
+  # mexico, and all countries in central america and south america
+  origin_country: NULL
   
   # Pest taxonomy:
   KINGDOM: NULL #["Fungi"]
@@ -21,16 +21,22 @@ params:
   CLASS: NULL #["Insecta", "Class2", "etc."]
   ORDER: NULL #["Coleoptera", "Order2", "etc."]
   FAMILY: NULL #["Dermestidae", "Family2", "etc."]
-  GENUS: ["Spodoptera"] #["Genus2", "Genus3", "etc."]
-  SPECIES: NULL #["Granarium", "Species2", "etc."]
-
-  # For the title of the file on save:
-  pest_nickname: ["armyworms"]
+  GENUS: ["Anthonomus"] #["Genus2", "Genus3", "etc."]
+  SPECIES: ["Grandis"] #["Granarium", "Species2", "etc."]
   
----
+  # For the title of the file on save:
+  pest_nickname: ["boll weevil"]
 
-# If errors:
-If VS Code cannot knit, it cannot find your params; run in RStudio instead
+---
+#   Question 1:
+#   " perhaps seeing if we can figure out how much cotton comes in from boll weevil countries? "
+#
+# Question 2:
+#   " commodities it (boll weevil) has been found on or ways it has hitchhiked "
+#
+#
+# # If errors:
+# If VS Code cannot knit, it cannot find your params; run in RStudio instead
 
 # Load libraries and parameters
 ```{r setup, include=FALSE}
@@ -74,8 +80,8 @@ df_diag_results <- df_diag_results |>
     DIAGNOSTIC_DETERMINATION_ID,
     DIAGNOSTIC_REQUEST_ID,
     any_of(c(starts_with("number_dead", ignore.case = TRUE),
-           starts_with("number_alive", ignore.case = TRUE),
-           starts_with("pest_", ignore.case = TRUE))
+             starts_with("number_alive", ignore.case = TRUE),
+             starts_with("pest_", ignore.case = TRUE))
     )
   )
 
@@ -89,13 +95,13 @@ source(here::here("functions","filter_commodity.R"))
 source(here::here("functions","filter_country.R"))
 source(here::here("functions","filter_taxa.R"))
 results <- df |>
-    filter_dates() |>
-    # filter by commodity
-    filter_commodity(params = params) |>
-    # filter by country
-    filter_country(params = params) |>
-    # filter by pest taxonomy
-    filter_by_taxonomy(params = params, threshold = 0.99)
+  filter_dates() |>
+  # filter by commodity
+  filter_commodity(params = params) |>
+  # filter by country
+  filter_country(params = params) |>
+  # filter by pest taxonomy
+  filter_by_taxonomy(params = params, threshold = 0.99)
 
 results
 #No matches found
@@ -179,19 +185,19 @@ cat(paste0("- Search report: ", report_file, "\n"))
 source(here::here('add-ons','plot-diagnostic-results.R'))
 
 diagnostic_results_summary = summarize_diagnostic_results(results,
-                                       arrange_by = "n", #"origin" or "year"; anything else will be by total pests
-                                       truncate_origins = FALSE,
-                                       top_n_origins = 10,
-                                       group_by_origin = FALSE,
-                                       group_by_year = FALSE,
-                                       group_by_commodities = TRUE,
-                                       truncate_commodities = TRUE,
-                                       top_n_commodities = 11,
-                                       group_by_taxon = FALSE,
-                                       truncate_taxon = FALSE,
-                                       top_n_taxon = 10,
-                                       group_by_pathway = TRUE,
-                                       taxonomic_level_grouping = "genus")
+                                                          arrange_by = "n", #"origin" or "year"; anything else will be by total pests
+                                                          truncate_origins = FALSE,
+                                                          top_n_origins = 10,
+                                                          group_by_origin = FALSE,
+                                                          group_by_year = FALSE,
+                                                          group_by_commodities = TRUE,
+                                                          truncate_commodities = TRUE,
+                                                          top_n_commodities = 11,
+                                                          group_by_taxon = FALSE,
+                                                          truncate_taxon = FALSE,
+                                                          top_n_taxon = 10,
+                                                          group_by_pathway = TRUE,
+                                                          taxonomic_level_grouping = "genus")
 
 save_summary(data = diagnostic_results_summary,
              base_filename = base_filename)
@@ -200,18 +206,18 @@ save_summary(data = diagnostic_results_summary,
 
 
 save_plot(data = diagnostic_results_summary,
-                      base_filename = paste0(base_filename,'_plot'),
-                      plot_x = "COMMODITY_DISPLAY_NAME",
-                      xlab = "Commodity",
-                      plot_y = "total_pests",
-                      ylab = "Total Pests",
-                      plot_fill = "INSPECTION_PATHWAY",
-                      fill_lab = "Pathway",
-                      plot_title = "Pest Interceptions by commodity and pathway",
-                      plot_subtitle = "Summary of pest interceptions",
-                      width = 10,
-                      height = 7,
-                      dpi = 300)
+          base_filename = paste0(base_filename,'_plot'),
+          plot_x = "COMMODITY_DISPLAY_NAME",
+          xlab = "Commodity",
+          plot_y = "total_pests",
+          ylab = "Total Pests",
+          plot_fill = "INSPECTION_PATHWAY",
+          fill_lab = "Pathway",
+          plot_title = "Pest Interceptions by commodity and pathway",
+          plot_subtitle = "Summary of pest interceptions",
+          width = 10,
+          height = 7,
+          dpi = 300)
 
 
 ```

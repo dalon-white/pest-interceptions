@@ -58,7 +58,7 @@ summarize_diagnostic_results <- function(data,
   # Create a copy to avoid modifying the original data
   working_data <- data
   
-  if(!is.na(taxonomic_level_grouping)){
+  if(!is.null(taxonomic_level_grouping)){
     #Use the taxonomic level specified to find the column
     # For instance taxonomic_level_grouping = "GENUS" would look for "PEST_TAXONOMY_GENUS"
     taxon_col <- paste0("PEST_TAXONOMY_", toupper(taxonomic_level_grouping))
@@ -212,16 +212,26 @@ summarize_diagnostic_results <- function(data,
 #' Save summary data to a CSV file
 #' @param data The data frame to save
 #' @param base_filename The base filename to use for the output file
-save_summary <- function(data, base_filename) {
+save_summary <- function(data, base_filename, output_dir = here::here(".gitignored", "output", "data")) {
   if (missing(base_filename)) {
     base_filename <- paste0("diagnostic_results_summary_", format(Sys.Date(), "%Y%m%d"))
   }
+
+  output_file <- paste0(base_filename, "_summary.csv")
+  if (dirname(output_file) %in% c(".", "")) {
+    output_file <- file.path(output_dir, output_file)
+  }
+
+  output_parent <- dirname(output_file)
+  if (!dir.exists(output_parent)) {
+    dir.create(output_parent, recursive = TRUE)
+  }
   
   # Save the summary data to a CSV file
-  write.csv(data, paste0(base_filename, "_summary.csv"), row.names = FALSE)
+  write.csv(data, output_file, row.names = FALSE)
   
   # Return the filename (invisible)
-  invisible(paste0(base_filename, "_summary.csv"))
+  invisible(output_file)
 }
 
 #' Create and save a plot of diagnostic results
@@ -240,6 +250,7 @@ save_summary <- function(data, base_filename) {
 #' @param dpi The resolution of the output plot in dots per inch
 save_plot <- function(data,
                       base_filename = NULL,
+                      output_dir = here::here(".gitignored", "output", "data"),
                       plot_x = "INSPECTION_YEAR",
                       xlab = "Year",
                       plot_y = "total_pests",
@@ -259,6 +270,16 @@ save_plot <- function(data,
   
   if (is.null(base_filename)) {
     base_filename <- paste0("diagnostic_results_plot_", format(Sys.Date(), "%Y%m%d"))
+  }
+
+  output_file <- paste0(base_filename, "_plot.png")
+  if (dirname(output_file) %in% c(".", "")) {
+    output_file <- file.path(output_dir, output_file)
+  }
+
+  output_parent <- dirname(output_file)
+  if (!dir.exists(output_parent)) {
+    dir.create(output_parent, recursive = TRUE)
   }
   
   # Check if required columns exist
@@ -321,7 +342,7 @@ save_plot <- function(data,
     )
   
   # Save the plot
-  ggsave(paste0(base_filename, "_plot.png"), 
+  ggsave(output_file, 
          plot = p, 
          width = width, 
          height = height, 
