@@ -20,6 +20,7 @@ SELECT DISTINCT
       ,[INTERCEPT_DT]
       ,[TIME_ID]
       ,[FINAL_DETERM_ID]
+      ,[DETERMINATION_TYPE]
       ,[INTERCEPT_NUM]
       ,[PORT_REFERENCE_NUMBER]
       ,[PATHWAY]
@@ -114,14 +115,12 @@ normalize_aqas_intercepts <- function(data) {
       SOURCE_RECORD_ID = as.character(.data$INTERCEPT_ID),
       INSPECTION_DATE = as.Date(.data$INTERCEPT_DT),
       COMMODITY_DISPLAY_NAME = dplyr::coalesce(.data$INSP_HOST, .data$BIO_HOST),
-      COMMODITY_TAXONOMIC_DISPLAY_NAME = dplyr::coalesce(.data$INSP_GENUS, .data$BIO_GENUS),
+      COMMODITY_TAXONOMIC_DISPLAY_NAME = .data$INSP_HOST,
       INSPECTION_PATHWAY = .data$PATHWAY,
       SUBCATEGORY = .data$PEST_TYPE,
-      INSPECTION_LOCATION_STATE_CODE = as.character(.data$LOCATION_ID),
-      DETERMINATION_TYPE = as.character(.data$FINAL_DETERM_ID),
+      DETERMINATION_TYPE = as.character(.data$DETERMINATION_TYPE),
       QUARANTINE_RECOMMENDATION = .data$QUARANTINE_STATUS,
       DIAGNOSTIC_DETERMINATION_ID = as.character(.data$FINAL_DETERM_ID),
-      DIAGNOSTIC_REQUEST_ID = as.character(.data$INTERCEPT_ID),
       PEST_DISPLAY_NAME = .data$PEST,
       PEST_TAXONOMIC_NAME = dplyr::case_when(
         !is.na(.data$GENUS) & !is.na(.data$SPECIES) ~ paste(.data$GENUS, .data$SPECIES),
@@ -147,4 +146,72 @@ normalize_aqas_intercepts <- function(data) {
       number_dead_egg = .data$DEAD_EGG,
       number_dead_cyst = .data$DEAD_CYST
     )
+}
+
+
+bind_aqas_arm_results <- function(arm_data, aqas_data, verbose = TRUE) {
+  coerce_to_date <- function(value) {
+    if (inherits(value, "Date")) {
+      return(value)
+    }
+
+    as.Date(as.character(value), tryFormats = c("%m-%d-%Y", "%Y-%m-%d", "%d-%m-%Y"))
+  }
+
+  matching_columns <- intersect(names(arm_data), names(aqas_data))
+  arm_only_columns <- setdiff(names(arm_data), names(aqas_data))
+  aqas_only_columns <- setdiff(names(aqas_data), names(arm_data))
+
+  if (isTRUE(verbose)) {
+    print("Common columns between both datasets:")
+    print(matching_columns)
+
+    print("Columns only in ARM data:")
+    print(arm_only_columns)
+
+    print("Columns only in AQAS data:")
+    print(aqas_only_columns)
+  }
+
+  column_types <- data.frame(
+    column_name = matching_columns,
+    arm_type = vapply(matching_columns, function(col) class(arm_data[[col]])[1], character(1)),
+    aqas_type = vapply(matching_columns, function(col) class(aqas_data[[col]])[1], character(1)),
+    stringsAsFactors = FALSE
+  )
+
+  mismatched_columns <- column_types[column_types$arm_type != column_types$aqas_type, ]
+
+  if (isTRUE(verbose)) {
+    print("Columns with mismatched types:")
+    print(mismatched_columns)
+  }
+
+  for (i in seq_len(nrow(mismatched_columns))) {
+    col <- mismatched_columns$column_name[i]
+    arm_col <- arm_data[[col]]
+    aqas_col <- aqas_data[[col]]
+
+    if (inherits(arm_col, "Date") || inherits(aqas_col, "Date")) {
+      arm_data[[col]] <- coerce_to_date(arm_col)
+      aqas_data[[col]] <- coerce_to_date(aqas_col)
+    } else if (inherits(arm_col, "POSIXt") || inherits(aqas_col, "POSIXt")) {
+      arm_data[[col]] <- as.POSIXct(arm_col)
+      aqas_data[[col]] <- as.POSIXct(aqas_col)
+    } else if (is.character(arm_col) || is.character(aqas_col) || is.factor(arm_col) || is.factor(aqas_col)) {
+      arm_data[[col]] <- as.character(arm_col)
+      aqas_data[[col]] <- as.character(aqas_col)
+    } else if (inherits(arm_col, "integer64") || inherits(aqas_col, "integer64")) {
+      arm_data[[col]] <- as.numeric(arm_col)
+      aqas_data[[col]] <- as.numeric(aqas_col)
+    } else if (is.numeric(arm_col) || is.numeric(aqas_col)) {
+      arm_data[[col]] <- as.numeric(arm_col)
+      aqas_data[[col]] <- as.numeric(aqas_col)
+    } else if (is.logical(arm_col) || is.logical(aqas_col)) {
+      arm_data[[col]] <- as.logical(arm_col)
+      aqas_data[[col]] <- as.logical(aqas_col)
+    }
+  }
+
+  dplyr::bind_rows(arm_data, aqas_data)
 }

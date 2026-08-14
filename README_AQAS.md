@@ -46,14 +46,12 @@ The table below shows the shared columns added for reporting and filtering, and 
 | `SOURCE_RECORD_ID` | `as.character(INTERCEPT_ID)` | Preserves the AQAS source record identifier. |
 | `INSPECTION_DATE` | `as.Date(INTERCEPT_DT)` | Used by `filter_dates()` and year summaries. |
 | `COMMODITY_DISPLAY_NAME` | `coalesce(INSP_HOST, BIO_HOST)` | Uses inspected host first, then biological host if inspected host is missing. |
-| `COMMODITY_TAXONOMIC_DISPLAY_NAME` | `coalesce(INSP_GENUS, BIO_GENUS)` | Uses inspected genus first, then biological genus if inspected genus is missing. |
+| `COMMODITY_TAXONOMIC_DISPLAY_NAME` | `INSP_HOST` | AQAS inspected host is used for commodity taxonomic matching; `INSP_GENUS` and `BIO_GENUS` are not used for this shared field. |
 | `INSPECTION_PATHWAY` | `PATHWAY` | Used by pathway summaries and plots. |
 | `SUBCATEGORY` | `PEST_TYPE` | Carries AQAS pest type into the shared result set. |
-| `INSPECTION_LOCATION_STATE_CODE` | `as.character(LOCATION_ID)` | AQAS has a location ID rather than the same ARM state-code field. |
-| `DETERMINATION_TYPE` | `as.character(FINAL_DETERM_ID)` | AQAS final determination identifier is used as the nearest shared value. |
+| `DETERMINATION_TYPE` | `as.character(DETERMINATION_TYPE)` | Uses the AQAS determination type field directly, matching the ARM column by meaning. |
 | `QUARANTINE_RECOMMENDATION` | `QUARANTINE_STATUS` | Carries AQAS quarantine status into the shared result set. |
 | `DIAGNOSTIC_DETERMINATION_ID` | `as.character(FINAL_DETERM_ID)` | Normalized to character so ARM and AQAS rows can be combined. |
-| `DIAGNOSTIC_REQUEST_ID` | `as.character(INTERCEPT_ID)` | Normalized to character so ARM and AQAS rows can be combined. |
 | `PEST_DISPLAY_NAME` | `PEST` | AQAS pest display text. |
 | `PEST_TAXONOMIC_NAME` | `GENUS` + `SPECIES`, else `GENUS`, else `PEST` | Builds a taxonomic display value when structured fields are available. |
 | `PEST_TAXON_SIMPLE_NAME` | `coalesce(SPECIES, GENUS, PEST)` | Uses the most specific available AQAS pest name component. |
@@ -99,14 +97,17 @@ aqas_results <- df_aqas |>
   filter_country(params = params) |>
   filter_by_taxonomy(params = params, threshold = 0.99)
 
-# ARM data should also include DATA_SOURCE and compatible ID types before binding.
-results <- bind_rows(arm_results, aqas_results)
+# Combine while reconciling type differences in shared columns.
+results <- bind_aqas_arm_results(arm_results, aqas_results)
 ```
+
+AQAS fields that are not equivalent to ARM fields remain separate after binding. For example, AQAS `LOCATION_ID` is not written into ARM `INSPECTION_LOCATION_STATE_CODE`, and AQAS `INTERCEPT_ID` is not written into ARM `DIAGNOSTIC_REQUEST_ID`.
 
 # Current Caveats
 
 - The mapping is intentionally limited to columns needed by the current filters, summaries, plots, and reports.
 - AQAS does not currently provide normalized kingdom, phylum, or class fields through this helper, so those shared columns are set to `NA_character_`.
-- `INSPECTION_LOCATION_STATE_CODE` is populated with AQAS `LOCATION_ID`, which is not semantically identical to ARM's state-code field.
+- AQAS `LOCATION_ID` remains separate from ARM `INSPECTION_LOCATION_STATE_CODE` because the fields are not semantically identical.
+- AQAS `INTERCEPT_ID` remains separate from ARM `DIAGNOSTIC_REQUEST_ID` because the fields are not semantically identical.
 - The current approach keeps the original AQAS columns in the output, so users can trace normalized fields back to the source data.
 - A formal reference table or crosswalk may be useful if this project needs broader field harmonization or more source databases.

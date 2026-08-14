@@ -118,7 +118,7 @@ dir_name <- paste0(
   "_to_",
   if(!is.null(params$end_date)) (params$end_date) else ("anytime")
 )
-if(!dir.exists(here::here('.gitignored','output','reports',dir_name))) dir.create(here::here('.gitignored','output','reports',dir_name), recursive = TRUE)
+if(!dir.exists(here::here('reports',dir_name))) dir.create(here::here('reports',dir_name), recursive = TRUE)
 
 # Generate base filename without extension
 base_filename <- paste0(
@@ -143,11 +143,11 @@ dt <- datatable(results,
                   buttons = c('copy', 'csv', 'excel', 'pdf')
                 ))
 
-write.csv(results, file = paste0(here::here('.gitignored','output','reports',base_filename), "_data.csv"))
+write.csv(results, file = paste0(here::here('reports',base_filename), "_data.csv"))
 
 
 # Save the interactive data table
-saveWidget(dt, file = paste0(here::here('.gitignored','output','reports',base_filename), "_data.html"), selfcontained = TRUE)
+saveWidget(dt, file = paste0(here::here('reports',base_filename), "_data.html"), selfcontained = TRUE)
 # Source the generate-report.R file to get the function
 source(here::here("add-ons", "generate-report.R"))
 
@@ -161,11 +161,11 @@ report_html <- generate_pest_report(
 )
 
 # Save the report to file
-report_file <- save_report(report_html, here::here('.gitignored','output','reports',base_filename))
+report_file <- save_report(report_html, here::here('reports',base_filename))
 
 # Print information about saved files
-cat(paste0("\nFiles saved to folder: ", here::here('.gitignored','output','reports', dir_name, "\n")))
-cat(paste0("- Interactive data table: ", here::here('.gitignored','output','reports', base_filename), "_data.html\n"))
+cat(paste0("\nFiles saved to folder: ", here::here('reports', dir_name, "\n")))
+cat(paste0("- Interactive data table: ", here::here('reports', base_filename), "_data.html\n"))
 cat(paste0("- Search report: ", report_file, "\n"))
 ```
 

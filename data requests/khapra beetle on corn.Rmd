@@ -365,7 +365,7 @@ print(head(df_diagnostic_results))
 
 ## Write ARM data
 ```{r write table}
-output_dir <- here::here('.gitignored','output','data')
+output_dir <- here::here('outputs')
 if(!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 setwd(output_dir)
 

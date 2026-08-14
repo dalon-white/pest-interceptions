@@ -212,7 +212,7 @@ summarize_diagnostic_results <- function(data,
 #' Save summary data to a CSV file
 #' @param data The data frame to save
 #' @param base_filename The base filename to use for the output file
-save_summary <- function(data, base_filename, output_dir = here::here(".gitignored", "output", "data")) {
+save_summary <- function(data, base_filename, output_dir = here::here("outputs")) {
   if (missing(base_filename)) {
     base_filename <- paste0("diagnostic_results_summary_", format(Sys.Date(), "%Y%m%d"))
   }
@@ -250,7 +250,7 @@ save_summary <- function(data, base_filename, output_dir = here::here(".gitignor
 #' @param dpi The resolution of the output plot in dots per inch
 save_plot <- function(data,
                       base_filename = NULL,
-                      output_dir = here::here(".gitignored", "output", "data"),
+                      output_dir = here::here("outputs"),
                       plot_x = "INSPECTION_YEAR",
                       xlab = "Year",
                       plot_y = "total_pests",

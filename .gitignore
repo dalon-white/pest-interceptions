@@ -4,11 +4,10 @@
 .Ruserdata
 
 # Generated analyst outputs
+/outputs/
+/reports/
 /output/
-/.gitignored/output/data/*
-!/.gitignored/output/data/.gitkeep
-/.gitignored/output/reports/*
-!/.gitignored/output/reports/.gitkeep
+/.gitignored/
 
 # Generated files that may be created from data request Rmds
 /data requests/**/*.csv

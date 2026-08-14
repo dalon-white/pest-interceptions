@@ -9,7 +9,7 @@ params:
   end_date: "today" #NULL for today, otherwise "mm-dd-yyyy"
   # Commodity taxonomy:
   commodity_taxonomic_name: ["Fortunella","Citrus japonica","Citrus hindsii", "Citrus crassifolia","Citrus margarita","Citrus obovata","Citrus swinglei"]
-  commodity_common_name: ["kumquat", "kumquats"]
+  commodity_common_name: ["kumquat"]
   
   # Country of origin: Looking for pests on commodities from any country of origin
   origin_country: NULL
@@ -130,7 +130,7 @@ aqas_results <- df_aqas |>
   # filter by pest taxonomy
   filter_by_taxonomy(params = params, threshold = 0.99)
 
-results <- bind_rows(arm_results, aqas_results)
+results <- bind_aqas_arm_results(arm_results, aqas_results)
 
 results
 
@@ -144,9 +144,17 @@ results
 dir_name <- paste0(
   if(!is.null(params$pest_nickname)) (paste(params$pest_nickname, collapse="_")) else (paste("all pests")),
   "_on_",
-  if(!(is.null(params$commodity_common_name) | is.null(params$commodity_taxonomic_name)))(paste(
-    if(!is.null(params$commodity_common_name)) (paste(params$commodity_common_name, collapse="_")),
-    if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_")))) else ("anything"),
+  #paste commodity common name if given
+  if(!is.null(params$commodity_common_name)) (paste(
+    params$commodity_common_name))
+    #otherwise
+  else
+    #paste commodity taxonomic name if given
+    if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_"))
+    #otherwise
+    else
+    #paste anything to denote no commodity filter
+    ("anything"),
   "_from_",
   if(!is.null(params$origin_country)) (paste(origin_country, collapse="_")) else ("anywhere"),
   "_from_period_",
@@ -154,15 +162,23 @@ dir_name <- paste0(
   "_to_",
   if(!is.null(params$end_date)) (params$end_date) else ("anytime")
 )
-if(!dir.exists(here::here('.gitignored','output','reports',dir_name))) dir.create(here::here('.gitignored','output','reports',dir_name), recursive = TRUE)
+if(!dir.exists(here::here('reports',dir_name))) dir.create(here::here('reports',dir_name), recursive = TRUE)
 
 # Generate base filename without extension
 base_filename <- paste0(
   if(!is.null(params$pest_nickname)) (paste(params$pest_nickname, collapse="_")) else (paste("all pests")),
   "_on_",
-  if(!(is.null(params$commodity_common_name) | is.null(params$commodity_taxonomic_name)))(paste(
-    if(!is.null(params$commodity_common_name)) (paste(params$commodity_common_name, collapse="_")),
-    if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_")))) else ("anything"),
+  #paste commodity common name if given
+  if(!is.null(params$commodity_common_name)) (paste(
+    params$commodity_common_name))
+    #otherwise
+  else
+    #paste commodity taxonomic name if given
+    if(!is.null(params$commodity_taxonomic_name)) (paste(params$commodity_taxonomic_name, collapse="_"))
+    #otherwise
+    else
+    #paste anything to denote no commodity filter
+    ("anything"),
   "_from_",
   if(!is.null(params$origin_country)) (paste(origin_country, collapse="_")) else ("anywhere"),
   "_from_period_",
@@ -179,11 +195,11 @@ dt <- datatable(results,
                   buttons = c('copy', 'csv', 'excel', 'pdf')
                 ))
 
-write.csv(results, file = paste0(here::here('.gitignored','output','reports',base_filename), "_data.csv"))
+write.csv(results, file = paste0(here::here('reports',base_filename), "_data.csv"))
 
 
 # Save the interactive data table
-saveWidget(dt, file = paste0(here::here('.gitignored','output','reports',base_filename), "_data.html"), selfcontained = TRUE)
+saveWidget(dt, file = paste0(here::here('reports',base_filename), "_data.html"), selfcontained = TRUE)
 # Source the generate-report.R file to get the function
 source(here::here("add-ons", "generate-report.R"))
 
@@ -197,11 +213,11 @@ report_html <- generate_pest_report(
 )
 
 # Save the report to file
-report_file <- save_report(report_html, here::here('.gitignored','output','reports',base_filename))
+report_file <- save_report(report_html, here::here('reports',base_filename))
 
 # Print information about saved files
-cat(paste0("\nFiles saved to folder: ", here::here('.gitignored','output','reports', dir_name, "\n")))
-cat(paste0("- Interactive data table: ", here::here('.gitignored','output','reports', base_filename), "_data.html\n"))
+cat(paste0("\nFiles saved to folder: ", here::here('reports', dir_name, "\n")))
+cat(paste0("- Interactive data table: ", here::here('reports', base_filename), "_data.html\n"))
 cat(paste0("- Search report: ", report_file, "\n"))
 ```
 
