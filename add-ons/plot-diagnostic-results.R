@@ -212,7 +212,7 @@ summarize_diagnostic_results <- function(data,
 #' Save summary data to a CSV file
 #' @param data The data frame to save
 #' @param base_filename The base filename to use for the output file
-save_summary <- function(data, base_filename, output_dir = here::here("outputs")) {
+save_summary <- function(data, base_filename, output_dir = here::here("reports")) {
   if (missing(base_filename)) {
     base_filename <- paste0("diagnostic_results_summary_", format(Sys.Date(), "%Y%m%d"))
   }
@@ -250,7 +250,7 @@ save_summary <- function(data, base_filename, output_dir = here::here("outputs")
 #' @param dpi The resolution of the output plot in dots per inch
 save_plot <- function(data,
                       base_filename = NULL,
-                      output_dir = here::here("outputs"),
+                      output_dir = here::here("reports"),
                       plot_x = "INSPECTION_YEAR",
                       xlab = "Year",
                       plot_y = "total_pests",
@@ -272,7 +272,7 @@ save_plot <- function(data,
     base_filename <- paste0("diagnostic_results_plot_", format(Sys.Date(), "%Y%m%d"))
   }
 
-  output_file <- paste0(base_filename, "_plot.png")
+  output_file <- paste0(base_filename, "_graph.png")
   if (dirname(output_file) %in% c(".", "")) {
     output_file <- file.path(output_dir, output_file)
   }

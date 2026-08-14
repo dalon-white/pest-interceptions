@@ -18,6 +18,8 @@ source(here::here("add-ons","load-yaml-header-in-vscode.R"))
 #' @param include_methodology Whether to include a section describing the methodology (default: TRUE)
 #' @param custom_title Custom title for the report (default: uses document title or "Pest Interceptions Report")
 #' @param additional_content Any additional HTML content to include in the report
+#' @param data_file Relative path to the interactive data file linked from the report
+#' @param plot_file Relative path to the graph file linked from the report
 #'
 #' @return HTML content as a string
 #' @export
@@ -31,7 +33,9 @@ generate_pest_report <- function(
   include_parameters = TRUE,
   include_methodology = TRUE,
   custom_title = NULL,
-  additional_content = NULL
+  additional_content = NULL,
+  data_file = NULL,
+  plot_file = NULL
 ) {
   # Load necessary libraries
   if (!requireNamespace("htmltools", quietly = TRUE)) {
@@ -56,6 +60,14 @@ generate_pest_report <- function(
     
     # Add date to filename
     base_filename <- paste0(title_for_filename, "_", format(Sys.Date(), "%Y%m%d"))
+  }
+
+  if (is.null(data_file)) {
+    data_file <- paste0(base_filename, "_data.html")
+  }
+
+  if (is.null(plot_file)) {
+    plot_file <- paste0(base_filename, "_graph.png")
   }
 
   source_label <- "ARM"
@@ -260,14 +272,14 @@ generate_pest_report <- function(
                " ultimate identifications matching the criteria.")),
                
         # Add links to any generated plot files
-        if (include_plot && file.exists(paste0(base_filename, "_plot.png"))) {
+        if (include_plot && !is.null(plot_file)) {
           tags$div(
             tags$h3("Visualizations"),
             tags$p("The following visualizations were generated from the data:"),
             tags$ul(
-              tags$li(tags$a(href = paste0(base_filename, "_plot.png"), "Visualization Plot"))
+              tags$li(tags$a(href = plot_file, "Visualization Plot"))
             ),
-            tags$img(src = paste0(base_filename, "_plot.png"), 
+            tags$img(src = plot_file,
                    alt = "Pest Interception Visualization", 
                    style = "max-width: 600px; margin: 20px 0;")
           )
@@ -307,7 +319,7 @@ generate_pest_report <- function(
         tags$h2("Accessing the Data"),
         tags$p(
           "The complete interactive dataset can be accessed ", 
-          tags$a(href = paste0(base_filename, "_data.html"), "here"), "."
+          tags$a(href = data_file, "here"), "."
         ),
         tags$p("The interactive data viewer provides options to copy, download as CSV, Excel, or PDF using the buttons at the top of the table.")
       ),
