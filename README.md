@@ -24,6 +24,9 @@ The script can be sourced using souce() and help(function_name) or ?function_nam
 ### Access the data
 The data will be saved in a folder within the `reports` folder in the root directory of this repository. An individual folder will have both a CSV and report file. The naming structure reflects the pest, origin countries, time frame, and commodity/host plant.
 
+### Access older AQAS data
+Older AQAS interception records are available through `functions/connect_and_access_aqas.R`. Source that file, call `aqas_intercepts()` to retrieve the SQL Server table with reformatted remarks, then call `normalize_aqas_intercepts()` after `collect()` so the AQAS rows use the same report-friendly columns as ARM results. Request files can then reuse the existing date, commodity, country, and taxonomy filters.
+
 ### Share the data
 Once the new file is saved, create a pull/push request to this repository
 Share the files over sharepoint or point to the github repository with the data available

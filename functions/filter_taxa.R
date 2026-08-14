@@ -1,6 +1,7 @@
 filter_by_taxonomy <- function(filtered_data, params, threshold = 0.9) {
-  # Extract names of non-NULL taxonomy parameters
-  non_null_params <- names(params)[!sapply(params, is.null)]
+  taxonomy_levels <- c("KINGDOM", "PHYLUM", "CLASS", "ORDER", "FAMILY", "GENUS", "SPECIES")
+  taxonomy_params <- params[intersect(taxonomy_levels, names(params))]
+  non_null_params <- names(taxonomy_params)[!sapply(taxonomy_params, is.null)]
   
   # If there are no non-NULL parameters, return the original data
   if (length(non_null_params) == 0) {
@@ -15,7 +16,7 @@ filter_by_taxonomy <- function(filtered_data, params, threshold = 0.9) {
     # Check if the column exists in filtered_data
     if (column_name %in% colnames(filtered_data)) {
       # Get the values to filter by
-      filter_values <- params[[param]]
+      filter_values <- taxonomy_params[[param]]
       
       # Create empty result set to collect matches
       level_matches <- data.frame()
@@ -28,7 +29,9 @@ filter_by_taxonomy <- function(filtered_data, params, threshold = 0.9) {
             similarity = sapply(
               .data[[column_name]], 
               function(x) {
-                if (is.na(x)) return(0)
+                if (is.na(x) || is.na(param_value)) return(0)
+                x <- as.character(x)
+                param_value <- as.character(param_value)
                 1 - stringdist(tolower(x), tolower(param_value), method = "jw") / 
                   max(nchar(x), nchar(param_value))
               }

@@ -25,16 +25,16 @@ if (!is.null(params$commodity_common_name) || !is.null(params$commodity_taxonomi
   # Build the filter dynamically based on available patterns
   if (has_common_pattern && has_taxonomic_pattern) {
     data <- data |> filter(
-      str_detect(COMMODITY_DISPLAY_NAME, common_pattern) |
-      str_detect(COMMODITY_TAXONOMIC_DISPLAY_NAME, taxonomic_pattern)
+      str_detect(COMMODITY_DISPLAY_NAME, regex(common_pattern, ignore_case = TRUE)) |
+      str_detect(COMMODITY_TAXONOMIC_DISPLAY_NAME, regex(taxonomic_pattern, ignore_case = TRUE))
     )
   } else if (has_common_pattern) {
     data <- data |> filter(
-      str_detect(COMMODITY_DISPLAY_NAME, common_pattern)
+      str_detect(COMMODITY_DISPLAY_NAME, regex(common_pattern, ignore_case = TRUE))
     )
   } else if (has_taxonomic_pattern) {
     data <- data |> filter(
-      str_detect(COMMODITY_TAXONOMIC_DISPLAY_NAME, taxonomic_pattern)
+      str_detect(COMMODITY_TAXONOMIC_DISPLAY_NAME, regex(taxonomic_pattern, ignore_case = TRUE))
     )
   }
 }

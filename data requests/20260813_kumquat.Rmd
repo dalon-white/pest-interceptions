@@ -26,6 +26,9 @@ params:
   # For the title of the file on save:
   pest_nickname: NULL
 
+  # Older AQAS data source:
+  include_aqas: TRUE
+
 ---
 
 # # If errors:
@@ -45,8 +48,8 @@ pacman::p_load(DT, htmlwidgets)
 
 ```{r load libraries and grab params}
 source(here::here("functions","filter_dates.R"))
-begin_date <- get_date_params(params=params)[1]
-end_date <- get_date_params(params=params)[2]
+begin_date <- get_date_params(params=params)[[1]]
+end_date <- get_date_params(params=params)[[2]]
 
 ```
 
@@ -79,6 +82,28 @@ df_diag_results <- df_diag_results |>
   )
 
 df <- df_diag_results |> collect()
+df <- df |>
+  mutate(
+    DATA_SOURCE = "ARM",
+    SOURCE_RECORD_ID = as.character(DIAGNOSTIC_DETERMINATION_ID),
+    DIAGNOSTIC_DETERMINATION_ID = as.character(DIAGNOSTIC_DETERMINATION_ID),
+    DIAGNOSTIC_REQUEST_ID = as.character(DIAGNOSTIC_REQUEST_ID),
+    INSPECTION_LOCATION_STATE_CODE = as.character(INSPECTION_LOCATION_STATE_CODE)
+  )
+```
+
+# Gather older data from AQAS
+```{r connect to AQAS}
+source(here::here("functions","connect_and_access_aqas.R"))
+
+if (isTRUE(params$include_aqas)) {
+  aqas_conn <- connect_aqas_db()
+  df_aqas <- aqas_intercepts(aqas_conn) |>
+    collect() |>
+    normalize_aqas_intercepts()
+} else {
+  df_aqas <- df[0, ]
+}
 ```
 
 ## Apply filters
@@ -87,14 +112,25 @@ source(here::here("functions","filter_dates.R"))
 source(here::here("functions","filter_commodity.R"))
 source(here::here("functions","filter_country.R"))
 source(here::here("functions","filter_taxa.R"))
-results <- df |>
-  filter_dates() |>
+arm_results <- df |>
+  filter_dates(begin_date = begin_date, end_date = end_date) |>
   # filter by commodity
   filter_commodity(params = params) |>
   # filter by country
   filter_country(params = params) |>
   # filter by pest taxonomy
   filter_by_taxonomy(params = params, threshold = 0.99)
+
+aqas_results <- df_aqas |>
+  filter_dates(begin_date = begin_date, end_date = end_date) |>
+  # filter by commodity
+  filter_commodity(params = params) |>
+  # filter by country
+  filter_country(params = params) |>
+  # filter by pest taxonomy
+  filter_by_taxonomy(params = params, threshold = 0.99)
+
+results <- bind_rows(arm_results, aqas_results)
 
 results
 

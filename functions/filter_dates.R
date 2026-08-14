@@ -1,7 +1,29 @@
+parse_request_date <- function(value, default = NULL) {
+  if (is.null(value) || length(value) == 0 || is.na(value)) {
+    return(default)
+  }
+
+  if (inherits(value, "Date")) {
+    return(value)
+  }
+
+  value <- as.character(value)
+  if (tolower(value) == "today") {
+    return(Sys.Date())
+  }
+
+  parsed_date <- as.Date(value, tryFormats = c("%m-%d-%Y", "%Y-%m-%d", "%d-%m-%Y"))
+  if (is.na(parsed_date)) {
+    stop(paste0("Could not parse date parameter: ", value), call. = FALSE)
+  }
+
+  parsed_date
+}
+
 # get start and end dates from params
 get_date_params <- function(params) {
-  begin_date <- if(is.null(params$begin_date)) as.Date("1900-01-01") else as.Date(params$begin_date, "%d-%m-%Y")
-  end_date <- if(is.null(params$end_date)) Sys.Date() else as.Date(params$end_date, "%d-%m-%Y")
+  begin_date <- parse_request_date(params$begin_date, default = as.Date("1900-01-01"))
+  end_date <- parse_request_date(params$end_date, default = Sys.Date())
   return(list(begin_date = begin_date, end_date = end_date))
 }
 
