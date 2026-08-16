@@ -117,7 +117,7 @@ normalize_aqas_intercepts <- function(data) {
       COMMODITY_TAXONOMIC_DISPLAY_NAME = .data$INSP_HOST,
       INSPECTION_PATHWAY = .data$PATHWAY,
       SUBCATEGORY = .data$PEST_TYPE,
-      DETERMINATION_TYPE = as.character(.data$DETERMINATION_TYPE),
+      #DETERMINATION_TYPE = as.character(.data$DETERMINATION_TYPE),
       QUARANTINE_RECOMMENDATION = .data$QUARANTINE_STATUS,
       DIAGNOSTIC_DETERMINATION_ID = as.character(.data$FINAL_DETERM_ID),
       PEST_DISPLAY_NAME = .data$PEST,
